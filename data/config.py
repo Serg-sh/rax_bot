@@ -7,6 +7,6 @@ BOT_TOKEN = env.str("BOT_TOKEN")
 ADMINS = env.list("ADMINS")  # Список админов
 IP = env.str("IP")  # адрес хоста
 
-managers_id = [
+manager_ids = [
     '1806701232',
 ]
