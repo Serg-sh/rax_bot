@@ -1,5 +1,5 @@
 from aiogram.dispatcher.filters import Command, Text
-from aiogram.types import CallbackQuery, Message, ReplyKeyboardRemove
+from aiogram.types import CallbackQuery, Message, ReplyKeyboardRemove, InlineKeyboardMarkup
 
 import data.texts as txt
 import keyboards.inline.user_keyboards as ukb

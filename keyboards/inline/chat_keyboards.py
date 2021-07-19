@@ -3,7 +3,7 @@ import random
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.callback_data import CallbackData
 
-from data.config import manager_ids
+from data.config import MANAGERS
 from loader import dp
 
 chat_callback = CallbackData('ask_chat', 'messages', 'user_id', 'as_user')
@@ -22,8 +22,8 @@ async def check_busy_manager(manager_id):
 
 
 async def get_id_manager():
-    random.shuffle(manager_ids)
-    for manager_id in manager_ids:
+    random.shuffle(MANAGERS)
+    for manager_id in MANAGERS:
         manager_id = await check_busy_manager(manager_id)
         if manager_id:
             return manager_id
@@ -42,7 +42,7 @@ async def chat_keyboard(messages, user_id=None):
         if messages == 'many' and contact_id is None:
             return False
         elif messages == 'one' and contact_id is None:
-            contact_id = random.choice(manager_ids)
+            contact_id = random.choice(MANAGERS)
 
         if messages == 'one':
             text = 'Написать 1 сообщение менеджеру'
