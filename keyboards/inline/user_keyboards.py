@@ -23,14 +23,14 @@ markup_main = InlineKeyboardMarkup(inline_keyboard=[
 ], )
 
 # Кнопка назад в меню
-button_back_to_main_menu = InlineKeyboardButton(text='Назад в меню', callback_data='back_to_main_menu')
+button_back_to_main_menu = InlineKeyboardButton(text='Назад', callback_data='back_to_main_menu')
 markup_to_main_menu = InlineKeyboardMarkup(inline_keyboard=[
     [button_back_to_main_menu]
 ])
 
 
-manager_chat_button = InlineKeyboardButton(text='Написать 1 сообщение менеджеру', callback_data='message_to_manager')
-manager_message_button = InlineKeyboardButton(text='Начать чат с менеджером', callback_data='chat_with_manager')
+manager_chat_button = InlineKeyboardButton(text='Написать OFFLINE сообщение менеджеру', callback_data='message_to_manager')
+manager_message_button = InlineKeyboardButton(text='Начать ONLINE чат с менеджером', callback_data='chat_with_manager')
 
 # Клавиатура чат - сообщение медеджеру
 markup_chat_message = InlineKeyboardMarkup(inline_keyboard=[

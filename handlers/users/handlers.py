@@ -1,8 +1,19 @@
-from aiogram.types import CallbackQuery
+from aiogram.dispatcher.filters import Command, Text
+from aiogram.types import CallbackQuery, Message, ReplyKeyboardRemove
 
 import data.texts as txt
 import keyboards.inline.user_keyboards as ukb
 from loader import dp
+
+
+@dp.message_handler(Text('Главное меню'))
+async def show_main_menu(message: Message):
+    await message.answer(text='Главное меню', reply_markup=ukb.markup_main)
+
+
+@dp.message_handler(Command('menu'))
+async def show_menu(message: Message):
+    await show_main_menu(message)
 
 
 @dp.callback_query_handler(text_contains='back_to_main_menu')
@@ -39,5 +50,6 @@ async def show_contacts(call: CallbackQuery):
 @dp.callback_query_handler(text_contains='ask_question')
 async def ask_question(call: CallbackQuery):
     await call.message.edit_reply_markup(ukb.markup_chat_message)
+
 
 
