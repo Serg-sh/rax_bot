@@ -6,7 +6,7 @@ from data import urls
 news_button = InlineKeyboardButton(text='Новости компании', url=urls.NEWS)
 site_button = InlineKeyboardButton(text='Сайт компании', url=urls.SITE)
 my_account_button = InlineKeyboardButton(text='Кабинет клиента', url=urls.MY_ACCOUNT)
-production_button = InlineKeyboardButton(text='Наша продукция', callback_data='production')
+production_button = InlineKeyboardButton(text='Наша продукция', url=urls.PRODUCTS)
 services_button = InlineKeyboardButton(text='Наши услуги', callback_data='services')
 manager_chat_button = InlineKeyboardButton(text='Задать вопрос менеджеру', callback_data='ask_question')
 contacts_button = InlineKeyboardButton(text='Наши контакты', callback_data='contacts')

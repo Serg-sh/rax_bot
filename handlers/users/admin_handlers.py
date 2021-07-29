@@ -8,9 +8,9 @@ from loader import dp
 
 @dp.message_handler(Text('Панель администратора'), user_id=ADMINS)
 async def show_admin_panel(message: Message):
-    await message.answer(text='Главное меню', reply_markup=akb.markup_admin_main)
+    await message.answer(text='Меню администратора', reply_markup=akb.markup_admin_main)
 
 
-@dp.message_handler(Command('admin_panel'), user_id=ADMINS)
+@dp.message_handler(Command('admin'), user_id=ADMINS)
 async def show_ap(message: Message):
     await show_admin_panel(message)

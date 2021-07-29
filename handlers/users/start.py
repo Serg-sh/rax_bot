@@ -4,8 +4,8 @@ from aiogram import types
 from aiogram.dispatcher.filters.builtin import CommandStart
 from aiogram.types import InputFile, Message, ReplyKeyboardMarkup
 
-from data.config import ADMINS
-from keyboards.default.main_menu import markup_main_menu, markup_admin_main_menu
+from data.config import ADMINS, MANAGERS
+from keyboards.default.main_menu import markup_main_menu, markup_admin_main_menu, markup_manager_main
 from loader import dp
 
 
@@ -23,6 +23,8 @@ def get_markup(message: Message) -> ReplyKeyboardMarkup:
     user_id = str(message.from_user.id)
     if user_id in ADMINS:
         return markup_admin_main_menu
+    elif user_id in MANAGERS:
+        return markup_manager_main
     else:
         return markup_main_menu
 
