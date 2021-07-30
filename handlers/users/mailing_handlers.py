@@ -10,7 +10,8 @@ from states.states import Mailing
 
 
 # Рассылка для админов
-@dp.callback_query_handler(user_id=ADMINS, text_contains='admins_mailing')
+@dp.callback_query_handler(text_contains='admins_mailing')
+@dp.callback_query_handler(text_contains='managers_mailing')
 async def mailing_to_admins(call: CallbackQuery):
     await call.message.answer('Пришлите текст рассылки')
     await Mailing.Text.set()
@@ -44,3 +45,8 @@ async def cancel_mailing(call: CallbackQuery, state: FSMContext):
     await state.reset_state()
     await call.message.edit_reply_markup()
     await call.message.answer('Рассылка отменена.')
+
+
+# Рассылка для менеджеров
+
+
