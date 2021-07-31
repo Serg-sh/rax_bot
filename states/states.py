@@ -2,7 +2,16 @@ from aiogram.dispatcher.filters.state import StatesGroup, State
 
 
 
-class Mailing(StatesGroup):
+class MailingAdmins(StatesGroup):
     Text = State()
-    Language = State()
     SendToAdmins = State()
+
+
+class MailingManagers(StatesGroup):
+    Text = State()
+    SendToManagers = State()
+
+
+class MailingClients(StatesGroup):
+    Text = State()
+    SendToClients = State()

@@ -3,8 +3,8 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
 production_button = InlineKeyboardButton(text='Наша продукция', callback_data='production')
-mailing_button_for_users = InlineKeyboardButton(text='Создать рассылку для пользователей',
-                                                callback_data='users_mailing')
+mailing_button_for_clients = InlineKeyboardButton(text='Создать рассылку для клиентов',
+                                                  callback_data='clients_mailing')
 mailing_button_for_admins = InlineKeyboardButton(text='Рассылка для админов',
                                                  callback_data='admins_mailing')
 mailing_button_for_managers = InlineKeyboardButton(text='Рассылка для менеджеров',
@@ -16,7 +16,7 @@ add_manager_button = InlineKeyboardButton(text='Добавить менедже�
 
 markup_admin_main = InlineKeyboardMarkup(inline_keyboard=[
     [production_button],
-    [mailing_button_for_users],
+    [mailing_button_for_clients],
     [mailing_button_for_admins, mailing_button_for_managers],
     [statistics_button],
     [add_admin_button, add_manager_button],
