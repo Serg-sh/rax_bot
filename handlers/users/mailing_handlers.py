@@ -115,3 +115,6 @@ async def cancel_mailing(call: CallbackQuery, state: FSMContext):
     await state.reset_state()
     await call.message.edit_reply_markup()
     await call.message.answer('Рассылка отменена.')
+
+
+

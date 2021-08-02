@@ -6,6 +6,7 @@ env.read_env()
 BOT_TOKEN = env.str("BOT_TOKEN")
 ADMINS = env.list("ADMINS")  # Список админов
 MANAGERS = env.list("MANAGERS")  # Список менеджеров
-IP = env.str("IP")  # адрес хоста
-
+db_host = env.str("HOST_DB")  # адрес хоста базы данных
+db_user = env.str("USER_DB") # юзер бд
+db_pass = env.str("PASS_DB") # пароль БД
 
