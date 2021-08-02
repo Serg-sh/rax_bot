@@ -6,7 +6,7 @@ from gino.schema import GinoSchemaVisitor
 from sqlalchemy import Column, Integer, BigInteger, String, Sequence, Boolean
 from sqlalchemy import sql
 
-from data.config import db_host, db_user, db_pass
+from data.config import db_host, db_user, db_pass, db_name
 
 db = Gino()
 
@@ -30,6 +30,7 @@ class Production(db.Model):
     text = Column(String)
     photo = Column(String(250))
     price = Column(Integer)
+    query: sql.Select
 
 class News(db.Model):
     __tablename__ = 'news'
@@ -37,10 +38,55 @@ class News(db.Model):
     title = Column(String(200))
     text = Column(String)
     date = Column(String(10))
+    query: sql.Select
 
 
 class DBCommands:
-    async def get_users(self, user_id) -> User:
+    async def get_user(self, user_id) -> User:
         user = await User.query.where(User.user_id == user_id).gino.first()
         return user
+
+    async def add_new_user(self, is_admin: Boolean=None, is_manager: Boolean=None) -> User:
+        user = types.User.get_current()
+        old_user = await self.get_user(user.id)
+        if old_user:
+            return old_user
+        new_user = User()
+        new_user.user_id = user.id
+        if is_admin:
+            new_user.is_admin = is_admin
+        if is_manager:
+            new_user.is_manager = is_manager
+        await new_user.create()
+        return new_user
+
+    async def set_language(self, language):
+        user_id = types.User.get_current().id
+        user = await self.get_user(user_id)
+        await user.update(language=language).apply()
+
+    async def count_users(self):
+        total = await db.func.count(User.id).gino.scalar()
+        return total
+
+    async def get_news(self):
+        news = await News.query.gino.all()
+        return news[:3:-1]
+
+    async def get_productions(self):
+        productions = await Production.query.gino.all()
+        return productions
+
+async def create_db():
+    await db.set_bind(f'postgresql://{db_user}:{db_pass}@{db_host}/{db_name}')
+    db.gino: GinoSchemaVisitor
+    await db.gino.drop_all()
+    await db.gino.create_all()
+
+
+
+
+
+
+
 
