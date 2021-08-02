@@ -7,15 +7,19 @@ from aiogram.types import InputFile, Message, ReplyKeyboardMarkup
 from data.config import ADMINS, MANAGERS
 from keyboards.default.main_menu import markup_main_menu, markup_admin_main_menu, markup_manager_main
 from loader import dp
+from utils.db_api import database
 
+db = database.DBCommands()
 
 @dp.message_handler(CommandStart())
 async def bot_start(message: types.Message):
     logo_rax = InputFile('data/images/logo_rax.jpg')
     await message.answer_photo(photo=logo_rax, parse_mode='HTML')
-    await sleep(0.3)
-    await message.answer(f'Привет, {message.from_user.full_name}!\n\n'
-                         f'ДЛЯ ПРОДОЛЖЕНИЯ РАБОТЫ ВОСПОЛЬЗУЙТЕСЬ ГЛАВНЫМ МЕНЮ \n',
+    await sleep(0.1)
+    await db.add_new_user()
+    await message.answer(f'Добрый День!  {message.from_user.full_name}!\n\n'
+                         f'ПРИВЕТСТВУЕМ ВАС В ТЕЛЕГРАММ БОТЕ ДДАП-РАКС\n\n'
+                         f'Для продолжения работы воспользуйтесь ГЛАВНЫМ МЕНЮ \n',
                          reply_markup=get_markup(message))
 
 

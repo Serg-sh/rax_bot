@@ -58,6 +58,7 @@ class DBCommands:
             new_user.is_admin = is_admin
         if is_manager:
             new_user.is_manager = is_manager
+        new_user.full_name = user.full_name
         await new_user.create()
         return new_user
 

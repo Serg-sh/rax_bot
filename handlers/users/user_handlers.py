@@ -3,7 +3,7 @@ from aiogram.types import CallbackQuery, Message, ReplyKeyboardRemove, InlineKey
 
 import data.texts as txt
 import keyboards.inline.user_keyboards as ukb
-from loader import dp
+from loader import dp, bot
 
 
 @dp.message_handler(Text('Главное меню'))
@@ -30,9 +30,13 @@ async def show_services(call: CallbackQuery):
 
 @dp.callback_query_handler(text_contains='about_us')
 async def show_about_us(call: CallbackQuery):
+    bot_username = (await bot.me).username
+    bot_link = f'https://t.me/{bot_username}'
     await call.message.answer(text=txt.ABOUT_US,
                               parse_mode='HTML',
                               reply_markup=ukb.markup_to_main_menu)
+    await call.message.answer(text=f'Поделиться ссылкой на БОТ ДДАП-РАКС\n'
+                                   f'{bot_link}')
 
 
 @dp.callback_query_handler(text_contains='contacts')

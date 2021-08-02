@@ -9,7 +9,7 @@ from loader import dp, bot
 
 @dp.callback_query_handler(text_contains='chat_with_manager')
 async def chat_with_manager(call: CallbackQuery):
-    text = 'Хотите начать чат с менеджером?\nНажмите кнопку ниже.'
+    text = 'Для открытия или завершения чата\nСделайте выбор.'
     kb_chat = await chat_keyboard(messages='many')
     if not kb_chat:
         await call.message.answer('В данный момент все менеджеры заняты!\nПопробуйте позже.')
