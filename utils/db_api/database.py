@@ -1,8 +1,6 @@
-from aiogram import types, Bot
-
+from aiogram import types
 from gino import Gino
 from gino.schema import GinoSchemaVisitor
-
 from sqlalchemy import Column, Integer, BigInteger, String, Sequence, Boolean
 from sqlalchemy import sql
 
@@ -12,9 +10,9 @@ db = Gino()
 
 
 class User(db.Model):
-    __tablename__ ='users'
+    __tablename__ = 'users'
     id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
-    user_id =Column(BigInteger)
+    user_id = Column(BigInteger)
     full_name = Column(String(100))
     languages = Column(String(2))
     is_admin = Column(Boolean, default=False)
@@ -22,6 +20,7 @@ class User(db.Model):
     username = Column(String(50))
     password = Column(String(200))
     query: sql.Select
+
 
 class Production(db.Model):
     __tablename__ = 'productions'
@@ -32,6 +31,7 @@ class Production(db.Model):
     drawing = Column(String(250))
     price = Column(Integer)
     query: sql.Select
+
 
 class News(db.Model):
     __tablename__ = 'news'
@@ -47,7 +47,7 @@ class DBCommands:
         user = await User.query.where(User.user_id == user_id).gino.first()
         return user
 
-    async def add_new_user(self, is_admin: Boolean=None, is_manager: Boolean=None) -> User:
+    async def add_new_user(self, is_admin: Boolean = None, is_manager: Boolean = None) -> User:
         user = types.User.get_current()
         old_user = await self.get_user(user.id)
         if old_user:
@@ -78,16 +78,9 @@ class DBCommands:
         productions = await Production.query.gino.all()
         return productions
 
+
 async def create_db():
     await db.set_bind(f'postgresql://{db_user}:{db_pass}@{db_host}/{db_name}')
     db.gino: GinoSchemaVisitor
-    await db.gino.drop_all()
+    # await db.gino.drop_all()
     await db.gino.create_all()
-
-
-
-
-
-
-
-
