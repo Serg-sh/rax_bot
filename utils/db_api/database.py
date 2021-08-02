@@ -29,6 +29,7 @@ class Production(db.Model):
     name = Column(String(200))
     text = Column(String)
     photo = Column(String(250))
+    drawing = Column(String(250))
     price = Column(Integer)
     query: sql.Select
 
