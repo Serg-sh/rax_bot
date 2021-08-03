@@ -11,6 +11,7 @@ from utils.db_api import database
 
 db = database.DBCommands()
 
+
 @dp.message_handler(CommandStart())
 async def bot_start(message: types.Message):
     logo_rax = InputFile('data/images/logo_rax.jpg')
@@ -31,4 +32,3 @@ def get_markup(message: Message) -> ReplyKeyboardMarkup:
         return markup_manager_main
     else:
         return markup_main_menu
-

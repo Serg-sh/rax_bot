@@ -1,7 +1,6 @@
 from aiogram.dispatcher.filters.state import StatesGroup, State
 
 
-
 class MailingAdmins(StatesGroup):
     Text = State()
     SendToAdmins = State()
@@ -15,6 +14,7 @@ class MailingManagers(StatesGroup):
 class MailingClients(StatesGroup):
     Text = State()
     SendToClients = State()
+
 
 class SetPermissions(StatesGroup):
     GetAdminId = State()

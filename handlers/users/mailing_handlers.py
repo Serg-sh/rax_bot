@@ -9,8 +9,8 @@ from keyboards.inline import admin_keyboards as akb
 from keyboards.inline import manager_keyboards as mkb
 from loader import dp, bot
 from states.states import MailingAdmins, MailingManagers, MailingClients
-
 from utils.db_api.database import User
+
 
 # Рассылка для админов
 

@@ -49,7 +49,31 @@ async def set_admin_permissions(message: Message, state: FSMContext):
     user_in_db = await db.get_user(user_id)
     if user_in_db:
         await user_in_db.update(is_admin=True).apply()
-        await message.answer(f'Пользовать {user_in_db.full_name}\nназначен администратором')
+        await message.answer(f'Пользовать {user_in_db.full_name}\nназначен администратором.')
+    else:
+        await message.answer(f'Что-то пошло не так\n'
+                             f'пользователь с ИД {user_id} не зарегистрирован\n'
+                             f'или введен не корректный ИД')
+    await state.reset_state()
+
+
+# Установка прав администратора
+@dp.callback_query_handler(text_contains='add_manager')
+async def get_id_manager(call: CallbackQuery):
+    await call.message.answer('Пришлите ИД пользователя.')
+    await SetPermissions.GetManagerId.set()
+
+
+@dp.message_handler(state=SetPermissions.GetManagerId)
+async def set_manager_permissions(message: Message, state: FSMContext):
+    try:
+        user_id = int(message.text)
+    except ValueError:
+        user_id = None
+    user_in_db = await db.get_user(user_id)
+    if user_in_db:
+        await user_in_db.update(is_manager=True).apply()
+        await message.answer(f'Пользовать {user_in_db.full_name}\nназначен менеджером.')
     else:
         await message.answer(f'Что-то пошло не так\n'
                              f'пользователь с ИД {user_id} не зарегистрирован\n'
