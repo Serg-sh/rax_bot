@@ -15,3 +15,7 @@ class MailingManagers(StatesGroup):
 class MailingClients(StatesGroup):
     Text = State()
     SendToClients = State()
+
+class SetPermissions(StatesGroup):
+    GetAdminId = State()
+    GetManagerId = State()

@@ -7,13 +7,12 @@ import keyboards.inline.mailing_keyboards as mk
 from data.config import ADMINS, MANAGERS
 from keyboards.inline import admin_keyboards as akb
 from keyboards.inline import manager_keyboards as mkb
-from keyboards.inline import user_keyboards as ukb
 from loader import dp, bot
 from states.states import MailingAdmins, MailingManagers, MailingClients
 
-# Рассылка для админов
 from utils.db_api.database import User
 
+# Рассылка для админов
 
 @dp.callback_query_handler(text_contains='admins_mailing')
 async def mailing_to_admins(call: CallbackQuery):

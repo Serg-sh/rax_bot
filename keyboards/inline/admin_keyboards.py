@@ -1,7 +1,6 @@
 # Клавиатура основного меню
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-
 production_button = InlineKeyboardButton(text='Наша продукция', callback_data='production')
 mailing_button_for_clients = InlineKeyboardButton(text='Создать рассылку для клиентов',
                                                   callback_data='clients_mailing')
@@ -13,9 +12,6 @@ statistics_button = InlineKeyboardButton(text='Статистика бота', c
 add_admin_button = InlineKeyboardButton(text='Добавить администратора', callback_data='add_admin')
 add_manager_button = InlineKeyboardButton(text='Добавить менеджера', callback_data='add_manager')
 
-
-
-
 markup_admin_main = InlineKeyboardMarkup(inline_keyboard=[
     [production_button],
     [mailing_button_for_clients],
@@ -23,7 +19,6 @@ markup_admin_main = InlineKeyboardMarkup(inline_keyboard=[
     [statistics_button],
     [add_admin_button, add_manager_button],
 ], )
-
 
 # Кнопка назад в меню администратора
 button_back_to_admin_menu = InlineKeyboardButton(text='Назад в админ-меню', callback_data='back_to_admin_menu')
