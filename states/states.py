@@ -19,3 +19,11 @@ class MailingClients(StatesGroup):
 class SetPermissions(StatesGroup):
     GetAdminId = State()
     GetManagerId = State()
+
+
+class SetUserProfile(StatesGroup):
+    GetPhone = State()
+    GetEmail = State()
+    GetCompany = State()
+    GetPassword = State()
+    GetLanguage = State()

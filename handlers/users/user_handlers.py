@@ -48,7 +48,6 @@ async def show_contacts(call: CallbackQuery):
                                     title=txt.COMPANY,
                                     address=txt.COMPANY_ADDRESS
                                     )
-
     await call.message.answer_contact(phone_number=txt.TEL,
                                       first_name=txt.EMAIL,
                                       reply_markup=ukb.markup_to_main_menu)
@@ -57,16 +56,3 @@ async def show_contacts(call: CallbackQuery):
 @dp.callback_query_handler(text_contains='ask_question')
 async def ask_question(call: CallbackQuery):
     await call.message.edit_reply_markup(ukb.markup_chat_message)
-
-
-@dp.message_handler(Text('Мой профиль'))
-async def show_my_profile(message: Message):
-    user_id = int(message.from_user.id)
-    user = await db.get_user(user_id)
-    await message.answer(text=f'ИД: <b>{user.user_id}</b>\n'
-                              f'Имя: <b>{user.full_name}</b>\n'
-                              f'Телефон: <b>{(user.phone if user.phone else "Не указан")}</b>\n'
-                              f'Email: <b>{(user.email if user.email else "Не указан")}</b>\n'
-                              f'Компания: <b>{(user.company_name if user.company_name else "Не указана")}</b>\n'
-                              f'Пароль: <b>{("Установлен" if user.password else "Неустановлен")}</b>\n',
-                         reply_markup=ukb.markup_my_profile)

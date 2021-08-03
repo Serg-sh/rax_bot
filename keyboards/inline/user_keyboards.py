@@ -1,6 +1,6 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from data import urls
 
+from data import urls
 
 # Клавиатура основного меню
 news_button = InlineKeyboardButton(text='Новости компании', url=urls.NEWS)
@@ -39,15 +39,14 @@ markup_chat_message = InlineKeyboardMarkup(inline_keyboard=[
 ], )
 
 # Клавиатура мой профиль
-set_phone_button = InlineKeyboardButton(text='Изменить телефон', callback_data='')
-set_email_button = InlineKeyboardButton(text='Изменить email', callback_data='')
-set_company_name_button = InlineKeyboardButton(text='Изменить название компании', callback_data='')
-set_password_button = InlineKeyboardButton(text='Изменить пароль', callback_data='')
+set_phone_button = InlineKeyboardButton(text='Изменить телефон', callback_data='get_user_phone')
+set_email_button = InlineKeyboardButton(text='Изменить email', callback_data='get_user_email')
+set_company_name_button = InlineKeyboardButton(text='Изменить название компании', callback_data='get_user_company')
+set_password_button = InlineKeyboardButton(text='Изменить пароль', callback_data='get_user_password')
 
 
 markup_my_profile = InlineKeyboardMarkup(inline_keyboard=[
-    [set_phone_button],
-    [set_email_button],
+    [set_phone_button, set_email_button],
     [set_company_name_button],
     [set_password_button],
 ], )

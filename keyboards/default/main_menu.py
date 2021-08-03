@@ -1,11 +1,9 @@
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
 
-
 main_menu = KeyboardButton(text='Главное меню')
 admin_panel = KeyboardButton(text='Панель администратора')
 manager_panel = KeyboardButton(text='Панель менеджера')
 my_profile = KeyboardButton(text='Мой профиль')
-
 
 markup_main_menu = ReplyKeyboardMarkup(keyboard=[
     [main_menu],
