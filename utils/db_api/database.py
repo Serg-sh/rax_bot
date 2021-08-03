@@ -17,7 +17,9 @@ class User(db.Model):
     languages = Column(String(2))
     is_admin = Column(Boolean, default=False)
     is_manager = Column(Boolean, default=False)
-    username = Column(String(50))
+    email = Column(String(100))
+    phone = Column(String(20))
+    company_name = Column(String(200))
     password = Column(String(200))
     query: sql.Select
 
@@ -47,17 +49,13 @@ class DBCommands:
         user = await User.query.where(User.user_id == user_id).gino.first()
         return user
 
-    async def add_new_user(self, is_admin: Boolean = None, is_manager: Boolean = None) -> User:
+    async def add_new_user(self) -> User:
         user = types.User.get_current()
         old_user = await self.get_user(user.id)
         if old_user:
             return old_user
         new_user = User()
         new_user.user_id = user.id
-        if is_admin:
-            new_user.is_admin = is_admin
-        if is_manager:
-            new_user.is_manager = is_manager
         new_user.full_name = user.full_name
         await new_user.create()
         return new_user
@@ -66,6 +64,29 @@ class DBCommands:
         user_id = types.User.get_current().id
         user = await self.get_user(user_id)
         await user.update(language=language).apply()
+
+    async def set_email(self, email):
+        user_id = types.User.get_current().id
+        user = await self.get_user(user_id)
+        await user.update(email=email).apply()
+
+
+    async def set_phone(self, phone):
+        user_id = types.User.get_current().id
+        user = await self.get_user(user_id)
+        await user.update(phone=phone).apply()
+
+
+    async def set_company_name(self, company_name):
+        user_id = types.User.get_current().id
+        user = await self.get_user(user_id)
+        await user.update(company_name=company_name).apply()
+
+
+    async def set_password(self, password):
+        user_id = types.User.get_current().id
+        user = await self.get_user(user_id)
+        await user.update(password=password).apply()
 
     async def count_users(self):
         total = await db.func.count(User.id).gino.scalar()

@@ -37,3 +37,17 @@ markup_chat_message = InlineKeyboardMarkup(inline_keyboard=[
     [manager_chat_button],
     [button_back_to_main_menu]
 ], )
+
+# Клавиатура мой профиль
+set_phone_button = InlineKeyboardButton(text='Изменить телефон', callback_data='')
+set_email_button = InlineKeyboardButton(text='Изменить email', callback_data='')
+set_company_name_button = InlineKeyboardButton(text='Изменить название компании', callback_data='')
+set_password_button = InlineKeyboardButton(text='Изменить пароль', callback_data='')
+
+
+markup_my_profile = InlineKeyboardMarkup(inline_keyboard=[
+    [set_phone_button],
+    [set_email_button],
+    [set_company_name_button],
+    [set_password_button],
+], )

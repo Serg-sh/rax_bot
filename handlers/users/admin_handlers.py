@@ -7,8 +7,16 @@ from data.config import ADMINS
 from loader import dp
 from states.states import SetPermissions
 from utils.db_api import database
+from utils.db_api.database import User
 
 db = database.DBCommands()
+
+
+def print_users(list_users):
+    text = ''
+    for user in list_users:
+        text += f'{user.user_id} - {user.full_name}\n'
+    return text
 
 
 @dp.message_handler(Text('Панель администратора'), user_id=ADMINS)
@@ -30,7 +38,13 @@ async def back_to_main_menu(call: CallbackQuery):
 @dp.callback_query_handler(text_contains='bot_statistics')
 async def show_bot_statistics(call: CallbackQuery):
     total_users = await db.count_users()
-    await call.message.answer(f'Колличество пользователей бота: {total_users}', reply_markup=akb.markup_to_admin_menu)
+    is_admin_users = await User.query.where(User.is_admin == True).gino.all()
+    is_manager_users = await User.query.where(User.is_manager == True).gino.all()
+    await call.message.answer(f'Колличество пользователей бота: {total_users}\n')
+    await call.message.answer(f'Администраторы бота:\n'
+                              f'{print_users(is_admin_users)}')
+    await call.message.answer(f'Менеджеры бота:\n'
+                              f'{print_users(is_manager_users)}')
 
 
 # Установка прав администратора

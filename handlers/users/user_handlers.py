@@ -1,9 +1,12 @@
 from aiogram.dispatcher.filters import Command, Text
-from aiogram.types import CallbackQuery, Message, ReplyKeyboardRemove, InlineKeyboardMarkup
+from aiogram.types import CallbackQuery, Message
 
 import data.texts as txt
 import keyboards.inline.user_keyboards as ukb
 from loader import dp, bot
+from utils.db_api import database
+
+db = database.DBCommands()
 
 
 @dp.message_handler(Text('Главное меню'))
@@ -56,4 +59,14 @@ async def ask_question(call: CallbackQuery):
     await call.message.edit_reply_markup(ukb.markup_chat_message)
 
 
-
+@dp.message_handler(Text('Мой профиль'))
+async def show_my_profile(message: Message):
+    user_id = int(message.from_user.id)
+    user = await db.get_user(user_id)
+    await message.answer(text=f'ИД: <b>{user.user_id}</b>\n'
+                              f'Имя: <b>{user.full_name}</b>\n'
+                              f'Телефон: <b>{(user.phone if user.phone else "Не указан")}</b>\n'
+                              f'Email: <b>{(user.email if user.email else "Не указан")}</b>\n'
+                              f'Компания: <b>{(user.company_name if user.company_name else "Не указана")}</b>\n'
+                              f'Пароль: <b>{("Установлен" if user.password else "Неустановлен")}</b>\n',
+                         reply_markup=ukb.markup_my_profile)
