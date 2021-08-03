@@ -6,11 +6,15 @@ from aiogram.types import CallbackQuery, Message
 import keyboards.inline.mailing_keyboards as mk
 from data.config import ADMINS, MANAGERS
 from keyboards.inline import admin_keyboards as akb
+from keyboards.inline import manager_keyboards as mkb
+from keyboards.inline import user_keyboards as ukb
 from loader import dp, bot
 from states.states import MailingAdmins, MailingManagers, MailingClients
 
-
 # Рассылка для админов
+from utils.db_api.database import User
+
+
 @dp.callback_query_handler(text_contains='admins_mailing')
 async def mailing_to_admins(call: CallbackQuery):
     await call.message.answer('Пришлите текст рассылки')
@@ -37,14 +41,14 @@ async def send_mailing(call: CallbackQuery, state: FSMContext):
             await sleep(0.3)
         except Exception:
             pass
-    await call.message.answer('Рассылка выполнена.')
+    await call.message.answer('Рассылка выполнена.', reply_markup=akb.markup_to_admin_menu)
 
 
 @dp.callback_query_handler(state=MailingAdmins.SendToAdmins, text_contains='cancel_mailing')
 async def cancel_mailing(call: CallbackQuery, state: FSMContext):
     await state.reset_state()
     await call.message.edit_reply_markup()
-    await call.message.answer('Рассылка отменена.')
+    await call.message.answer('Рассылка отменена.', reply_markup=akb.markup_to_admin_menu)
 
 
 # Рассылка для менеджеров
@@ -75,14 +79,14 @@ async def send_mailing(call: CallbackQuery, state: FSMContext):
             await sleep(0.3)
         except Exception:
             pass
-    await call.message.answer('Рассылка выполнена.')
+    await call.message.answer('Рассылка выполнена.', reply_markup=mkb.markup_to_manager_menu)
 
 
 @dp.callback_query_handler(state=MailingManagers.SendToManagers, text_contains='cancel_mailing')
 async def cancel_mailing(call: CallbackQuery, state: FSMContext):
     await state.reset_state()
     await call.message.edit_reply_markup()
-    await call.message.answer('Рассылка отменена.')
+    await call.message.answer('Рассылка отменена.', reply_markup=mkb.markup_to_manager_menu)
 
 
 # Рассылка для клиентов
@@ -107,7 +111,13 @@ async def send_mailing(call: CallbackQuery, state: FSMContext):
     text = data.get('text')
     await state.reset_state()
     await call.message.edit_reply_markup()
-    # выбрать ид клиентов из бд
+    users = await User.query.where(User.is_admin == False).gino.all()
+    for user in users:
+        try:
+            await bot.send_message(chat_id=user.user_id, text=text)
+            await sleep(0.3)
+        except Exception:
+            pass
     await call.message.answer('Рассылка выполнена.')
 
 
@@ -116,6 +126,3 @@ async def cancel_mailing(call: CallbackQuery, state: FSMContext):
     await state.reset_state()
     await call.message.edit_reply_markup()
     await call.message.answer('Рассылка отменена.')
-
-
-
