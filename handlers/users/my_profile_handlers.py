@@ -1,3 +1,5 @@
+import base64
+
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters import Text
 from aiogram.types import Message, CallbackQuery
@@ -84,5 +86,5 @@ async def set_user_password(message: Message, state: FSMContext):
     # придумать метод хранения пароля
     await state.reset_state()
     await db.set_password(password=password)
-    await message.answer(text=f'Пароль успешно изменен')
+    await message.answer(text=f"Пароль успешно изменен")
     await show_my_profile(message)

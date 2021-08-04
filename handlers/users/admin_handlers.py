@@ -15,7 +15,9 @@ db = database.DBCommands()
 def print_users(list_users):
     text = ''
     for user in list_users:
-        text += f'{user.user_id} - {user.full_name}\n'
+        text += f'{user.user_id} - {user.full_name}\n' \
+                f'● Email: {user.email}\n' \
+                f'● Tel: {user.phone}\n'
     return text
 
 
@@ -40,10 +42,10 @@ async def show_bot_statistics(call: CallbackQuery):
     total_users = await db.count_users()
     is_admin_users = await User.query.where(User.is_admin == True).gino.all()
     is_manager_users = await User.query.where(User.is_manager == True).gino.all()
-    await call.message.answer(f'Колличество пользователей бота: {total_users}\n')
-    await call.message.answer(f'Администраторы бота:\n'
+    await call.message.answer(f'<strong>Колличество пользователей бота:</strong> <i>{total_users}</i>\n')
+    await call.message.answer(f'<b>Администраторы бота:</b>\n'
                               f'{print_users(is_admin_users)}')
-    await call.message.answer(f'Менеджеры бота:\n'
+    await call.message.answer(f'<b>Менеджеры бота:</b>\n'
                               f'{print_users(is_manager_users)}')
 
 
