@@ -12,9 +12,7 @@ cancel_chat_callback = CallbackData('cancel_chat', 'user_id')
 
 async def check_busy_manager(manager_id):
     state = dp.current_state(chat=manager_id, user=manager_id)
-    state_str = str(
-        await state.get_state()
-    )
+    state_str = str(await state.get_state())
     if state_str == 'in_chat':
         return
     else:
@@ -27,8 +25,8 @@ async def get_id_manager():
         manager_id = await check_busy_manager(manager_id)
         if manager_id:
             return manager_id
-    else:
-        return
+        else:
+            return
 
 
 async def chat_keyboard(messages, user_id=None):
@@ -59,7 +57,7 @@ async def chat_keyboard(messages, user_id=None):
                  )
 
     if messages == 'many':
-        # Добавляем кнопку завершения сеанса, если передумали
+        # Кнопка завершения сеанса, если передумали
         keyboard.add(InlineKeyboardButton(text='Завершить сеанс',
                                           callback_data=cancel_chat_callback.new(user_id=contact_id)
                                           )

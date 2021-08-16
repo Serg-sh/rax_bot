@@ -73,7 +73,7 @@ async def set_admin_permissions(message: Message, state: FSMContext):
     await state.reset_state()
 
 
-# Установка прав администратора
+# Установка прав менеджера
 @dp.callback_query_handler(text_contains='add_manager')
 async def get_id_manager(call: CallbackQuery):
     await call.message.answer('Пришлите ИД пользователя.')

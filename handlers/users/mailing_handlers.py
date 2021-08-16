@@ -4,12 +4,13 @@ from aiogram.dispatcher import FSMContext
 from aiogram.types import CallbackQuery, Message
 
 import keyboards.inline.mailing_keyboards as mk
-from data.config import ADMINS, MANAGERS
 from keyboards.inline import admin_keyboards as akb
 from keyboards.inline import manager_keyboards as mkb
 from loader import dp, bot
 from states.states import MailingAdmins, MailingManagers, MailingClients
-from utils.db_api.database import User
+from utils.db_api import database
+
+db = database.DBCommands()
 
 
 # Рассылка для админов
@@ -34,7 +35,8 @@ async def send_mailing(call: CallbackQuery, state: FSMContext):
     text = data.get('text')
     await state.reset_state()
     await call.message.edit_reply_markup()
-    for admin_id in ADMINS:
+    admins_id = await db.get_admins_user_id()
+    for admin_id in admins_id:
         try:
             await bot.send_message(chat_id=admin_id, text=text)
             await sleep(0.3)
@@ -72,7 +74,8 @@ async def send_mailing(call: CallbackQuery, state: FSMContext):
     text = data.get('text')
     await state.reset_state()
     await call.message.edit_reply_markup()
-    for user_id in MANAGERS:
+    managers_id = await db.get_managers_user_id()
+    for user_id in managers_id:
         try:
             await bot.send_message(chat_id=user_id, text=text)
             await sleep(0.3)
@@ -110,10 +113,10 @@ async def send_mailing(call: CallbackQuery, state: FSMContext):
     text = data.get('text')
     await state.reset_state()
     await call.message.edit_reply_markup()
-    users = await User.query.where(User.is_admin == False).gino.all()
-    for user in users:
+    clients_id = await db.get_clients_user_id()
+    for client_id in clients_id:
         try:
-            await bot.send_message(chat_id=user.user_id, text=text)
+            await bot.send_message(chat_id=client_id, text=text)
             await sleep(0.3)
         except Exception:
             pass

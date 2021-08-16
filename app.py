@@ -1,5 +1,5 @@
 from aiogram.utils import executor
-import middlewares, filters, handlers
+
 from loader import dp
 from utils.db_api.database import create_db
 from utils.notify_admins import on_startup_notify

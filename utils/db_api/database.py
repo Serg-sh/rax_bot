@@ -1,3 +1,5 @@
+from typing import List
+
 from aiogram import types
 from gino import Gino
 from gino.schema import GinoSchemaVisitor
@@ -70,18 +72,15 @@ class DBCommands:
         user = await self.get_user(user_id)
         await user.update(email=email).apply()
 
-
     async def set_phone(self, phone):
         user_id = types.User.get_current().id
         user = await self.get_user(user_id)
         await user.update(phone=phone).apply()
 
-
     async def set_company_name(self, company_name):
         user_id = types.User.get_current().id
         user = await self.get_user(user_id)
         await user.update(company_name=company_name).apply()
-
 
     async def set_password(self, password):
         user_id = types.User.get_current().id
@@ -99,6 +98,24 @@ class DBCommands:
     async def get_productions(self):
         productions = await Production.query.gino.all()
         return productions
+
+    # Возвращает список строк ид админив
+    async def get_admins_user_id(self) -> List:
+        admins = await User.query.where(User.is_admin == True).gino.all()
+        admins_id = list(str(user.user_id) for user in admins)
+        return admins_id
+
+    # Возвращает список строк ид менеджеров
+    async def get_managers_user_id(self) -> List:
+        managers = list(await User.query.where(User.is_manager == True).gino.all())
+        managers_id = list(str(user.user_id) for user in managers)
+        return managers_id
+
+    async def get_clients_user_id(self) -> List:
+        clients_all = list(await User.query.where(User.is_manager == False).gino.all())
+        clients = list(user for user in clients_all if user.is_admin == False)
+        clients_id = list(str(user.user_id) for user in clients)
+        return clients_id
 
 
 async def create_db():
