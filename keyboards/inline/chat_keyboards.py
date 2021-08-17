@@ -3,11 +3,13 @@ import random
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.callback_data import CallbackData
 
-from data.config import MANAGERS
 from loader import dp
+from utils.db_api import database
 
 chat_callback = CallbackData('ask_chat', 'messages', 'user_id', 'as_user')
 cancel_chat_callback = CallbackData('cancel_chat', 'user_id')
+
+db = database.DBCommands()
 
 
 async def check_busy_manager(manager_id):
@@ -20,8 +22,9 @@ async def check_busy_manager(manager_id):
 
 
 async def get_id_manager():
-    random.shuffle(MANAGERS)
-    for manager_id in MANAGERS:
+    managers_id = await db.get_managers_user_id()
+    random.shuffle(managers_id)
+    for manager_id in managers_id:
         manager_id = await check_busy_manager(manager_id)
         if manager_id:
             return manager_id
@@ -30,6 +33,7 @@ async def get_id_manager():
 
 
 async def chat_keyboard(messages, user_id=None):
+    managers_id = await db.get_managers_user_id()
     if user_id:
         contact_id = int(user_id)
         as_user = 'no'
@@ -40,7 +44,7 @@ async def chat_keyboard(messages, user_id=None):
         if messages == 'many' and contact_id is None:
             return False
         elif messages == 'one' and contact_id is None:
-            contact_id = random.choice(MANAGERS)
+            contact_id = random.choice(managers_id)
 
         if messages == 'one':
             text = 'Написать 1 сообщение менеджеру'
@@ -68,9 +72,9 @@ async def chat_keyboard(messages, user_id=None):
 
 def cancel_chat(user_id):
     return InlineKeyboardMarkup(inline_keyboard=[
-            [
-                InlineKeyboardButton(text='Завершить сеанс',
-                                     callback_data=cancel_chat_callback.new(user_id=user_id))
-            ]
+        [
+            InlineKeyboardButton(text='Завершить сеанс',
+                                 callback_data=cancel_chat_callback.new(user_id=user_id))
         ]
+    ]
     )
