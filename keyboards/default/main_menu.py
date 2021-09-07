@@ -8,12 +8,11 @@ my_profile = KeyboardButton(text='Мой профиль')
 markup_main_menu = ReplyKeyboardMarkup(keyboard=[
     [main_menu],
     [my_profile],
-], resize_keyboard=True, one_time_keyboard=False)
+], resize_keyboard=True, one_time_keyboard=True)
 
 markup_admin_main_menu = ReplyKeyboardMarkup(keyboard=[
     [main_menu],
-    [admin_panel],
-    [manager_panel],
+    [admin_panel, manager_panel],
     [my_profile],
 ], resize_keyboard=True, one_time_keyboard=True)
 
