@@ -22,6 +22,8 @@ async def bot_start(message: types.Message):
     managers = await db.get_managers_user_id()
     admins = await db.get_admins_user_id()
     admins.extend(ADMINS)
+    user = await db.get_user(message.from_user.id)
+
     await message.answer(f'Добрый День!  {message.from_user.full_name}!\n\n'
                          f'ПРИВЕТСТВУЕМ ВАС В ТЕЛЕГРАММ БОТЕ ДДАП-РАКС\n\n'
                          f'Для продолжения работы воспользуйтесь ГЛАВНЫМ МЕНЮ \n',
