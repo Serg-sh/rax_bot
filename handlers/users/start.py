@@ -6,6 +6,7 @@ from aiogram.dispatcher.filters.builtin import CommandStart
 from aiogram.types import InputFile, Message, ReplyKeyboardMarkup
 
 from data.config import ADMINS
+from handlers.users.my_profile_handlers import show_my_profile
 from keyboards.default.main_menu import markup_main_menu, markup_admin_main_menu, markup_manager_main
 from loader import dp
 from utils.db_api import database
@@ -26,10 +27,16 @@ async def bot_start(message: types.Message):
 
     await message.answer(f'Добрый День!  {message.from_user.full_name}!\n\n'
                          f'ПРИВЕТСТВУЕМ ВАС В ТЕЛЕГРАММ БОТЕ ДДАП-РАКС\n\n'
-                         f'Для продолжения работы воспользуйтесь ГЛАВНЫМ МЕНЮ \n',
+                         f'Для продолжения работы воспользуйтесь ГЛАВНЫМ МЕНЮ. \n',
                          reply_markup=get_markup(message,
                                                  admins_id=admins,
                                                  managers_id=managers))
+    await sleep(1)
+    if not user.phone or not user.email or not user.company_name:
+        await message.answer(f'{message.from_user.full_name}. \n'
+                             f'Вы не указали контактные данные, '
+                             f'укажите их в личном профиле.')
+        await show_my_profile(message)
 
 
 def get_markup(message: Message, admins_id: List, managers_id: List) -> ReplyKeyboardMarkup:
