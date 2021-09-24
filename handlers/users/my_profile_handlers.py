@@ -7,6 +7,8 @@ from loader import dp
 from states.states import SetUserProfile
 from utils.db_api import database
 
+import bcrypt
+
 db = database.DBCommands()
 
 
@@ -82,7 +84,14 @@ async def get_user_password(call: CallbackQuery):
 async def set_user_password(message: Message, state: FSMContext):
     password = message.text
     # придумать метод хранения пароля
+    # https://pythonist.ru/heshirovanie-parolej-v-python-tutorial-po-bcrypt-s-primerami/
+
+    hash_and_salt = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
+
+
     await state.reset_state()
-    await db.set_password(password=password)
+    print(type(hash_and_salt))
+    # как записать байты в бд?????????????????
+    # await db.set_password(password=hash_and_salt)
     await message.answer(text=f"Пароль успешно изменен")
     await show_my_profile(message)
