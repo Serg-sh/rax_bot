@@ -2,6 +2,7 @@ from aiogram import types
 from aiogram.dispatcher import FSMContext
 from aiogram.types import CallbackQuery
 
+from handlers.users.my_profile_handlers import check_user_data
 from keyboards.inline.chat_keyboards import chat_callback, check_busy_manager, get_id_manager, chat_keyboard, \
     cancel_chat, cancel_chat_callback
 from loader import dp, bot
@@ -9,6 +10,11 @@ from loader import dp, bot
 
 @dp.callback_query_handler(text_contains='chat_with_manager')
 async def chat_with_manager(call: CallbackQuery):
+    if await check_user_data(call.from_user.id):
+        await call.message.answer(f'{call.from_user.full_name}. \n'
+                                  f'Для связи с менеджером, укажите контактные данные '
+                                  f'в разделе мой профиль.')
+        return
     text = 'Для открытия или завершения чата\nСделайте выбор.'
     kb_chat = await chat_keyboard(messages='many')
     if not kb_chat:

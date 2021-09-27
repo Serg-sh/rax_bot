@@ -3,7 +3,7 @@ from typing import List
 from aiogram import types
 from gino import Gino
 from gino.schema import GinoSchemaVisitor
-from sqlalchemy import Column, Integer, BigInteger, String, Sequence, Boolean
+from sqlalchemy import Column, Integer, BigInteger, String, Sequence, Boolean, LargeBinary
 from sqlalchemy import sql
 
 from data.config import db_host, db_user, db_pass, db_name
@@ -22,7 +22,7 @@ class User(db.Model):
     email = Column(String(100))
     phone = Column(String(20))
     company_name = Column(String(200))
-    password = Column(String(200))
+    password = Column(LargeBinary())
     query: sql.Select
 
 

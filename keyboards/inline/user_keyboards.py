@@ -14,7 +14,6 @@ manager_chat_button = InlineKeyboardButton(text='Задать вопрос ме�
 contacts_button = InlineKeyboardButton(text='Наши контакты', callback_data='contacts')
 about_us_button = InlineKeyboardButton(text='О нас', callback_data='about_us')
 
-
 markup_main = InlineKeyboardMarkup(inline_keyboard=[
     [news_button],
     [site_button, my_account_button],
@@ -44,7 +43,6 @@ set_phone_button = InlineKeyboardButton(text='Изменить телефон', 
 set_email_button = InlineKeyboardButton(text='Изменить email', callback_data='get_user_email')
 set_company_name_button = InlineKeyboardButton(text='Изменить название компании', callback_data='get_user_company')
 set_password_button = InlineKeyboardButton(text='Изменить пароль', callback_data='get_user_password')
-
 
 markup_my_profile = InlineKeyboardMarkup(inline_keyboard=[
     [set_phone_button, set_email_button],
