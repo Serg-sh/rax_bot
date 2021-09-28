@@ -51,6 +51,10 @@ class DBCommands:
         user = await User.query.where(User.user_id == user_id).gino.first()
         return user
 
+    async def get_all_users(self):
+        users = await User.query.gino.all()
+        return users
+
     async def add_new_user(self) -> User:
         user = types.User.get_current()
         old_user = await self.get_user(user.id)
@@ -106,10 +110,10 @@ class DBCommands:
         return admins_id
 
     # Возвращает список строк ид менеджеров
-    async def get_managers_user_id(self) -> List:
-        managers = list(await User.query.where(User.is_manager == True).gino.all())
-        managers_id = list(str(user.user_id) for user in managers)
-        return managers_id
+    async def get_managers_user_id(self):
+        managers = await User.query.where(User.is_manager == True).gino.all()
+        # managers_id = list(str(user.user_id) for user in managers)
+        return managers
 
     async def get_clients_user_id(self) -> List:
         clients_all = list(await User.query.where(User.is_manager == False).gino.all())

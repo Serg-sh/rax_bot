@@ -1,5 +1,6 @@
 # Клавиатура основного меню
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from aiogram.utils import callback_data
 
 production_button = InlineKeyboardButton(text='Наша продукция', callback_data='production')
 mailing_button_for_clients = InlineKeyboardButton(text='Создать рассылку для клиентов',
@@ -26,3 +27,8 @@ markup_to_admin_menu = InlineKeyboardMarkup(inline_keyboard=[
     [button_back_to_admin_menu]
 ])
 
+# показать всех пользователей
+button_show_all_users = InlineKeyboardButton(text='Показать всех пользователей', callback_data='show_all_user')
+markup_show_all_users = InlineKeyboardMarkup(inline_keyboard=[
+    [button_show_all_users]
+])

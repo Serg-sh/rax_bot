@@ -42,11 +42,28 @@ async def show_bot_statistics(call: CallbackQuery):
     total_users = await db.count_users()
     is_admin_users = await User.query.where(User.is_admin == True).gino.all()
     is_manager_users = await User.query.where(User.is_manager == True).gino.all()
-    await call.message.answer(f'<strong>Колличество пользователей бота:</strong> <i>{total_users}</i>\n')
-    await call.message.answer(f'<b>Администраторы бота:</b>\n'
-                              f'{print_users(is_admin_users)}')
-    await call.message.answer(f'<b>Менеджеры бота:</b>\n'
-                              f'{print_users(is_manager_users)}')
+    await call.message.answer(text=f'<strong>Колличество пользователей бота:</strong> <i>{total_users}</i>\n')
+    await call.message.answer(text=f'<b>Администраторы бота:</b>\n'
+                                   f'{print_users(is_admin_users)}')
+    await call.message.answer(text=f'<b>Менеджеры бота:</b>\n'
+                                   f'{print_users(is_manager_users)}',
+                              reply_markup=akb.markup_show_all_users)
+
+
+@dp.callback_query_handler(text_contains='show_all_user')
+async def show_all_user(call: CallbackQuery):
+    users = await db.get_all_users()
+    text = f''
+    for user in users:
+        text += f'<strong>ИД клиента: {user.user_id}\n</strong>' \
+                f'<b>   ● Имя: </b>{user.full_name}\n' \
+                f'<b>   ● Компания: </b>{user.company_name}\n' \
+                f'<b>   ● Тел.: </b>{user.phone}\n' \
+                f'<b>   ● Email: </b>{user.email}\n'
+
+
+
+    await call.message.answer(text=text)
 
 
 # Установка прав администратора
