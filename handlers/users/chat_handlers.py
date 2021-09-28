@@ -6,6 +6,9 @@ from handlers.users.my_profile_handlers import check_user_data
 from keyboards.inline.chat_keyboards import chat_callback, check_busy_manager, get_id_manager, chat_keyboard, \
     cancel_chat, cancel_chat_callback
 from loader import dp, bot
+from utils.db_api import database
+
+db = database.DBCommands()
 
 
 @dp.callback_query_handler(text_contains='chat_with_manager')
@@ -42,9 +45,14 @@ async def send_to_chat(call: types.CallbackQuery, state: FSMContext, callback_da
     await state.update_data(second_id=manager_id)
 
     kb = await chat_keyboard(messages='many', user_id=call.from_user.id)
+    user = await db.get_user(call.from_user.id)
 
     await bot.send_message(manager_id,
-                           f'С вами хочет связаться пользователь {call.from_user.full_name}',
+                           f'С вами хочет связаться пользователь:\n'
+                           f'{call.from_user.full_name}\n'
+                           f'Компания: {user.company_name}\n'
+                           f'Тел.: {user.phone}\n'
+                           f'Email: {user.email}',
                            reply_markup=kb
                            )
 
