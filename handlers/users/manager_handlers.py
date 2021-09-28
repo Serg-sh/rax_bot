@@ -1,11 +1,14 @@
 from aiogram.dispatcher.filters import Text, Command
 from aiogram.types import Message, CallbackQuery
 
-from data.config import MANAGERS
 from keyboards.inline.manager_keyboards import markup_manager_main
 from keyboards.inline import manager_keyboards as mkb
 from loader import dp
+from utils.db_api import database
 
+db = database.DBCommands()
+
+MANAGERS = db.get_managers_user_id()
 
 @dp.message_handler(Text('Панель менеджера'), user_id=MANAGERS)
 async def show_manager_panel(message: Message):
