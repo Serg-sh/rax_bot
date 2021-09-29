@@ -112,8 +112,8 @@ class DBCommands:
     # Возвращает список строк ид менеджеров
     async def get_managers_user_id(self):
         managers = await User.query.where(User.is_manager == True).gino.all()
-        # managers_id = list(str(user.user_id) for user in managers)
-        return managers
+        managers_id = list(str(user.user_id) for user in managers)
+        return managers_id
 
     async def get_clients_user_id(self) -> List:
         clients_all = list(await User.query.where(User.is_manager == False).gino.all())
@@ -125,5 +125,5 @@ class DBCommands:
 async def create_db():
     await db.set_bind(f'postgresql://{db_user}:{db_pass}@{db_host}/{db_name}')
     db.gino: GinoSchemaVisitor
-    # await db.gino.drop_all()
+    await db.gino.drop_all()
     await db.gino.create_all()

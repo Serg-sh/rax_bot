@@ -3,7 +3,7 @@ from multiprocessing import managers
 from aiogram.dispatcher.filters import Text, Command
 from aiogram.types import Message, CallbackQuery
 
-# from data.config import MANAGERS
+from data.config import MANAGERS
 from keyboards.inline.manager_keyboards import markup_manager_main
 from keyboards.inline import manager_keyboards as mkb
 from loader import dp
@@ -12,16 +12,18 @@ from utils.db_api import database
 db = database.DBCommands()
 
 
-async def managers_id():
-    MANAGERS1 = await db.get_managers_user_id()
-    managers = list()
-    for man in MANAGERS1:
-        managers.append(man.user_id)
-    print(type(managers))
-    print(managers)
-    return managers
+# async def managers_id():
+#     MANAGERS1 = await db.get_managers_user_id()
+#     managers = list()
+#     for man in MANAGERS1:
+#         managers.append(man.user_id)
+#     print(type(managers))
+#     print(managers)
+#     return managers
 
-MANAGERS = managers_id()
+
+managers_id = db.get_managers_user_id()
+MANAGERS.extend(managers_id)
 
 
 
