@@ -21,14 +21,10 @@ def print_users(list_users):
     return text
 
 
+@dp.message_handler(Command('admin'), user_id=ADMINS)
 @dp.message_handler(Text('Панель администратора'), user_id=ADMINS)
 async def show_admin_panel(message: Message):
     await message.answer(text='Меню администратора', reply_markup=akb.markup_admin_main)
-
-
-@dp.message_handler(Command('admin'), user_id=ADMINS)
-async def show_ap(message: Message):
-    await show_admin_panel(message)
 
 
 @dp.callback_query_handler(text_contains='back_to_admin_menu')
@@ -60,9 +56,6 @@ async def show_all_user(call: CallbackQuery):
                 f'<b>   ● Компания: </b>{user.company_name}\n' \
                 f'<b>   ● Тел.: </b>{user.phone}\n' \
                 f'<b>   ● Email: </b>{user.email}\n'
-
-
-
     await call.message.answer(text=text)
 
 

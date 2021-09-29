@@ -92,7 +92,6 @@ async def cancel_mailing(call: CallbackQuery, state: FSMContext):
 
 
 # Рассылка для клиентов
-
 @dp.callback_query_handler(text_contains='clients_mailing')
 async def mailing_to_managers(call: CallbackQuery):
     await call.message.answer('Пришлите текст рассылки')
