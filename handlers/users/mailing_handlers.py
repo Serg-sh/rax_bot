@@ -14,7 +14,6 @@ db = database.DBCommands()
 
 
 # Рассылка для админов
-
 @dp.callback_query_handler(text_contains='admins_mailing')
 async def mailing_to_admins(call: CallbackQuery):
     await call.message.answer('Пришлите текст рассылки')
@@ -53,7 +52,6 @@ async def cancel_mailing(call: CallbackQuery, state: FSMContext):
 
 
 # Рассылка для менеджеров
-
 @dp.callback_query_handler(text_contains='managers_mailing')
 async def mailing_to_managers(call: CallbackQuery):
     await call.message.answer('Пришлите текст рассылки')
