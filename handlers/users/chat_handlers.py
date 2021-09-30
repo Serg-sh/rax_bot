@@ -49,7 +49,7 @@ async def send_to_chat(call: types.CallbackQuery, state: FSMContext, callback_da
 
     await bot.send_message(manager_id,
                            f'С вами хочет связаться пользователь:\n'
-                           f'{call.from_user.full_name}\n'
+                           f'{user.full_name}\n'
                            f'Компания: {user.company_name}\n'
                            f'Тел.: {user.phone}\n'
                            f'Email: {user.email}',
@@ -78,8 +78,9 @@ async def answer_chat(call: types.CallbackQuery, state: FSMContext, callback_dat
                                  'Чтобы завершить общение нажмите на кнопку.',
                                  reply_markup=keyboard)
     await bot.send_message(second_id,
-                           'Менеджер на связи! Можете писать сюда свое сообщение. \n'
-                           'Чтобы завершить общение нажмите на кнопку.',
+                           f'Менеджер, {call.from_user.full_name} на связи!\n'
+                           f'Вы можете задать Ваш вопрос.'
+                           f'Для закрытия чата с медеджером, нажмите на кнопку.',
                            reply_markup=keyboard_second_user
                            )
 
