@@ -16,8 +16,8 @@ def print_users(list_users):
     text = ''
     for user in list_users:
         text += f'{user.user_id} - {user.full_name}\n' \
-                f'● Email: {user.email}\n' \
-                f'● Tel: {user.phone}\n'
+                f'● <b>Email:</b> {user.email}\n' \
+                f'● <b>Tel:</b> {user.phone}\n'
     return text
 
 
@@ -52,10 +52,10 @@ async def show_all_user(call: CallbackQuery):
     text = f''
     for user in users:
         text += f'<strong>ИД клиента: {user.user_id}\n</strong>' \
-                f'<b>   ● Имя: </b>{user.full_name}\n' \
-                f'<b>   ● Компания: </b>{user.company_name}\n' \
-                f'<b>   ● Тел.: </b>{user.phone}\n' \
-                f'<b>   ● Email: </b>{user.email}\n'
+                f'    ● <b>Имя: </b>{user.full_name}\n' \
+                f'    ● <b>Компания: </b>{user.company_name}\n' \
+                f'    ● <b>Тел.: </b>{user.phone}\n' \
+                f'    ● <b>Email: </b>{user.email}\n'
     await call.message.answer(text=text)
 
 
