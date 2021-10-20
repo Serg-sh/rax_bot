@@ -16,7 +16,7 @@ class User(db.Model):
     id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
     user_id = Column(BigInteger)
     full_name = Column(String(100))
-    languages = Column(String(2))
+    languages = Column(String(2), default='ru')
     is_admin = Column(Boolean, default=False)
     is_manager = Column(Boolean, default=False)
     email = Column(String(100))
@@ -67,13 +67,55 @@ class DBCommands:
         await new_user.create()
         return new_user
 
-    async def add_new_news(self, list_news) -> News:
-        pass
+    # Возвращает список строк ид админив
+    async def get_admins_user_id(self) -> List:
+        admins = await User.query.where(User.is_admin == True).gino.all()
+        admins_id = list(str(user.user_id) for user in admins)
+        return admins_id
+
+    # Возвращает список строк ид менеджеров
+    async def get_managers_user_id(self):
+        managers = await User.query.where(User.is_manager == True).gino.all()
+        managers_id = list(str(user.user_id) for user in managers)
+        return managers_id
+
+    async def get_clients_user_id(self) -> List:
+        clients_all = list(await User.query.where(User.is_manager == False).gino.all())
+        clients = list(user for user in clients_all if user.is_admin == False)
+        clients_id = list(str(user.user_id) for user in clients)
+        return clients_id
+
+    # новости
+    async def get_news(self, title) -> News:
+        news = await News.query.where(News.title == title).gino.first()
+        return news
+
+    async def get_all_news(self):
+        all_news = await News.query.gino.all()
+        return all_news
+
+    async def add_new_news(self, news) -> News:
+        title = news['title']
+        old_news = await self.get_news(title)
+        if old_news:
+            return old_news
+        new_news = News()
+        new_news.title = news['title']
+        new_news.text = news['body']
+        new_news.date = news['created']
+        new_news.api_link = news['api_link']
+        await new_news.create()
+        return new_news
 
     async def set_language(self, language):
         user_id = types.User.get_current().id
         user = await self.get_user(user_id)
         await user.update(language=language).apply()
+
+    async def get_language(self):
+        user = types.User.get_current()
+        user = await self.get_user(user.id)
+        return user.languages
 
     async def set_email(self, email):
         user_id = types.User.get_current().id
@@ -99,31 +141,9 @@ class DBCommands:
         total = await db.func.count(User.id).gino.scalar()
         return total
 
-    async def get_news(self):
-        news = await News.query.gino.all()
-        return news[:3:-1]
-
     async def get_productions(self):
         productions = await Production.query.gino.all()
         return productions
-
-    # Возвращает список строк ид админив
-    async def get_admins_user_id(self) -> List:
-        admins = await User.query.where(User.is_admin == True).gino.all()
-        admins_id = list(str(user.user_id) for user in admins)
-        return admins_id
-
-    # Возвращает список строк ид менеджеров
-    async def get_managers_user_id(self):
-        managers = await User.query.where(User.is_manager == True).gino.all()
-        managers_id = list(str(user.user_id) for user in managers)
-        return managers_id
-
-    async def get_clients_user_id(self) -> List:
-        clients_all = list(await User.query.where(User.is_manager == False).gino.all())
-        clients = list(user for user in clients_all if user.is_admin == False)
-        clients_id = list(str(user.user_id) for user in clients)
-        return clients_id
 
 
 async def create_db():
