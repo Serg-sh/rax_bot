@@ -19,6 +19,6 @@ async def get_news() -> List:
     request = requests.get(news_url, headers=headers)
     data = request.json()
     list_news = data.get('rows')
-    for news in list_news:
+    for news in list_news[::-1]:
         await db.add_new_news(news)
     return list_news

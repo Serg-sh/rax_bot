@@ -86,17 +86,20 @@ class DBCommands:
         return clients_id
 
     # новости
-    async def get_news(self, title) -> News:
-        news = await News.query.where(News.title == title).gino.first()
+    async def get_news(self, title=None, news_id=None) -> News:
+        if title:
+            news = await News.query.where(News.title == title).gino.first()
+            return news
+        news = await News.query.where(News.id == news_id).gino.first()
         return news
 
     async def get_all_news(self):
-        all_news = await News.query.gino.all()
+        all_news = await News.query.order_by('id').gino.all()
         return all_news
 
     async def add_new_news(self, news) -> News:
         title = news['title']
-        old_news = await self.get_news(title)
+        old_news = await self.get_news(title=title)
         if old_news:
             return old_news
         new_news = News()

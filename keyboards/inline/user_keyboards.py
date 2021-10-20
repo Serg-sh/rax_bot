@@ -5,7 +5,7 @@ from data import urls
 
 # Клавиатура основного меню
 # news_button = InlineKeyboardButton(text='Новости компании', url=urls.NEWS)
-news_button = InlineKeyboardButton(text='Новости компании', callback_data='news')
+news_button = InlineKeyboardButton(text='Новости компании', callback_data='show_news')
 site_button = InlineKeyboardButton(text='Сайт компании', url=urls.SITE)
 my_account_button = InlineKeyboardButton(text='Кабинет клиента', url=urls.MY_ACCOUNT)
 # production_button = InlineKeyboardButton(text='Наша продукция', callback_data='production')
@@ -52,15 +52,12 @@ markup_my_profile = InlineKeyboardMarkup(inline_keyboard=[
     [set_password_button],
 ], )
 
-
 # Клавиатура новости
 prev_button = InlineKeyboardButton(text='⬅', callback_data='prev_news')
-details_button = InlineKeyboardButton(text='Подробнее...', callback_data='details_news')
+details_button = InlineKeyboardButton(text='Все новости', url=urls.NEWS)
 next_button = InlineKeyboardButton(text='➡', callback_data='next_news')
 
 markup_news = InlineKeyboardMarkup(inline_keyboard=[
     [prev_button, details_button, next_button],
-    [button_back_to_main_menu]
+    [button_back_to_main_menu],
 ])
-
-
