@@ -8,5 +8,7 @@ from . import chat_handlers
 from . import send_message
 from . import mailing_handlers
 from . import my_profile_handlers
+from . import news_handlers
 
 from . import echo
+

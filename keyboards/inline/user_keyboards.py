@@ -1,9 +1,11 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from aiogram.utils import callback_data
 
 from data import urls
 
 # Клавиатура основного меню
-news_button = InlineKeyboardButton(text='Новости компании', url=urls.NEWS)
+# news_button = InlineKeyboardButton(text='Новости компании', url=urls.NEWS)
+news_button = InlineKeyboardButton(text='Новости компании', callback_data='news')
 site_button = InlineKeyboardButton(text='Сайт компании', url=urls.SITE)
 my_account_button = InlineKeyboardButton(text='Кабинет клиента', url=urls.MY_ACCOUNT)
 # production_button = InlineKeyboardButton(text='Наша продукция', callback_data='production')
@@ -14,7 +16,7 @@ manager_chat_button = InlineKeyboardButton(text='Задать вопрос ме�
 contacts_button = InlineKeyboardButton(text='Наши контакты', callback_data='contacts')
 about_us_button = InlineKeyboardButton(text='О нас', callback_data='about_us')
 
-markup_main = InlineKeyboardMarkup(inline_keyboard=[
+markup_main = InlineKeyboardMarkup(row_width=2, inline_keyboard=[
     [news_button],
     [site_button, my_account_button],
     [production_button, services_button],
@@ -49,3 +51,16 @@ markup_my_profile = InlineKeyboardMarkup(inline_keyboard=[
     [set_company_name_button],
     [set_password_button],
 ], )
+
+
+# Клавиатура новости
+prev_button = InlineKeyboardButton(text='⬅', callback_data='prev_news')
+details_button = InlineKeyboardButton(text='Подробнее...', callback_data='details_news')
+next_button = InlineKeyboardButton(text='➡', callback_data='next_news')
+
+markup_news = InlineKeyboardMarkup(inline_keyboard=[
+    [prev_button, details_button, next_button],
+    [button_back_to_main_menu]
+])
+
+

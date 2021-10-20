@@ -40,9 +40,10 @@ class Production(db.Model):
 class News(db.Model):
     __tablename__ = 'news'
     id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
-    title = Column(String(200))
+    title = Column(String(500))
     text = Column(String)
     date = Column(String(10))
+    api_link = Column(String(300))
     query: sql.Select
 
 
@@ -65,6 +66,9 @@ class DBCommands:
         new_user.full_name = user.full_name
         await new_user.create()
         return new_user
+
+    async def add_new_news(self, list_news) -> News:
+        pass
 
     async def set_language(self, language):
         user_id = types.User.get_current().id
