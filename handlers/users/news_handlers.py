@@ -18,7 +18,6 @@ def language_insert(user_language, api_link):
 async def show_news(call: CallbackQuery, news_id: int = None):
     user_language = await db.get_language()
     all_news = await db.get_all_news()
-    list_id_news = [news.id for news in all_news]
     news = all_news[len(all_news) - 1]
     if news_id:
         news = await db.get_news(news_id=news_id)
