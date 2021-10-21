@@ -22,4 +22,5 @@ async def show_manager_panel(message: Message):
 
 @dp.callback_query_handler(text_contains='back_to_manager_menu')
 async def back_to_main_menu(call: CallbackQuery):
+    await call.message.edit_reply_markup()
     await call.message.edit_reply_markup(mkb.markup_manager_main)

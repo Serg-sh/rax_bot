@@ -54,10 +54,11 @@ markup_my_profile = InlineKeyboardMarkup(inline_keyboard=[
 
 # Клавиатура новости
 prev_button = InlineKeyboardButton(text='⬅', callback_data='prev_news')
-details_button = InlineKeyboardButton(text='Все новости', url=urls.NEWS)
+details_button = InlineKeyboardButton(text='Больше новостей на сайте', url=urls.NEWS)
 next_button = InlineKeyboardButton(text='➡', callback_data='next_news')
 
 markup_news = InlineKeyboardMarkup(inline_keyboard=[
-    [prev_button, details_button, next_button],
+    [prev_button, next_button],
+    [details_button],
     [button_back_to_main_menu],
 ])

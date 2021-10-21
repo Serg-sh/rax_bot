@@ -21,7 +21,8 @@ async def show_menu(message: Message):
 
 @dp.callback_query_handler(text_contains='back_to_main_menu')
 async def back_to_main_menu(call: CallbackQuery):
-    await call.message.edit_reply_markup(ukb.markup_main)
+    await call.message.edit_reply_markup()
+    await call.message.answer(text='Главное меню', reply_markup=ukb.markup_main)
 
 
 @dp.callback_query_handler(text_contains='services')

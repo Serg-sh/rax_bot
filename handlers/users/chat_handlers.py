@@ -5,6 +5,7 @@ from aiogram.types import CallbackQuery
 from handlers.users.my_profile_handlers import check_user_data
 from keyboards.inline.chat_keyboards import chat_callback, check_busy_manager, get_id_manager, chat_keyboard, \
     cancel_chat, cancel_chat_callback
+import keyboards.inline.user_keyboards as ukb
 from loader import dp, bot
 from utils.db_api import database
 
@@ -14,9 +15,10 @@ db = database.DBCommands()
 @dp.callback_query_handler(text_contains='chat_with_manager')
 async def chat_with_manager(call: CallbackQuery):
     if await check_user_data(call.from_user.id):
-        await call.message.answer(f'{call.from_user.full_name}. \n'
-                                  f'Для связи с менеджером, укажите контактные данные '
-                                  f'в разделе мой профиль.')
+        await call.message.answer(text=f'{call.from_user.full_name}. \n'
+                                       f'Для связи с менеджером, укажите контактные данные '
+                                       f'в разделе мой профиль.',
+                                  reply_markup=ukb.markup_main)
         return
     text = 'Для открытия или завершения чата\nСделайте выбор.'
     kb_chat = await chat_keyboard(messages='many')

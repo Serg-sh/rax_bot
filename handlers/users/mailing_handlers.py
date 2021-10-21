@@ -117,11 +117,11 @@ async def send_mailing(call: CallbackQuery, state: FSMContext):
             await sleep(0.3)
         except Exception:
             pass
-    await call.message.answer('Рассылка выполнена.')
+    await call.message.answer(text='Рассылка выполнена.', reply_markup=mkb.markup_to_manager_menu)
 
 
 @dp.callback_query_handler(state=MailingClients.SendToClients, text_contains='cancel_mailing')
 async def cancel_mailing(call: CallbackQuery, state: FSMContext):
     await state.reset_state()
     await call.message.edit_reply_markup()
-    await call.message.answer('Рассылка отменена.')
+    await call.message.answer(text='Рассылка отменена.', reply_markup=mkb.markup_to_manager_menu)
