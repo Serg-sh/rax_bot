@@ -16,6 +16,8 @@ def language_insert(user_language, api_link):
 
 @dp.callback_query_handler(text_contains='show_news')
 async def show_news(call: CallbackQuery, news_id: int = None):
+    # возможно переделать функционал через heapq - https://t.me/python_tricks/56
+    # что-бы отображалось только 3-5 последних новостей
     user_language = await db.get_language()
     all_news = await db.get_all_news()
     news = all_news[len(all_news) - 1]
