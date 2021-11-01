@@ -1,11 +1,11 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from aiogram.utils import callback_data
-
+from loader import _
 from data import urls
 
 # Клавиатура основного меню
 # news_button = InlineKeyboardButton(text='Новости компании', url=urls.NEWS)
-news_button = InlineKeyboardButton(text='Новости компании', callback_data='show_news')
+news_button = InlineKeyboardButton(text=_('Новости компании'), callback_data='show_news')
 site_button = InlineKeyboardButton(text='Сайт компании', url=urls.SITE)
 my_account_button = InlineKeyboardButton(text='Кабинет клиента', url=urls.MY_ACCOUNT)
 # production_button = InlineKeyboardButton(text='Наша продукция', callback_data='production')

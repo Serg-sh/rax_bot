@@ -1,0 +1,21 @@
+Название - testbot, можете сменить на любое другое
+
+Запускаем первый раз
+1. Вытаскиваем тексты из файлов (он сам находит)
+pybabel extract . -o data/locales/ddaprax.pot
+2. Создаем папку для перевода на английский
+pybabel init -i data/locales/ddaprax.pot -d data/locales -D ddaprax -l en
+3. То же, на русский
+pybabel init -i data/locales/ddaprax.pot -d data/locales -D ddaprax -l ru
+4. То же, на украинский
+pybabel init -i data/locales/ddaprax.pot -d data/locales -D ddaprax -l uk
+5. Переводим, а потом собираем переводы
+pybabel compile -d data/locales -D ddaprax
+
+
+Обновляем переводы
+1. Вытаскиваем тексты из файлов, Добавляем текст в переведенные версии
+pybabel extract . -o data/locales/ddaprax.pot
+pybabel update -d data/locales -D ddaprax -i data/locales/ddaprax.pot
+3. Вручную делаем переводы, а потом Собираем
+pybabel compile -d data/locales -D ddaprax

@@ -1,4 +1,5 @@
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
+from loader import _
 
 main_menu = KeyboardButton(text='Главное меню')
 admin_panel = KeyboardButton(text='Панель администратора')

@@ -48,6 +48,7 @@ class News(db.Model):
 
 
 class DBCommands:
+    # Операции с пользователями
     async def get_user(self, user_id) -> User:
         user = await User.query.where(User.user_id == user_id).gino.first()
         return user
@@ -66,6 +67,10 @@ class DBCommands:
         new_user.full_name = user.full_name
         await new_user.create()
         return new_user
+
+    async def count_users(self):
+        total = await db.func.count(User.id).gino.scalar()
+        return total
 
     # Возвращает список строк ид админив
     async def get_admins_user_id(self) -> List:
@@ -110,6 +115,7 @@ class DBCommands:
         await new_news.create()
         return new_news
 
+    # Запись чтение языковых параметров
     async def set_language(self, language):
         user_id = types.User.get_current().id
         user = await self.get_user(user_id)
@@ -120,6 +126,7 @@ class DBCommands:
         user = await self.get_user(user.id)
         return user.languages
 
+    # Запись / чтение личных данных пользователя
     async def set_email(self, email):
         user_id = types.User.get_current().id
         user = await self.get_user(user_id)
@@ -139,10 +146,6 @@ class DBCommands:
         user_id = types.User.get_current().id
         user = await self.get_user(user_id)
         await user.update(password=password).apply()
-
-    async def count_users(self):
-        total = await db.func.count(User.id).gino.scalar()
-        return total
 
     async def get_productions(self):
         productions = await Production.query.gino.all()
