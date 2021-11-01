@@ -7,6 +7,7 @@ import keyboards.inline.user_keyboards as ukb
 from loader import dp
 from states.states import SetUserProfile
 from utils.db_api import database
+from utils.db_api.database import User
 
 db = database.DBCommands()
 
@@ -20,7 +21,7 @@ async def show_my_profile(message: Message):
                          reply_markup=ukb.markup_my_profile)
 
 
-def print_user_info(user):
+def print_user_info(user: User) -> str:
     return f'ИД: <b>{user.user_id}</b>\n' \
            f'Имя: <b>{user.full_name}</b>\n' \
            f'Язык: <b>{user.languages}</b>\n' \
