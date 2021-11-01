@@ -18,6 +18,7 @@ async def show_my_profile(message: Message):
     user = await db.get_user(user_id)
     await message.answer(text=f'ИД: <b>{user_id}</b>\n'
                               f'Имя: <b>{user.full_name}</b>\n'
+                              f'Язык: <b>{user.languages}</b>\n'
                               f'Телефон: <b>{(user.phone if user.phone else "Не указан")}</b>\n'
                               f'Email: <b>{(user.email if user.email else "Не указан")}</b>\n'
                               f'Компания: <b>{(user.company_name if user.company_name else "Не указана")}</b>\n'
@@ -44,6 +45,30 @@ async def set_user_phone(message: Message, state: FSMContext):
     await db.set_phone(phone=phone)
     await message.answer(text=f'Телефон {phone} успешно записан в Ваш профиль')
     await show_my_profile(message)
+
+
+# Изменение языка
+@dp.callback_query_handler(text_contains='get_user_language')
+async def get_user_language(call: CallbackQuery):
+    await call.message.edit_reply_markup()
+    await call.message.answer(text='<b>Выберите язык</b>', reply_markup=ukb.markup_languages)
+
+
+@dp.callback_query_handler(text_contains='ru_language')
+async def set_user_lang_ru(call: CallbackQuery):
+    await call.message.edit_reply_markup()
+    await db.set_language(language='ru')
+
+
+
+@dp.callback_query_handler(text_contains='uk_language')
+async def set_user_lang_uk(call: CallbackQuery):
+    pass
+
+
+@dp.callback_query_handler(text_contains='en_language')
+async def set_user_lang_en(call: CallbackQuery):
+    pass
 
 
 # Изменение email в профиле

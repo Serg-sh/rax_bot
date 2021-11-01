@@ -11,7 +11,7 @@ db = database.DBCommands()
 
 @dp.message_handler(Text('Главное меню'))
 async def show_main_menu(message: Message):
-    await message.answer(text=_('Главное меню'), reply_markup=ukb.markup_main)
+    await message.answer(text=_('Главное меню'), reply_markup=ukb.get_markup_main())
 
 
 @dp.message_handler(Command('menu'))
@@ -22,7 +22,7 @@ async def show_menu(message: Message):
 @dp.callback_query_handler(text_contains='back_to_main_menu')
 async def back_to_main_menu(call: CallbackQuery):
     await call.message.edit_reply_markup()
-    await call.message.answer(text=_('Главное меню'), reply_markup=ukb.markup_main)
+    await call.message.answer(text=_('Главное меню'), reply_markup=ukb.get_markup_main())
 
 
 @dp.callback_query_handler(text_contains='services')

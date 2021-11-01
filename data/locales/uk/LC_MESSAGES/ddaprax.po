@@ -21,9 +21,9 @@ msgstr ""
 
 #: handlers/users/user_handlers.py:14 handlers/users/user_handlers.py:25
 msgid "Главное меню"
-msgstr ""
+msgstr "Головне меню"
 
 #: keyboards/inline/user_keyboards.py:8
 msgid "Новости компании"
-msgstr ""
+msgstr "Новини компаніі"
 

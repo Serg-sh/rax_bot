@@ -119,7 +119,7 @@ class DBCommands:
     async def set_language(self, language):
         user_id = types.User.get_current().id
         user = await self.get_user(user_id)
-        await user.update(language=language).apply()
+        await user.update(languages=language).apply()
 
     async def get_language(self):
         user = types.User.get_current()
