@@ -18,7 +18,7 @@ async def show_my_profile(message: Message):
     user_id = int(message.from_user.id)
     user = await db.get_user(user_id)
     await message.answer(text=print_user_info(user),
-                         reply_markup=ukb.markup_my_profile)
+                         reply_markup=ukb.get_markup_my_profile())
 
 
 def print_user_info(user: User) -> str:
@@ -65,7 +65,7 @@ async def change_lang(call: CallbackQuery, language: str):
     user = await db.get_user(call.from_user.id)
     await call.message.edit_text(text='<b>Язык успешно изменен!</b>')
     await call.message.answer(text=print_user_info(user),
-                              reply_markup=ukb.markup_my_profile)
+                              reply_markup=ukb.get_markup_my_profile())
 
 
 @dp.callback_query_handler(text_contains='ru_language')
