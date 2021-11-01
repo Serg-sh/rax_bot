@@ -16,14 +16,18 @@ db = database.DBCommands()
 async def show_my_profile(message: Message):
     user_id = int(message.from_user.id)
     user = await db.get_user(user_id)
-    await message.answer(text=f'ИД: <b>{user_id}</b>\n'
-                              f'Имя: <b>{user.full_name}</b>\n'
-                              f'Язык: <b>{user.languages}</b>\n'
-                              f'Телефон: <b>{(user.phone if user.phone else "Не указан")}</b>\n'
-                              f'Email: <b>{(user.email if user.email else "Не указан")}</b>\n'
-                              f'Компания: <b>{(user.company_name if user.company_name else "Не указана")}</b>\n'
-                              f'Пароль: <b>{("Установлен" if user.password else "Неустановлен")}</b>\n',
+    await message.answer(text=print_user_info(user),
                          reply_markup=ukb.markup_my_profile)
+
+
+def print_user_info(user):
+    return f'ИД: <b>{user.user_id}</b>\n' \
+           f'Имя: <b>{user.full_name}</b>\n' \
+           f'Язык: <b>{user.languages}</b>\n' \
+           f'Телефон: <b>{(user.phone if user.phone else "Не указан")}</b>\n' \
+           f'Email: <b>{(user.email if user.email else "Не указан")}</b>\n' \
+           f'Компания: <b>{(user.company_name if user.company_name else "Не указана")}</b>\n' \
+           f'Пароль: <b>{("Установлен" if user.password else "Неустановлен")}</b>\n'
 
 
 async def check_user_data(user_id):
@@ -54,21 +58,28 @@ async def get_user_language(call: CallbackQuery):
     await call.message.answer(text='<b>Выберите язык</b>', reply_markup=ukb.markup_languages)
 
 
+async def change_lang(call: CallbackQuery, language: str):
+    await call.message.edit_reply_markup()
+    await db.set_language(language=language)
+    user = await db.get_user(call.from_user.id)
+    await call.message.edit_text(text='<b>Язык успешно изменен!</b>')
+    await call.message.answer(text=print_user_info(user),
+                              reply_markup=ukb.markup_my_profile)
+
+
 @dp.callback_query_handler(text_contains='ru_language')
 async def set_user_lang_ru(call: CallbackQuery):
-    await call.message.edit_reply_markup()
-    await db.set_language(language='ru')
-
+    await change_lang(call, 'ru')
 
 
 @dp.callback_query_handler(text_contains='uk_language')
 async def set_user_lang_uk(call: CallbackQuery):
-    pass
+    await change_lang(call, 'uk')
 
 
 @dp.callback_query_handler(text_contains='en_language')
 async def set_user_lang_en(call: CallbackQuery):
-    pass
+    await change_lang(call, 'en')
 
 
 # Изменение email в профиле

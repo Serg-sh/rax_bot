@@ -18,7 +18,7 @@ api_url_news_ru = env.str("API_URL_NEWS_RU")  # url для получения н
 api_url_news_uk = env.str("API_URL_NEWS_UK")  # url для получения новостей с апи сайта на укр. языке
 api_url_news_en = env.str("API_URL_NEWS_EN")  # url для получения новостей с апи сайта на анг. языке
 
-I18N_DOMAIN = 'ddaprax'
+I18N_DOMAIN = "ddaprax"
 BASE_DIR = Path(__file__).parent
-LOCALES_DIR = BASE_DIR / 'locales'
+LOCALES_DIR = BASE_DIR / "locales"
 print(LOCALES_DIR)
