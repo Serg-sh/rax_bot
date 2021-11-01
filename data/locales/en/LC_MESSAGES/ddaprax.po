@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-11-02 00:14+0200\n"
+"POT-Creation-Date: 2021-11-02 01:14+0200\n"
 "PO-Revision-Date: 2021-11-02 00:16+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -20,9 +20,37 @@ msgstr ""
 
 #: handlers/users/user_handlers.py:14 handlers/users/user_handlers.py:25
 msgid "Главное меню"
-msgstr ""
+msgstr "Main Menu"
 
 #: keyboards/inline/user_keyboards.py:10
 msgid "Новости компании"
-msgstr "NEWS"
+msgstr "News"
+
+#: keyboards/inline/user_keyboards.py:11
+msgid "Сайт компании"
+msgstr "Site"
+
+#: keyboards/inline/user_keyboards.py:12
+msgid "Кабинет клиента"
+msgstr "Client's Cabinet"
+
+#: keyboards/inline/user_keyboards.py:14
+msgid "Наша продукция"
+msgstr "Productions"
+
+#: keyboards/inline/user_keyboards.py:15
+msgid "Наши услуги"
+msgstr "Services"
+
+#: keyboards/inline/user_keyboards.py:17
+msgid "Задать вопрос менеджеру"
+msgstr "Ask a question to the manager"
+
+#: keyboards/inline/user_keyboards.py:18
+msgid "Наши контакты"
+msgstr "Our contacts"
+
+#: keyboards/inline/user_keyboards.py:19
+msgid "О нас"
+msgstr "About Us"
 

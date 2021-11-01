@@ -8,15 +8,15 @@ from loader import _
 def get_markup_main():
     # news_button = InlineKeyboardButton(text='Новости компании', url=urls.NEWS)
     news_button = InlineKeyboardButton(text=_('Новости компании'), callback_data='show_news')
-    site_button = InlineKeyboardButton(text='Сайт компании', url=urls.SITE)
-    my_account_button = InlineKeyboardButton(text='Кабинет клиента', url=urls.MY_ACCOUNT)
+    site_button = InlineKeyboardButton(text=_('Сайт компании'), url=urls.SITE)
+    my_account_button = InlineKeyboardButton(text=_('Кабинет клиента'), url=urls.MY_ACCOUNT)
     # production_button = InlineKeyboardButton(text='Наша продукция', callback_data='production')
-    production_button = InlineKeyboardButton(text='Наша продукция', url=urls.PRODUCTS)
-    services_button = InlineKeyboardButton(text='Наши услуги', callback_data='services')
+    production_button = InlineKeyboardButton(text=_('Наша продукция'), url=urls.PRODUCTS)
+    services_button = InlineKeyboardButton(text=_('Наши услуги'), callback_data='services')
     # manager_chat_button = InlineKeyboardButton(text='Задать вопрос менеджеру', callback_data='ask_question')
-    manager_chat_button = InlineKeyboardButton(text='Задать вопрос менеджеру', callback_data='chat_with_manager')
-    contacts_button = InlineKeyboardButton(text='Наши контакты', callback_data='contacts')
-    about_us_button = InlineKeyboardButton(text='О нас', callback_data='about_us')
+    manager_chat_button = InlineKeyboardButton(text=_('Задать вопрос менеджеру'), callback_data='chat_with_manager')
+    contacts_button = InlineKeyboardButton(text=_('Наши контакты'), callback_data='contacts')
+    about_us_button = InlineKeyboardButton(text=_('О нас'), callback_data='about_us')
     markup_main = InlineKeyboardMarkup(row_width=2, inline_keyboard=[
         [news_button],
         [site_button, my_account_button],
