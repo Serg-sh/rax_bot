@@ -55,12 +55,12 @@ def get_markup_chat_message() -> InlineKeyboardMarkup:
                                                   callback_data='message_to_manager')
     manager_chat_button = InlineKeyboardButton(text=_('Начать чат с менеджером'),
                                                callback_data='chat_with_manager')
-    button_back_to_main_menu = InlineKeyboardButton(text=_('Назад в меню'),
-                                                    callback_data='back_to_main_menu')
+    button_back_to_main_ = InlineKeyboardButton(text=_('Назад в меню'),
+                                                callback_data='back_to_main_menu')
 
     markup_chat_message = InlineKeyboardMarkup(inline_keyboard=[
         [manager_chat_button],
-        [button_back_to_main_menu]
+        [button_back_to_main_]
     ], )
     return markup_chat_message
 
@@ -88,16 +88,23 @@ def get_markup_my_profile() -> InlineKeyboardMarkup:
 
 
 # Клавиатура новости
-prev_button = InlineKeyboardButton(text='⬅', callback_data='prev_news')
-details_button = InlineKeyboardButton(text='Больше новостей на сайте', url=urls.NEWS)
-next_button = InlineKeyboardButton(text='➡', callback_data='next_news')
-button_back_to_main_menu = InlineKeyboardButton(text=_('Назад в меню'), callback_data='back_to_main_menu')
+def get_markup_news():
+    prev_button = InlineKeyboardButton(text='⬅',
+                                       callback_data='prev_news')
+    details_button = InlineKeyboardButton(text=_('Больше новостей на сайте'),
+                                          url=urls.NEWS)
+    next_button = InlineKeyboardButton(text='➡',
+                                       callback_data='next_news')
+    button_back_to_main_menu = InlineKeyboardButton(text=_('Назад в меню'),
+                                                    callback_data='back_to_main_menu')
 
-markup_news = InlineKeyboardMarkup(inline_keyboard=[
-    [prev_button, next_button],
-    [details_button],
-    [button_back_to_main_menu],
-])
+    markup_news = InlineKeyboardMarkup(inline_keyboard=[
+        [prev_button, next_button],
+        [details_button],
+        [button_back_to_main_menu],
+    ])
+    return markup_news
+
 
 # Клавиатура языки
 ru_button = InlineKeyboardButton(text='Русский', callback_data='ru_language')

@@ -27,7 +27,7 @@ async def show_news(call: CallbackQuery, news_id: int = None):
     text = f'<b>{news.title}</b>\n' \
            f'{url_news}\n' \
            f'ИД: {news.id}'
-    await call.message.edit_text(text=text, reply_markup=ukb.markup_news)
+    await call.message.edit_text(text=text, reply_markup=ukb.get_markup_news())
 
 
 @dp.callback_query_handler(text_contains='next_news')

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-11-02 02:22+0200\n"
+"POT-Creation-Date: 2021-11-02 02:33+0200\n"
 "PO-Revision-Date: 2021-11-02 00:16+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk\n"
@@ -56,7 +56,7 @@ msgid "О нас"
 msgstr "Про нас"
 
 #: keyboards/inline/user_keyboards.py:43 keyboards/inline/user_keyboards.py:58
-#: keyboards/inline/user_keyboards.py:94
+#: keyboards/inline/user_keyboards.py:98
 msgid "Назад в меню"
 msgstr "Назад у меню"
 
@@ -87,4 +87,8 @@ msgstr "Змінити пароль"
 #: keyboards/inline/user_keyboards.py:78
 msgid "Изменить язык"
 msgstr "Змінити мову"
+
+#: keyboards/inline/user_keyboards.py:94
+msgid "Больше новостей на сайте"
+msgstr "Більше новин на сайті"
 
