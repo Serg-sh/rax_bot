@@ -24,7 +24,7 @@ async def mailing_to_admins(call: CallbackQuery):
 async def enter_text(message: Message, state: FSMContext):
     text = message.text
     await state.update_data(text=text)
-    await message.answer(f'Текст рассылки:\n\n{text}', reply_markup=mk.markup_mailing)
+    await message.answer(f'Текст рассылки:\n\n{text}', reply_markup=mk.get_markup_mailing())
     await MailingAdmins.SendToAdmins.set()
 
 
@@ -41,14 +41,14 @@ async def send_mailing(call: CallbackQuery, state: FSMContext):
             await sleep(0.3)
         except Exception:
             pass
-    await call.message.answer('Рассылка выполнена.', reply_markup=akb.markup_to_admin_menu)
+    await call.message.answer('Рассылка выполнена.', reply_markup=akb.get_markup_to_admin_menu())
 
 
 @dp.callback_query_handler(state=MailingAdmins.SendToAdmins, text_contains='cancel_mailing')
 async def cancel_mailing(call: CallbackQuery, state: FSMContext):
     await state.reset_state()
     await call.message.edit_reply_markup()
-    await call.message.answer('Рассылка отменена.', reply_markup=akb.markup_to_admin_menu)
+    await call.message.answer('Рассылка отменена.', reply_markup=akb.get_markup_to_admin_menu())
 
 
 # Рассылка для менеджеров
@@ -62,7 +62,7 @@ async def mailing_to_managers(call: CallbackQuery):
 async def enter_text(message: Message, state: FSMContext):
     text = message.text
     await state.update_data(text=text)
-    await message.answer(f'Текст рассылки:\n\n{text}', reply_markup=mk.markup_mailing)
+    await message.answer(f'Текст рассылки:\n\n{text}', reply_markup=mk.get_markup_mailing())
     await MailingManagers.SendToManagers.set()
 
 
@@ -79,14 +79,14 @@ async def send_mailing(call: CallbackQuery, state: FSMContext):
             await sleep(0.3)
         except Exception:
             pass
-    await call.message.answer('Рассылка выполнена.', reply_markup=mkb.markup_to_manager_menu)
+    await call.message.answer('Рассылка выполнена.', reply_markup=mkb.get_markup_to_manager_menu())
 
 
 @dp.callback_query_handler(state=MailingManagers.SendToManagers, text_contains='cancel_mailing')
 async def cancel_mailing(call: CallbackQuery, state: FSMContext):
     await state.reset_state()
     await call.message.edit_reply_markup()
-    await call.message.answer('Рассылка отменена.', reply_markup=mkb.markup_to_manager_menu)
+    await call.message.answer('Рассылка отменена.', reply_markup=mkb.get_markup_to_manager_menu())
 
 
 # Рассылка для клиентов
@@ -100,7 +100,7 @@ async def mailing_to_managers(call: CallbackQuery):
 async def enter_text(message: Message, state: FSMContext):
     text = message.text
     await state.update_data(text=text)
-    await message.answer(f'Текст рассылки:\n\n{text}', reply_markup=mk.markup_mailing)
+    await message.answer(f'Текст рассылки:\n\n{text}', reply_markup=mk.get_markup_mailing())
     await MailingClients.SendToClients.set()
 
 
@@ -117,11 +117,11 @@ async def send_mailing(call: CallbackQuery, state: FSMContext):
             await sleep(0.3)
         except Exception:
             pass
-    await call.message.answer(text='Рассылка выполнена.', reply_markup=mkb.markup_to_manager_menu)
+    await call.message.answer(text='Рассылка выполнена.', reply_markup=mkb.grt_markup_to_manager_menu())
 
 
 @dp.callback_query_handler(state=MailingClients.SendToClients, text_contains='cancel_mailing')
 async def cancel_mailing(call: CallbackQuery, state: FSMContext):
     await state.reset_state()
     await call.message.edit_reply_markup()
-    await call.message.answer(text='Рассылка отменена.', reply_markup=mkb.markup_to_manager_menu)
+    await call.message.answer(text='Рассылка отменена.', reply_markup=mkb.get_markup_to_manager_menu())

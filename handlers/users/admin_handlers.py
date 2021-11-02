@@ -24,12 +24,12 @@ def print_users(list_users):
 @dp.message_handler(Command('admin'), user_id=ADMINS)
 @dp.message_handler(Text('Панель администратора'), user_id=ADMINS)
 async def show_admin_panel(message: Message):
-    await message.answer(text='Меню администратора', reply_markup=akb.markup_admin_main)
+    await message.answer(text='Меню администратора', reply_markup=akb.get_markup_admin_main())
 
 
 @dp.callback_query_handler(text_contains='back_to_admin_menu')
 async def back_to_main_menu(call: CallbackQuery):
-    await call.message.edit_reply_markup(akb.markup_admin_main)
+    await call.message.edit_reply_markup(akb.get_markup_admin_main())
 
 
 # статистика бота
@@ -43,7 +43,7 @@ async def show_bot_statistics(call: CallbackQuery):
                                    f'{print_users(is_admin_users)}')
     await call.message.answer(text=f'<b>Менеджеры бота:</b>\n'
                                    f'{print_users(is_manager_users)}',
-                              reply_markup=akb.markup_show_all_users)
+                              reply_markup=akb.get_markup_show_all_users())
 
 
 @dp.callback_query_handler(text_contains='show_all_user')

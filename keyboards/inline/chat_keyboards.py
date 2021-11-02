@@ -5,6 +5,7 @@ from aiogram.utils.callback_data import CallbackData
 
 from loader import dp
 from utils.db_api import database
+from loader import _
 
 chat_callback = CallbackData('ask_chat', 'messages', 'user_id', 'as_user')
 cancel_chat_callback = CallbackData('cancel_chat', 'user_id')
@@ -32,12 +33,12 @@ async def get_id_manager():
             return
 
 
-async def chat_keyboard(messages, user_id=None):
+async def chat_keyboard(messages, user_id=None) -> InlineKeyboardMarkup:
     managers_id = await db.get_managers_user_id()
     if user_id:
         contact_id = int(user_id)
         as_user = 'no'
-        text = 'Ответить пользователю'
+        text = _('Ответить пользователю')
     else:
         contact_id = await get_id_manager()
         as_user = 'yes'
@@ -47,9 +48,9 @@ async def chat_keyboard(messages, user_id=None):
             contact_id = random.choice(managers_id)
 
         if messages == 'one':
-            text = 'Написать 1 сообщение менеджеру'
+            text = _('Написать 1 сообщение менеджеру')
         else:
-            text = 'Начать чат с менеджером'
+            text = _('Начать чат с менеджером')
 
     keyboard = InlineKeyboardMarkup()
 
@@ -62,7 +63,7 @@ async def chat_keyboard(messages, user_id=None):
 
     if messages == 'many':
         # Кнопка завершения сеанса, если передумали
-        keyboard.add(InlineKeyboardButton(text='Завершить сеанс',
+        keyboard.add(InlineKeyboardButton(text=_('Завершить сеанс'),
                                           callback_data=cancel_chat_callback.new(user_id=contact_id)
                                           )
                      )
@@ -73,7 +74,7 @@ async def chat_keyboard(messages, user_id=None):
 def cancel_chat(user_id):
     return InlineKeyboardMarkup(inline_keyboard=[
         [
-            InlineKeyboardButton(text='Завершить сеанс',
+            InlineKeyboardButton(text=_('Завершить сеанс'),
                                  callback_data=cancel_chat_callback.new(user_id=user_id))
         ]
     ]

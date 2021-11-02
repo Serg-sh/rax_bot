@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-11-02 02:33+0200\n"
+"POT-Creation-Date: 2021-11-02 17:10+0200\n"
 "PO-Revision-Date: 2021-11-02 00:16+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk\n"
@@ -23,6 +23,80 @@ msgstr ""
 msgid "Главное меню"
 msgstr "Головне меню"
 
+#: keyboards/inline/admin_keyboards.py:7
+#: keyboards/inline/manager_keyboards.py:6
+#: keyboards/inline/user_keyboards.py:17
+msgid "Наша продукция"
+msgstr "Наша продукція"
+
+#: keyboards/inline/admin_keyboards.py:9
+msgid "Создать рассылку для клиентов"
+msgstr "Створити розсилку для кліеєетів"
+
+#: keyboards/inline/admin_keyboards.py:11
+msgid "Рассылка для админов"
+msgstr "Розсилка для адмінов"
+
+#: keyboards/inline/admin_keyboards.py:13
+msgid "Рассылка для менеджеров"
+msgstr "Розсилка для менеджерів"
+
+#: keyboards/inline/admin_keyboards.py:15
+msgid "Статистика бота"
+msgstr "Статистика бота"
+
+#: keyboards/inline/admin_keyboards.py:17
+msgid "Добавить администратора"
+msgstr "Додати адміністратора"
+
+#: keyboards/inline/admin_keyboards.py:19
+msgid "Добавить менеджера"
+msgstr "Додати менеджера"
+
+#: keyboards/inline/admin_keyboards.py:34
+msgid "Назад в админ-меню"
+msgstr "Назад у меню"
+
+#: keyboards/inline/admin_keyboards.py:45
+msgid "Показать всех пользователей"
+msgstr "Показати всіх корристувачів"
+
+#: keyboards/inline/chat_keyboards.py:41
+msgid "Ответить пользователю"
+msgstr "Відповісти користувачу"
+
+#: keyboards/inline/chat_keyboards.py:51 keyboards/inline/user_keyboards.py:54
+msgid "Написать 1 сообщение менеджеру"
+msgstr "Задати питання менеджеру"
+
+#: keyboards/inline/chat_keyboards.py:53 keyboards/inline/user_keyboards.py:56
+msgid "Начать чат с менеджером"
+msgstr "Задати питання менеджеру"
+
+#: keyboards/inline/chat_keyboards.py:66 keyboards/inline/chat_keyboards.py:77
+msgid "Завершить сеанс"
+msgstr "Завершити сеанс"
+
+#: keyboards/inline/mailing_keyboards.py:6
+msgid "Разослать рассылку"
+msgstr "Надіслати розсилку"
+
+#: keyboards/inline/mailing_keyboards.py:7
+msgid "Отменить"
+msgstr "Відминити"
+
+#: keyboards/inline/manager_keyboards.py:7
+msgid "Создать рассылку для пользователей"
+msgstr "Створити розсилку для користувачів"
+
+#: keyboards/inline/manager_keyboards.py:9
+msgid "Создать рассылку для менеджеров"
+msgstr "Створити розсилку для менеджерів"
+
+#: keyboards/inline/manager_keyboards.py:22
+msgid "Назад в меню менджера"
+msgstr "Назад у меню"
+
 #: keyboards/inline/user_keyboards.py:9
 msgid "Новости компании"
 msgstr "Новини компаніі"
@@ -34,10 +108,6 @@ msgstr "Сайт компаніі"
 #: keyboards/inline/user_keyboards.py:13
 msgid "Кабинет клиента"
 msgstr "Кабінет клієнта"
-
-#: keyboards/inline/user_keyboards.py:17
-msgid "Наша продукция"
-msgstr "Наша продукція"
 
 #: keyboards/inline/user_keyboards.py:19
 msgid "Наши услуги"
@@ -59,14 +129,6 @@ msgstr "Про нас"
 #: keyboards/inline/user_keyboards.py:98
 msgid "Назад в меню"
 msgstr "Назад у меню"
-
-#: keyboards/inline/user_keyboards.py:54
-msgid "Написать 1 сообщение менеджеру"
-msgstr "Задати питання менеджеру"
-
-#: keyboards/inline/user_keyboards.py:56
-msgid "Начать чат с менеджером"
-msgstr "Задати питання менеджеру"
 
 #: keyboards/inline/user_keyboards.py:70
 msgid "Изменить телефон"
