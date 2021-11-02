@@ -10,6 +10,8 @@ db = database.DBCommands()
 
 
 @dp.message_handler(Text('Главное меню'))
+@dp.message_handler(Text('Main Menu'))
+@dp.message_handler(Text('Головне меню'))
 async def show_main_menu(message: Message):
     await message.answer(text=_('Главное меню'), reply_markup=ukb.get_markup_main())
 

@@ -11,6 +11,8 @@ db = database.DBCommands()
 
 @dp.message_handler(Command('manager'))
 @dp.message_handler(Text('Панель менеджера'))
+@dp.message_handler(Text('Manager panel'))
+@dp.message_handler(Text('Панель менеджера'))
 async def show_manager_panel(message: Message):
     MANAGERS.extend(await db.get_managers_user_id())
     if str(message.from_user.id) in MANAGERS:

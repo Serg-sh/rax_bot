@@ -23,6 +23,8 @@ def print_users(list_users):
 
 @dp.message_handler(Command('admin'), user_id=ADMINS)
 @dp.message_handler(Text('Панель администратора'), user_id=ADMINS)
+@dp.message_handler(Text('Admin panel'), user_id=ADMINS)
+@dp.message_handler(Text('Панель адміністратора'), user_id=ADMINS)
 async def show_admin_panel(message: Message):
     await message.answer(text='Меню администратора', reply_markup=akb.get_markup_admin_main())
 

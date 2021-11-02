@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-11-02 17:10+0200\n"
+"POT-Creation-Date: 2021-11-02 23:15+0200\n"
 "PO-Revision-Date: 2021-11-02 00:16+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -19,8 +19,23 @@ msgstr ""
 "Generated-By: Babel 2.9.1\n"
 
 #: handlers/users/user_handlers.py:14 handlers/users/user_handlers.py:25
+#: keyboards/default/main_menu.py:6 keyboards/default/main_menu.py:17
+#: keyboards/default/main_menu.py:31
 msgid "Главное меню"
 msgstr "Main Menu"
+
+#: keyboards/default/main_menu.py:7 keyboards/default/main_menu.py:20
+#: keyboards/default/main_menu.py:33
+msgid "Мой профиль"
+msgstr "My profile"
+
+#: keyboards/default/main_menu.py:18
+msgid "Панель администратора"
+msgstr "Admin panel"
+
+#: keyboards/default/main_menu.py:19 keyboards/default/main_menu.py:32
+msgid "Панель менеджера"
+msgstr "Manager panel"
 
 #: keyboards/inline/admin_keyboards.py:7
 #: keyboards/inline/manager_keyboards.py:6

@@ -14,6 +14,8 @@ db = database.DBCommands()
 
 @dp.callback_query_handler(text_contains='my_profile')
 @dp.message_handler(Text('Мой профиль'))
+@dp.message_handler(Text('My profile'))
+@dp.message_handler(Text('Мій профіль'))
 async def show_my_profile(message: Message):
     user_id = int(message.from_user.id)
     user = await db.get_user(user_id)
@@ -63,7 +65,8 @@ async def change_lang(call: CallbackQuery, language: str):
     await call.message.edit_reply_markup()
     await db.set_language(language=language)
     user = await db.get_user(call.from_user.id)
-    await call.message.edit_text(text='<b>Язык успешно изменен!</b>')
+    await call.message.edit_text(text='<b>Язык успешно изменен!\n'
+                                      'Наберите /start для применения настроек.</b>')
     await call.message.answer(text=print_user_info(user),
                               reply_markup=ukb.get_markup_my_profile())
 

@@ -7,7 +7,7 @@ from aiogram.types import InputFile, Message, ReplyKeyboardMarkup
 
 from data.config import ADMINS
 from handlers.users.my_profile_handlers import show_my_profile, check_user_data
-from keyboards.default.main_menu import markup_main_menu, markup_admin_main_menu, markup_manager_main
+from keyboards.default import main_menu as mmkb
 from loader import dp
 from utils.db_api import database
 
@@ -40,8 +40,8 @@ async def bot_start(message: types.Message):
 def get_markup(message: Message, admins_id: List, managers_id: List) -> ReplyKeyboardMarkup:
     user_id = str(message.from_user.id)
     if user_id in admins_id:
-        return markup_admin_main_menu
+        return mmkb.get_markup_admin_main_menu()
     elif user_id in managers_id:
-        return markup_manager_main
+        return mmkb.get_markup_manager_main()
     else:
-        return markup_main_menu
+        return mmkb.get_markup_main_menu()
