@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-11-02 01:42+0200\n"
+"POT-Creation-Date: 2021-11-02 02:22+0200\n"
 "PO-Revision-Date: 2021-11-02 00:16+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk\n"
@@ -55,23 +55,36 @@ msgstr "Наші контакти"
 msgid "О нас"
 msgstr "Про нас"
 
-#: keyboards/inline/user_keyboards.py:59
+#: keyboards/inline/user_keyboards.py:43 keyboards/inline/user_keyboards.py:58
+#: keyboards/inline/user_keyboards.py:94
+msgid "Назад в меню"
+msgstr "Назад у меню"
+
+#: keyboards/inline/user_keyboards.py:54
+msgid "Написать 1 сообщение менеджеру"
+msgstr "Задати питання менеджеру"
+
+#: keyboards/inline/user_keyboards.py:56
+msgid "Начать чат с менеджером"
+msgstr "Задати питання менеджеру"
+
+#: keyboards/inline/user_keyboards.py:70
 msgid "Изменить телефон"
 msgstr "Змінити телефон"
 
-#: keyboards/inline/user_keyboards.py:61
+#: keyboards/inline/user_keyboards.py:72
 msgid "Изменить email"
 msgstr "Змінити email"
 
-#: keyboards/inline/user_keyboards.py:63
+#: keyboards/inline/user_keyboards.py:74
 msgid "Изменить название компании"
 msgstr "Змінити назву компанії"
 
-#: keyboards/inline/user_keyboards.py:65
+#: keyboards/inline/user_keyboards.py:76
 msgid "Изменить пароль"
 msgstr "Змінити пароль"
 
-#: keyboards/inline/user_keyboards.py:67
+#: keyboards/inline/user_keyboards.py:78
 msgid "Изменить язык"
 msgstr "Змінити мову"
 

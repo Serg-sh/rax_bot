@@ -38,20 +38,31 @@ def get_markup_main() -> InlineKeyboardMarkup:
     return markup_main
 
 
-# Кнопка назад в меню
-button_back_to_main_menu = InlineKeyboardButton(text='Назад в меню', callback_data='back_to_main_menu')
-markup_to_main_menu = InlineKeyboardMarkup(inline_keyboard=[
-    [button_back_to_main_menu]
-])
+# Клавиатура назад в меню
+def get_markup_to_main_menu() -> InlineKeyboardMarkup:
+    button_back_to_main = InlineKeyboardButton(text=_('Назад в меню'),
+                                               callback_data='back_to_main_menu')
 
-manager_message_button = InlineKeyboardButton(text='Написать 1 сообщение менеджеру', callback_data='message_to_manager')
-manager_chat_button = InlineKeyboardButton(text='Начать чат с менеджером', callback_data='chat_with_manager')
+    markup_to_main_menu = InlineKeyboardMarkup(inline_keyboard=[
+        [button_back_to_main]
+    ])
+    return markup_to_main_menu
+
 
 # Клавиатура чат - сообщение медеджеру
-markup_chat_message = InlineKeyboardMarkup(inline_keyboard=[
-    [manager_chat_button],
-    [button_back_to_main_menu]
-], )
+def get_markup_chat_message() -> InlineKeyboardMarkup:
+    manager_message_button = InlineKeyboardButton(text=_('Написать 1 сообщение менеджеру'),
+                                                  callback_data='message_to_manager')
+    manager_chat_button = InlineKeyboardButton(text=_('Начать чат с менеджером'),
+                                               callback_data='chat_with_manager')
+    button_back_to_main_menu = InlineKeyboardButton(text=_('Назад в меню'),
+                                                    callback_data='back_to_main_menu')
+
+    markup_chat_message = InlineKeyboardMarkup(inline_keyboard=[
+        [manager_chat_button],
+        [button_back_to_main_menu]
+    ], )
+    return markup_chat_message
 
 
 # Клавиатура мой профиль
@@ -80,6 +91,7 @@ def get_markup_my_profile() -> InlineKeyboardMarkup:
 prev_button = InlineKeyboardButton(text='⬅', callback_data='prev_news')
 details_button = InlineKeyboardButton(text='Больше новостей на сайте', url=urls.NEWS)
 next_button = InlineKeyboardButton(text='➡', callback_data='next_news')
+button_back_to_main_menu = InlineKeyboardButton(text=_('Назад в меню'), callback_data='back_to_main_menu')
 
 markup_news = InlineKeyboardMarkup(inline_keyboard=[
     [prev_button, next_button],

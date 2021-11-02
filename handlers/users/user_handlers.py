@@ -29,7 +29,7 @@ async def back_to_main_menu(call: CallbackQuery):
 async def show_services(call: CallbackQuery):
     await call.message.answer(text=txt.SERVICES,
                               parse_mode='HTML',
-                              reply_markup=ukb.markup_to_main_menu)
+                              reply_markup=ukb.get_markup_to_main_menu())
 
 
 @dp.callback_query_handler(text_contains='about_us')
@@ -38,7 +38,7 @@ async def show_about_us(call: CallbackQuery):
     bot_link = f'https://t.me/{bot_username}'
     await call.message.answer(text=txt.ABOUT_US,
                               parse_mode='HTML',
-                              reply_markup=ukb.markup_to_main_menu)
+                              reply_markup=ukb.get_markup_to_main_menu())
     await call.message.answer(text=f'Поделиться ссылкой на БОТ ДДАП-РАКС\n'
                                    f'{bot_link}')
 
@@ -51,9 +51,9 @@ async def show_contacts(call: CallbackQuery):
                                     )
     await call.message.answer_contact(phone_number=txt.TEL,
                                       first_name=txt.EMAIL,
-                                      reply_markup=ukb.markup_to_main_menu)
+                                      reply_markup=ukb.get_markup_to_main_menu())
 
 
 @dp.callback_query_handler(text_contains='ask_question')
 async def ask_question(call: CallbackQuery):
-    await call.message.edit_reply_markup(ukb.markup_chat_message)
+    await call.message.edit_reply_markup(ukb.get_markup_chat_message())
