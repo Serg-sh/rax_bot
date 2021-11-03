@@ -65,7 +65,7 @@ msgid "Пароль"
 msgstr "Password"
 
 msgid "Не указан"
-msgstr Not specified""
+msgstr "Not specified"
 
 msgid "Не указано"
 msgstr "Not indicated"
