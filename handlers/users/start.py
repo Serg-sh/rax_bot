@@ -8,7 +8,7 @@ from aiogram.types import InputFile, Message, ReplyKeyboardMarkup
 from data.config import ADMINS
 from handlers.users.my_profile_handlers import show_my_profile, check_user_data
 from keyboards.default import main_menu as mmkb
-from loader import dp
+from loader import dp, _
 from utils.db_api import database
 
 db = database.DBCommands()
@@ -23,17 +23,17 @@ async def bot_start(message: types.Message):
     managers = await db.get_managers_user_id()
     admins = await db.get_admins_user_id()
     admins.extend(ADMINS)
-    await message.answer(f'Добрый День!  {message.from_user.full_name}!\n\n'
-                         f'ПРИВЕТСТВУЕМ ВАС В ТЕЛЕГРАММ БОТЕ ДДАП-РАКС\n\n'
-                         f'Для продолжения работы воспользуйтесь ГЛАВНЫМ МЕНЮ. \n',
+    await message.answer(f'{_("Добрый День")}!  {message.from_user.full_name}!\n\n'
+                         f'{_("ПРИВЕТСТВУЕМ ВАС В ТЕЛЕГРАММ БОТЕ ДДАП-РАКС")} \n\n'
+                         f'{_("Для продолжения работы воспользуйтесь ГЛАВНЫМ МЕНЮ")}.\n',
                          reply_markup=get_markup(message,
                                                  admins_id=admins,
                                                  managers_id=managers))
     await sleep(1)
     if await check_user_data(message.from_user.id):
         await message.answer(f'{message.from_user.full_name}. \n'
-                             f'Вы не указали контактные данные, '
-                             f'укажите их в личном профиле.')
+                             f'{_("Вы не указали контактные данные")},'
+                             f'{_("укажите их в личном профиле")}.')
         await show_my_profile(message)
 
 

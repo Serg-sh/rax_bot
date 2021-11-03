@@ -1,16 +1,16 @@
 from aiogram import types
 from aiogram.dispatcher.filters.builtin import CommandHelp
 
-from loader import dp
+from loader import dp, _
 
 
 @dp.message_handler(CommandHelp())
 async def bot_help(message: types.Message):
-    text = ("Список команд: ",
-            "/start - Начать диалог",
-            "/menu - Главаное меню",
-            "/admin - Панель администратора",
-            "/manager - Панель менеджера",
-            "/help - Получить справку")
+    text = (f'{_("Список команд")}: ',
+            f'/start - {_("Запустить бота")}',
+            f'/menu - {_("Главаное меню")}',
+            f'/admin - {_("Панель администратора")}',
+            f'/manager - {_("Панель менеджера")}',
+            f'/help - {_("Получить справку")}')
     
     await message.answer("\n".join(text))

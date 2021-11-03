@@ -41,7 +41,7 @@ async def show_about_us(call: CallbackQuery):
     await call.message.answer(text=txt.ABOUT_US,
                               parse_mode='HTML',
                               reply_markup=ukb.get_markup_to_main_menu())
-    await call.message.answer(text=f'Поделиться ссылкой на БОТ ДДАП-РАКС\n'
+    await call.message.answer(text=f'{_("Поделиться ссылкой на БОТ ДДАП-РАКС")}\n'
                                    f'{bot_link}')
 
 

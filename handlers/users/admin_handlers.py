@@ -4,7 +4,7 @@ from aiogram.types import Message, CallbackQuery
 
 import keyboards.inline.admin_keyboards as akb
 from data.config import ADMINS
-from loader import dp
+from loader import dp, _
 from states.states import SetPermissions
 from utils.db_api import database
 from utils.db_api.database import User
@@ -40,10 +40,10 @@ async def show_bot_statistics(call: CallbackQuery):
     total_users = await db.count_users()
     is_admin_users = await User.query.where(User.is_admin == True).gino.all()
     is_manager_users = await User.query.where(User.is_manager == True).gino.all()
-    await call.message.answer(text=f'<strong>Колличество пользователей бота:</strong> <i>{total_users}</i>\n')
-    await call.message.answer(text=f'<b>Администраторы бота:</b>\n'
+    await call.message.answer(text=f'<strong>{_("Колличество пользователей бота")}:</strong> <i>{total_users}</i>\n')
+    await call.message.answer(text=f'<b>{_("Администраторы бота")}:</b>\n'
                                    f'{print_users(is_admin_users)}')
-    await call.message.answer(text=f'<b>Менеджеры бота:</b>\n'
+    await call.message.answer(text=f'<b>{_("Менеджеры бота")}:</b>\n'
                                    f'{print_users(is_manager_users)}',
                               reply_markup=akb.get_markup_show_all_users())
 
@@ -53,10 +53,10 @@ async def show_all_user(call: CallbackQuery):
     users = await db.get_all_users()
     text = f''
     for user in users:
-        text += f'<strong>ИД клиента: {user.user_id}\n</strong>' \
-                f'    ● <b>Имя: </b>{user.full_name}\n' \
-                f'    ● <b>Компания: </b>{user.company_name}\n' \
-                f'    ● <b>Тел.: </b>{user.phone}\n' \
+        text += f'<strong>{_("ИД клиента")}: {user.user_id}\n</strong>' \
+                f'    ● <b>{_("Имя")}: </b>{user.full_name}\n' \
+                f'    ● <b>{_("Компания")}: </b>{user.company_name}\n' \
+                f'    ● <b>{_("Тел")}.: </b>{user.phone}\n' \
                 f'    ● <b>Email: </b>{user.email}\n'
     await call.message.answer(text=text)
 
@@ -64,7 +64,7 @@ async def show_all_user(call: CallbackQuery):
 # Установка прав администратора
 @dp.callback_query_handler(text_contains='add_admin')
 async def get_id_admin(call: CallbackQuery):
-    await call.message.answer('Пришлите ИД пользователя.')
+    await call.message.answer(_('Пришлите ИД пользователя.'))
     await SetPermissions.GetAdminId.set()
 
 
@@ -77,18 +77,18 @@ async def set_admin_permissions(message: Message, state: FSMContext):
     user_in_db = await db.get_user(user_id)
     if user_in_db:
         await user_in_db.update(is_admin=True).apply()
-        await message.answer(f'Пользовать {user_in_db.full_name}\nназначен администратором.')
+        await message.answer(f'{_("Пользовать")} {user_in_db.full_name}\n{_("назначен администратором")}.')
     else:
-        await message.answer(f'Что-то пошло не так\n'
-                             f'пользователь с ИД {user_id} не зарегистрирован\n'
-                             f'или введен не корректный ИД')
+        await message.answer(f'{_("Что - то пошло не так")}\n'
+                             f'{_("пользователь с ИД")} {user_id} {_("не зарегистрирован")}\n'
+                             f'{_("или введен не корректный ИД")}')
     await state.reset_state()
 
 
 # Установка прав менеджера
 @dp.callback_query_handler(text_contains='add_manager')
 async def get_id_manager(call: CallbackQuery):
-    await call.message.answer('Пришлите ИД пользователя.')
+    await call.message.answer(_('Пришлите ИД пользователя.'))
     await SetPermissions.GetManagerId.set()
 
 
@@ -101,9 +101,9 @@ async def set_manager_permissions(message: Message, state: FSMContext):
     user_in_db = await db.get_user(user_id)
     if user_in_db:
         await user_in_db.update(is_manager=True).apply()
-        await message.answer(f'Пользовать {user_in_db.full_name}\nназначен менеджером.')
+        await message.answer(f'{_("Пользовать")} {user_in_db.full_name}\n{_("назначен менеджером")}.')
     else:
-        await message.answer(f'Что-то пошло не так\n'
-                             f'пользователь с ИД {user_id} не зарегистрирован\n'
-                             f'или введен не корректный ИД')
+        await message.answer(f'{_("Что - то пошло не так")}\n'
+                             f'{_("пользователь с ИД")} {user_id} {_("не зарегистрирован")}\n'
+                             f'{_("или введен не корректный ИД")}')
     await state.reset_state()

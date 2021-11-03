@@ -4,7 +4,7 @@ from aiogram.dispatcher.filters import Text
 from aiogram.types import Message, CallbackQuery
 
 import keyboards.inline.user_keyboards as ukb
-from loader import dp
+from loader import dp, _
 from states.states import SetUserProfile
 from utils.db_api import database
 from utils.db_api.database import User
@@ -24,13 +24,13 @@ async def show_my_profile(message: Message):
 
 
 def print_user_info(user: User) -> str:
-    return f'ИД: <b>{user.user_id}</b>\n' \
-           f'Имя: <b>{user.full_name}</b>\n' \
-           f'Язык: <b>{user.languages}</b>\n' \
-           f'Телефон: <b>{(user.phone if user.phone else "Не указан")}</b>\n' \
-           f'Email: <b>{(user.email if user.email else "Не указан")}</b>\n' \
-           f'Компания: <b>{(user.company_name if user.company_name else "Не указана")}</b>\n' \
-           f'Пароль: <b>{("Установлен" if user.password else "Неустановлен")}</b>\n'
+    return f'<b>{_("ИД:")} </b>{user.user_id}\n' \
+           f'<b>{_("Имя:")} </b>{user.full_name}\n' \
+           f'<b>{_("Язык:")} </b>{user.languages}\n' \
+           f'<b>{_("Телефон:")} </b>{(user.phone if user.phone else _("Не указан"))}\n' \
+           f'<b>{_("Email:")} </b>{(user.email if user.email else _("Не указан"))}\n' \
+           f'<b>{_("Компания:")} </b>{(user.company_name if user.company_name else _("Не указана"))}\n' \
+           f'<b>{_("Пароль:")} </b>{(_("Установлен") if user.password else _("Неустановлен"))}\n'
 
 
 async def check_user_data(user_id):
@@ -41,7 +41,7 @@ async def check_user_data(user_id):
 # Изменение телефона в профиле
 @dp.callback_query_handler(text_contains='get_user_phone')
 async def get_user_phone(call: CallbackQuery):
-    await call.message.answer(text='Пришлите Ваш контактный номер телефона.')
+    await call.message.answer(text=_('Пришлите Ваш контактный номер телефона.'))
     await SetUserProfile.GetPhone.set()
 
 
@@ -50,7 +50,7 @@ async def set_user_phone(message: Message, state: FSMContext):
     phone = message.text
     await state.reset_state()
     await db.set_phone(phone=phone)
-    await message.answer(text=f'Телефон {phone} успешно записан в Ваш профиль')
+    await message.answer(text=f'{_("Телефон")} {phone} {_("успешно записан в Ваш профиль")}')
     await show_my_profile(message)
 
 
@@ -58,15 +58,15 @@ async def set_user_phone(message: Message, state: FSMContext):
 @dp.callback_query_handler(text_contains='get_user_language')
 async def get_user_language(call: CallbackQuery):
     await call.message.edit_reply_markup()
-    await call.message.answer(text='<b>Выберите язык</b>', reply_markup=ukb.markup_languages)
+    await call.message.answer(text=f'<b>{_("Выберите язык")}</b>', reply_markup=ukb.markup_languages)
 
 
 async def change_lang(call: CallbackQuery, language: str):
     await call.message.edit_reply_markup()
     await db.set_language(language=language)
     user = await db.get_user(call.from_user.id)
-    await call.message.edit_text(text='<b>Язык успешно изменен!\n'
-                                      'Наберите /start для применения настроек.</b>')
+    await call.message.edit_text(text=f'<b>{_("Язык успешно изменен")}!</b>\n'
+                                      f'<b>Наберите /start для применения настроек.</b>')
     await call.message.answer(text=print_user_info(user),
                               reply_markup=ukb.get_markup_my_profile())
 
@@ -89,7 +89,7 @@ async def set_user_lang_en(call: CallbackQuery):
 # Изменение email в профиле
 @dp.callback_query_handler(text_contains='get_user_email')
 async def get_user_email(call: CallbackQuery):
-    await call.message.answer(text='Пришлите Ваш email.')
+    await call.message.answer(text=_('Пришлите Ваш email.'))
     await SetUserProfile.GetEmail.set()
 
 
@@ -98,14 +98,14 @@ async def set_user_email(message: Message, state: FSMContext):
     email = message.text
     await state.reset_state()
     await db.set_email(email=email)
-    await message.answer(text=f'Email {email} успешно записан в Ваш профиль')
+    await message.answer(text=f'Email {email} {_("успешно записан в ваш профиль")}.')
     await show_my_profile(message)
 
 
 # Изменение названия компании в профиле
 @dp.callback_query_handler(text_contains='get_user_company')
 async def get_user_company(call: CallbackQuery):
-    await call.message.answer(text='Пришлите название Вашей компании.')
+    await call.message.answer(text=_('Пришлите название вашей компании.'))
     await SetUserProfile.GetCompany.set()
 
 
@@ -114,14 +114,14 @@ async def set_user_company(message: Message, state: FSMContext):
     company_name = message.text
     await state.reset_state()
     await db.set_company_name(company_name=company_name)
-    await message.answer(text=f'Компания {company_name} успешно записана в Ваш профиль')
+    await message.answer(text=f'{_("Название компании")} {company_name} {_("успешно записано в Ваш профиль")}')
     await show_my_profile(message)
 
 
 # Изменение пароля в профиле
 @dp.callback_query_handler(text_contains='get_user_password')
 async def get_user_password(call: CallbackQuery):
-    await call.message.answer(text='Пришлите Ваш пароль.')
+    await call.message.answer(text=_('Пришлите Ваш пароль.'))
     await SetUserProfile.GetPassword.set()
 
 
@@ -134,7 +134,7 @@ async def set_user_password(message: Message, state: FSMContext):
     # запись пароля в базу
     await db.set_password(password=hash_and_salt)
 
-    await message.answer(text=f"Пароль успешно изменен")
+    await message.answer(text=_('Пароль успешно изменен'))
     # для примера проверки пароля взят input()
     # user = await db.get_user(types.User.get_current().id)
     # print('Пароль:')
