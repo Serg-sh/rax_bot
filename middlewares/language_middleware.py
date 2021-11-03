@@ -10,7 +10,8 @@ db = database.DBCommands()
 
 class ACLMiddleware(I18nMiddleware):
     async def get_user_locale(self, action: str, args: Tuple[Any]) -> Optional[str]:
-        return await db.get_language()
+        user = await db.add_new_user()
+        return user.languages
 
 
 def setup_middleware(dp):
