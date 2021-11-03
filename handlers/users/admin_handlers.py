@@ -26,7 +26,7 @@ def print_users(list_users):
 @dp.message_handler(Text('Admin panel'), user_id=ADMINS)
 @dp.message_handler(Text('Панель адміністратора'), user_id=ADMINS)
 async def show_admin_panel(message: Message):
-    await message.answer(text='Меню администратора', reply_markup=akb.get_markup_admin_main())
+    await message.answer(text=_('Меню администратора'), reply_markup=akb.get_markup_admin_main())
 
 
 @dp.callback_query_handler(text_contains='back_to_admin_menu')
