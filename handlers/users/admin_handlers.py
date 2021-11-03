@@ -56,7 +56,7 @@ async def show_all_user(call: CallbackQuery):
         text += f'<strong>{_("ИД клиента")}: {user.user_id}\n</strong>' \
                 f'    ● <b>{_("Имя")}: </b>{user.full_name}\n' \
                 f'    ● <b>{_("Компания")}: </b>{user.company_name}\n' \
-                f'    ● <b>{_("Тел")}.: </b>{user.phone}\n' \
+                f'    ● <b>{_("Телефон")}.: </b>{user.phone}\n' \
                 f'    ● <b>Email: </b>{user.email}\n'
     await call.message.answer(text=text)
 
@@ -77,7 +77,7 @@ async def set_admin_permissions(message: Message, state: FSMContext):
     user_in_db = await db.get_user(user_id)
     if user_in_db:
         await user_in_db.update(is_admin=True).apply()
-        await message.answer(f'{_("Пользовать")} {user_in_db.full_name}\n{_("назначен администратором")}.')
+        await message.answer(f'{_("Пользователь")} {user_in_db.full_name}\n{_("назначен администратором")}.')
     else:
         await message.answer(f'{_("Что - то пошло не так")}\n'
                              f'{_("пользователь с ИД")} {user_id} {_("не зарегистрирован")}\n'
@@ -101,7 +101,7 @@ async def set_manager_permissions(message: Message, state: FSMContext):
     user_in_db = await db.get_user(user_id)
     if user_in_db:
         await user_in_db.update(is_manager=True).apply()
-        await message.answer(f'{_("Пользовать")} {user_in_db.full_name}\n{_("назначен менеджером")}.')
+        await message.answer(f'{_("Пользователь")} {user_in_db.full_name}\n{_("назначен менеджером")}.')
     else:
         await message.answer(f'{_("Что - то пошло не так")}\n'
                              f'{_("пользователь с ИД")} {user_id} {_("не зарегистрирован")}\n'

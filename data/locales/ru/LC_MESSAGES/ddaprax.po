@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-11-02 23:15+0200\n"
+"POT-Creation-Date: 2021-11-03 15:32+0200\n"
 "PO-Revision-Date: 2021-11-02 00:16+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -19,7 +19,86 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: handlers/users/user_handlers.py:14 handlers/users/user_handlers.py:25
+#: handlers/users/admin_handlers.py:29
+msgid "Меню администратора"
+msgstr ""
+
+#: handlers/users/admin_handlers.py:67 handlers/users/admin_handlers.py:91
+msgid "Пришлите ИД пользователя."
+msgstr ""
+
+#: handlers/users/chat_handlers.py:68
+msgid "Пользователь завершил сеанс."
+msgstr ""
+
+#: handlers/users/chat_handlers.py:96
+msgid "Дождитесь ответа менеджара или отмените сеанс"
+msgstr ""
+
+#: handlers/users/chat_handlers.py:108
+msgid "Пользователь завершил сеанс"
+msgstr ""
+
+#: handlers/users/chat_handlers.py:110
+msgid "Вы завершили сеанс"
+msgstr ""
+
+#: handlers/users/mailing_handlers.py:19 handlers/users/mailing_handlers.py:57
+#: handlers/users/mailing_handlers.py:95
+msgid "Пришлите текст рассылки"
+msgstr ""
+
+#: handlers/users/mailing_handlers.py:44 handlers/users/mailing_handlers.py:82
+#: handlers/users/mailing_handlers.py:120
+msgid "Рассылка выполнена."
+msgstr ""
+
+#: handlers/users/mailing_handlers.py:51 handlers/users/mailing_handlers.py:89
+#: handlers/users/mailing_handlers.py:127
+msgid "Рассылка отменена."
+msgstr ""
+
+#: handlers/users/manager_handlers.py:19
+msgid "Меню менеджера"
+msgstr ""
+
+#: handlers/users/manager_handlers.py:21
+msgid "Недостаточно прав доступа."
+msgstr ""
+
+#: handlers/users/my_profile_handlers.py:44
+msgid "Пришлите Ваш контактный номер телефона."
+msgstr ""
+
+#: handlers/users/my_profile_handlers.py:92
+msgid "Пришлите Ваш email."
+msgstr ""
+
+#: handlers/users/my_profile_handlers.py:108
+msgid "Пришлите название вашей компании."
+msgstr ""
+
+#: handlers/users/my_profile_handlers.py:124
+msgid "Пришлите Ваш пароль."
+msgstr ""
+
+#: handlers/users/my_profile_handlers.py:137
+msgid "Пароль успешно изменен"
+msgstr ""
+
+#: handlers/users/send_message.py:10
+msgid "Для отправки сообщения менеджеру, нажмите на кнопку ниже!"
+msgstr ""
+
+#: handlers/users/send_message.py:20
+msgid "Отпаравьте Ваш вопрос"
+msgstr ""
+
+#: handlers/users/send_message.py:34
+msgid "Сообщение отпрвлено, ожидайте ответа."
+msgstr ""
+
+#: handlers/users/user_handlers.py:16 handlers/users/user_handlers.py:27
 #: keyboards/default/main_menu.py:6 keyboards/default/main_menu.py:17
 #: keyboards/default/main_menu.py:31
 msgid "Главное меню"

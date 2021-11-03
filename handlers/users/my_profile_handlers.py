@@ -24,13 +24,13 @@ async def show_my_profile(message: Message):
 
 
 def print_user_info(user: User) -> str:
-    return f'<b>{_("ИД:")} </b>{user.user_id}\n' \
-           f'<b>{_("Имя:")} </b>{user.full_name}\n' \
-           f'<b>{_("Язык:")} </b>{user.languages}\n' \
-           f'<b>{_("Телефон:")} </b>{(user.phone if user.phone else _("Не указан"))}\n' \
-           f'<b>{_("Email:")} </b>{(user.email if user.email else _("Не указан"))}\n' \
-           f'<b>{_("Компания:")} </b>{(user.company_name if user.company_name else _("Не указана"))}\n' \
-           f'<b>{_("Пароль:")} </b>{(_("Установлен") if user.password else _("Неустановлен"))}\n'
+    return f'<b>{_("ИД")}: </b>{user.user_id}\n' \
+           f'<b>{_("Имя")}: </b>{user.full_name}\n' \
+           f'<b>{_("Язык")}: </b>{user.languages}\n' \
+           f'<b>{_("Телефон")}: </b>{(user.phone if user.phone else _("Не указан"))}\n' \
+           f'<b>{_("Email")}: </b>{(user.email if user.email else _("Не указан"))}\n' \
+           f'<b>{_("Компания")}: </b>{(user.company_name if user.company_name else _("Не указано"))}\n' \
+           f'<b>{_("Пароль")}: </b>{(_("Установлен") if user.password else _("Неустановлен"))}\n'
 
 
 async def check_user_data(user_id):
@@ -66,7 +66,7 @@ async def change_lang(call: CallbackQuery, language: str):
     await db.set_language(language=language)
     user = await db.get_user(call.from_user.id)
     await call.message.edit_text(text=f'<b>{_("Язык успешно изменен")}!</b>\n'
-                                      f'<b>Наберите /start для применения настроек.</b>')
+                                      f'<b>{_("Наберите /start для применения настроек")}.</b>')
     await call.message.answer(text=print_user_info(user),
                               reply_markup=ukb.get_markup_my_profile())
 
@@ -98,7 +98,7 @@ async def set_user_email(message: Message, state: FSMContext):
     email = message.text
     await state.reset_state()
     await db.set_email(email=email)
-    await message.answer(text=f'Email {email} {_("успешно записан в ваш профиль")}.')
+    await message.answer(text=f'Email {email} {_("успешно записан в Ваш профиль")}.')
     await show_my_profile(message)
 
 

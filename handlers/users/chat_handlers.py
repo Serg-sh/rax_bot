@@ -39,7 +39,7 @@ async def send_to_chat(call: types.CallbackQuery, state: FSMContext, callback_da
         manager_id = user_id
 
     if not manager_id:
-        await call.message.edit_text(f'{_("К сожалению, сейчас нет свободных менеджеров")}.\n {_("Попробуйте позже")}.')
+        await call.message.edit_text(f'{_("В данный момент все менеджеры заняты")}.\n {_("Попробуйте позже")}.')
         await state.reset_state()
         return
 
@@ -81,7 +81,7 @@ async def answer_chat(call: types.CallbackQuery, state: FSMContext, callback_dat
                                  reply_markup=keyboard)
     await bot.send_message(second_id,
                            f'<b>{_("Менеджер")}, {call.from_user.full_name} {_("на связи")}!</b>\n'
-                           f'{_("Вы можете задать Ваш вопрос")}.'
+                           f'{_("Можете задать Ваш вопрос")}.'
                            f'{_("Для закрытия чата с медеджером, нажмите на кнопку")}.',
                            reply_markup=keyboard_second_user
                            )
