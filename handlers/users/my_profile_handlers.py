@@ -1,3 +1,5 @@
+from asyncio import sleep
+
 import bcrypt
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters import Text
@@ -65,10 +67,12 @@ async def change_lang(call: CallbackQuery, language: str):
     await call.message.edit_reply_markup()
     await db.set_language(language=language)
     user = await db.get_user(call.from_user.id)
-    await call.message.edit_text(text=f'<b>{_("Язык успешно изменен")}!</b>\n'
-                                      f'<b>{_("Наберите /start для применения настроек")}.</b>')
+    await call.message.edit_text(_('Мой профиль'))
     await call.message.answer(text=print_user_info(user),
                               reply_markup=ukb.get_markup_my_profile())
+    await sleep(1)
+    await call.message.answer(text=f'<b>{_("Язык успешно изменен")}!</b>\n'
+                                   f'<b>{_("Наберите /start для применения настроек")}.</b>')
 
 
 @dp.callback_query_handler(text_contains='ru_language')
