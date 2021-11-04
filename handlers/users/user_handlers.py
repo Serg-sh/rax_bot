@@ -1,5 +1,5 @@
 from aiogram.dispatcher.filters import Command, Text
-from aiogram.types import CallbackQuery, Message
+from aiogram.types import CallbackQuery, Message, InputFile
 
 import data.texts as txt
 import keyboards.inline.user_keyboards as ukb
@@ -29,7 +29,7 @@ async def back_to_main_menu(call: CallbackQuery):
 
 @dp.callback_query_handler(text_contains='services')
 async def show_services(call: CallbackQuery):
-    await call.message.answer(text=txt.SERVICES,
+    await call.message.answer(text=txt.SERVICES_RU,
                               parse_mode='HTML',
                               reply_markup=ukb.get_markup_to_main_menu())
 
@@ -38,18 +38,21 @@ async def show_services(call: CallbackQuery):
 async def show_about_us(call: CallbackQuery):
     bot_username = (await bot.me).username
     bot_link = f'https://t.me/{bot_username}'
-    await call.message.answer(text=txt.ABOUT_US,
-                              parse_mode='HTML',
-                              reply_markup=ukb.get_markup_to_main_menu())
+    values_ru_1 = InputFile('data/images/VALUES_RU_1.png')
+    await call.message.answer(text=txt.ABOUT_US_RU,
+                              parse_mode='HTML')
+    await call.message.answer_photo(photo=values_ru_1, parse_mode='HTML')
+    await call.message.answer(text=txt.ABOUT_US_1_RU, parse_mode='HTML')
     await call.message.answer(text=f'{_("Поделиться ссылкой на БОТ ДДАП-РАКС")}\n'
-                                   f'{bot_link}')
+                                   f'{bot_link}',
+                              reply_markup=ukb.get_markup_to_main_menu())
 
 
 @dp.callback_query_handler(text_contains='contacts')
 async def show_contacts(call: CallbackQuery):
     await call.message.answer_venue(48.5260340474648, 34.610616658895474,
-                                    title=txt.COMPANY,
-                                    address=txt.COMPANY_ADDRESS
+                                    title=txt.COMPANY_RU,
+                                    address=txt.COMPANY_ADDRESS_RU
                                     )
     await call.message.answer_contact(phone_number=txt.TEL,
                                       first_name=txt.EMAIL,
