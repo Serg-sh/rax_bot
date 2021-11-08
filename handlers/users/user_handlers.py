@@ -1,3 +1,5 @@
+from asyncio import sleep
+
 from aiogram.dispatcher.filters import Command, Text
 from aiogram.types import CallbackQuery, Message, InputFile
 
@@ -29,7 +31,15 @@ async def back_to_main_menu(call: CallbackQuery):
 
 @dp.callback_query_handler(text_contains='services')
 async def show_services(call: CallbackQuery):
-    await call.message.answer(text=txt.SERVICES_RU,
+    user_id = call.from_user.id
+    user = await db.get_user(user_id=user_id)
+    text = txt.SERVICES_RU
+    if user.languages == 'en':
+        text = txt.SERVICES_EN
+    elif user.languages == 'uk':
+        text = txt.SERVICES_UK
+
+    await call.message.answer(text=text,
                               parse_mode='HTML',
                               reply_markup=ukb.get_markup_to_main_menu())
 
@@ -39,10 +49,27 @@ async def show_about_us(call: CallbackQuery):
     bot_username = (await bot.me).username
     bot_link = f'https://t.me/{bot_username}'
     values_ru_1 = InputFile('data/images/VALUES_RU_1.png')
-    await call.message.answer(text=txt.ABOUT_US_RU,
+    values_en_1 = InputFile('data/images/VALUES_EN_1.png')
+    values_uk_1 = InputFile('data/images/VALUES_UK_1.png')
+    user_id = call.from_user.id
+    user = await db.get_user(user_id=user_id)
+    text_about_us = txt.ABOUT_US_0_RU
+    text_about_geo = txt.ABOUT_US_1_RU
+    img_values = values_ru_1
+    if user.languages == 'en':
+        text_about_us = txt.ABOUT_US_0_EN
+        text_about_geo = txt.ABOUT_US_1_EN
+        img_values = values_en_1
+    elif user.languages == 'uk':
+        text_about_us = txt.ABOUT_US_0_UK
+        text_about_geo = txt.ABOUT_US_1_UK
+        img_values = values_uk_1
+
+    await call.message.answer(text=text_about_us,
                               parse_mode='HTML')
-    await call.message.answer_photo(photo=values_ru_1, parse_mode='HTML')
-    await call.message.answer(text=txt.ABOUT_US_1_RU, parse_mode='HTML')
+    await call.message.answer_photo(photo=img_values, parse_mode='HTML')
+    await call.message.answer(text=text_about_geo, parse_mode='HTML')
+    await sleep(0.5)
     await call.message.answer(text=f'{_("Поделиться ссылкой на БОТ ДДАП-РАКС")}\n'
                                    f'{bot_link}',
                               reply_markup=ukb.get_markup_to_main_menu())

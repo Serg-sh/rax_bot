@@ -16,7 +16,7 @@ class User(db.Model):
     id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
     user_id = Column(BigInteger)
     full_name = Column(String(100))
-    languages = Column(String(2), default='ru')
+    languages = Column(String(2), default='uk')
     is_admin = Column(Boolean, default=False)
     is_manager = Column(Boolean, default=False)
     email = Column(String(100))
