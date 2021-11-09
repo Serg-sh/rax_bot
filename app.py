@@ -1,5 +1,7 @@
 from aiogram.utils import executor
-import middlewares, filters, handlers
+import middlewares
+import filters
+import handlers
 from loader import dp
 from utils.db_api.database import create_db
 from utils.http_api import site_api
