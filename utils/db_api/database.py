@@ -75,19 +75,19 @@ class DBCommands:
     # Возвращает список строк ид админив
     async def get_admins_user_id(self) -> List:
         admins = await User.query.where(User.is_admin is True).gino.all()
-        admins_id = list(str(user.user_id) for user in admins)
+        admins_id = [str(user.user_id) for user in admins]
         return admins_id
 
     # Возвращает список строк ид менеджеров
     async def get_managers_user_id(self):
         managers = await User.query.where(User.is_manager is True).gino.all()
-        managers_id = list(str(user.user_id) for user in managers)
+        managers_id = [str(user.user_id) for user in managers]
         return managers_id
 
     async def get_clients_user_id(self) -> List:
-        clients_all = list(await User.query.where(User.is_manager is False).gino.all())
-        clients = list(user for user in clients_all if user.is_admin is False)
-        clients_id = list(str(user.user_id) for user in clients)
+        clients_all = await User.query.where(User.is_manager is False).gino.all()
+        clients = [user for user in clients_all if user.is_admin is False]
+        clients_id = [str(user.user_id) for user in clients]
         return clients_id
 
     # новости
