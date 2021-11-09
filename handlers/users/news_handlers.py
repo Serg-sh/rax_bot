@@ -20,7 +20,7 @@ async def show_news(call: CallbackQuery, news_id: int = None):
     # что-бы отображалось только 3-5 последних новостей
     user_language = await db.get_language()
     all_news = await db.get_all_news()
-    news = all_news[len(all_news) - 1]
+    news = all_news[-1]
     if news_id:
         news = await db.get_news(news_id=news_id)
     url_news = language_insert(user_language, news.api_link)
@@ -58,7 +58,7 @@ async def prev_news(call: CallbackQuery):
     all_news = await db.get_all_news()
     list_id_news = [news.id for news in all_news]
     while True:
-        if news_id > list_id_news[len(list_id_news) - 1]:
+        if news_id > list_id_news[-1]:
             await show_news(call, news_id=list_id_news[0])
             return
         if await db.get_news(news_id=news_id):
