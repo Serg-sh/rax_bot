@@ -3,9 +3,8 @@ import random
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.callback_data import CallbackData
 
-from loader import dp
+from loader import dp, _
 from utils.db_api import database
-from loader import _
 
 chat_callback = CallbackData('ask_chat', 'messages', 'user_id', 'as_user')
 cancel_chat_callback = CallbackData('cancel_chat', 'user_id')
