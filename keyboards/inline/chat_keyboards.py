@@ -32,7 +32,7 @@ async def get_id_manager():
             return
 
 
-async def chat_keyboard(messages, user_id=None) -> InlineKeyboardMarkup:
+async def chat_keyboard(messages, user_id=None):
     managers_id = await db.get_managers_user_id()
     if user_id:
         contact_id = int(user_id)
