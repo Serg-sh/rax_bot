@@ -26,11 +26,13 @@ async def get_news() -> List:
 
 def send_order(order_data: dict):
     """
-  order_data = {'email': 'test@mail',
-                'phone': '+380971112233',
-                'company': 'Рога и Копыта',
-                'fio': 'Иванов ИИ',
-                'comment': 'Комментарий'}
+    order_data = {'email': 'test@mail',
+                  'phone': '+380971112233',
+                  'company': 'Рога и Копыта',
+                  'fio': 'Иванов ИИ',
+                  'comment': 'Комментарий'}
+    :param order_data:
+    :return:
     """
     json_data = json.dumps(order_data)
     request = requests.post(url=config.api_order_url, data=json_data, headers=headers,

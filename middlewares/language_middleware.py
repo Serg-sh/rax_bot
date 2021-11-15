@@ -18,4 +18,3 @@ def setup_middleware(dp):
     i18n = ACLMiddleware(I18N_DOMAIN, LOCALES_DIR)
     dp.middleware.setup(i18n)
     return i18n
-
