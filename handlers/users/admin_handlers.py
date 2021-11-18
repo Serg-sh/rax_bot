@@ -38,8 +38,8 @@ async def back_to_main_menu(call: CallbackQuery):
 @dp.callback_query_handler(text_contains='bot_statistics')
 async def show_bot_statistics(call: CallbackQuery):
     total_users = await db.count_users()
-    is_admin_users = await User.query.where(User.is_admin is True).gino.all()
-    is_manager_users = await User.query.where(User.is_manager is True).gino.all()
+    is_admin_users = await User.query.where(User.is_admin == True).gino.all()
+    is_manager_users = await User.query.where(User.is_manager == True).gino.all()
     await call.message.answer(text=f'<strong>{_("Колличество пользователей бота")}:</strong> <i>{total_users}</i>\n')
     await call.message.answer(text=f'<b>{_("Администраторы бота")}:</b>\n'
                                    f'{print_users(is_admin_users)}')
