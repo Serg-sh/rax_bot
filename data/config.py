@@ -14,13 +14,13 @@ db_name = env.str("NAME_DB")  # Имя БД
 db_user = env.str("USER_DB")  # юзер бд
 db_pass = env.str("PASS_DB")  # пароль БД
 
-api_user = env.str("USER_API")  # юзер для доступа к api
-api_pass = env.str("PASS_API")  # пароль для доступа к api
+# api_user = env.str("USER_API")  # юзер для доступа к api
+# api_pass = env.str("PASS_API")  # пароль для доступа к api
 
 api_url_news_ru = env.str("API_URL_NEWS_RU")  # url для получения новостей с апи сайта на рус. языке
 api_url_news_uk = env.str("API_URL_NEWS_UK")  # url для получения новостей с апи сайта на укр. языке
 api_url_news_en = env.str("API_URL_NEWS_EN")  # url для получения новостей с апи сайта на анг. языке
-api_order_url = env.str("API_ORDER_URL")  # url для отправки заявки через апи сайта
+# api_order_url = env.str("API_ORDER_URL")  # url для отправки заявки через апи сайта
 
 I18N_DOMAIN = "ddaprax"
 BASE_DIR = Path(__file__).parent
