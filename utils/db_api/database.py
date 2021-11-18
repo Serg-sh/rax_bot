@@ -1,5 +1,3 @@
-from typing import List
-
 from aiogram import types
 from gino import Gino
 from gino.schema import GinoSchemaVisitor
@@ -50,14 +48,29 @@ class News(db.Model):
 class DBCommands:
     # Операции с пользователями
     async def get_user(self, user_id) -> User:
+        """
+        Возвращает клас User из БД по ИД
+        :param user_id:
+        :return object: User
+        """
         user = await User.query.where(User.user_id == user_id).gino.first()
         return user
 
     async def get_all_users(self):
+        """
+        Возвращает список всех User из БД
+        :return list: User
+        """
         users = await User.query.gino.all()
         return users
 
     async def add_new_user(self) -> User:
+        """
+        Возвращает класс User из БД, проверяя по ИД из телеги,
+        если нет в БД, тогда создает новую запись в БД и
+        затем возвращает новый объект User
+        :return object: User
+        """
         user = types.User.get_current()
         old_user = await self.get_user(user.id)
         if old_user:
@@ -69,22 +82,41 @@ class DBCommands:
         return new_user
 
     async def count_users(self):
+        """
+        Возвращает количество записей из таблицы users
+        :return int:
+        """
         total = await db.func.count(User.id).gino.scalar()
         return total
 
     # Возвращает список строк ид админив
-    async def get_admins_user_id(self) -> List:
+    async def get_admins_user_id(self) -> list[str]:
+        """
+        Возвращает список строк ид пользователей со
+        статусом is_admin == True
+        :return list[str]
+        """
         admins = await User.query.where(User.is_admin == True).gino.all()
         admins_id = [str(user.user_id) for user in admins]
         return admins_id
 
     # Возвращает список строк ид менеджеров
-    async def get_managers_user_id(self):
+    async def get_managers_user_id(self) -> list[str]:
+        """
+        Возвращает список строк ид пользователей со
+        статусом is_manager == True
+        :return list[str]
+        """
         managers = await User.query.where(User.is_manager == True).gino.all()
         managers_id = [str(user.user_id) for user in managers]
         return managers_id
 
-    async def get_clients_user_id(self) -> List:
+    async def get_clients_user_id(self) -> list[str]:
+        """
+        Возвращает список строк ид пользователей со
+        статусом is_manager == False и is_admin == False
+        :return list[str]
+        """
         clients_all = await User.query.where(User.is_manager == False).gino.all()
         clients = [user for user in clients_all if user.is_admin == False]
         clients_id = [str(user.user_id) for user in clients]
@@ -92,13 +124,25 @@ class DBCommands:
 
     # новости
     async def get_news(self, title=None, news_id=None) -> News:
+        """
+        Возвращает объект News по полю title, если title = None,
+        тогда возвращает News по полю news_id, если news_id = None,
+        тогда возвращает None
+        :param title:
+        :param news_id:
+        :return object News
+        """
         if title:
             news = await News.query.where(News.title == title).gino.first()
             return news
         news = await News.query.where(News.id == news_id).gino.first()
         return news
 
-    async def get_all_news(self):
+    async def get_all_news(self) -> list[News]:
+        """
+        Возвращает список объектов News отсортированный по полю id
+        :return: list[News]
+        """
         all_news = await News.query.order_by('id').gino.all()
         return all_news
 

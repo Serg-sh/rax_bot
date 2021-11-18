@@ -1,5 +1,4 @@
 import json
-from typing import List
 
 import requests
 
@@ -15,7 +14,7 @@ headers = {
 }
 
 
-async def get_news() -> List:
+async def get_news() -> list:
     request = requests.get(config.api_url_news_ru, headers=headers)
     data = request.json()
     list_news = data.get('rows')
@@ -31,8 +30,8 @@ def send_order(order_data: dict):
                   'company': 'Рога и Копыта',
                   'fio': 'Иванов ИИ',
                   'comment': 'Комментарий'}
-    :param order_data:
-    :return:
+    :param order_data: dict
+    :return статус код :int
     """
     json_data = json.dumps(order_data)
     request = requests.post(url=config.api_order_url, data=json_data, headers=headers,
