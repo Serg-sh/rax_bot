@@ -7,9 +7,11 @@ COMPANY_UK = 'ДДАП-РАКС, ТОВ'
 COMPANY_ADDRESS_RU = '51925, Украина, Днепропетровская обл.,\n' \
                      'г. Каменское, ул. Игнатия Ясюковича, 1\n'
 
-COMPANY_ADDRESS_EN = ''
+COMPANY_ADDRESS_EN = '51925, Ukraine, Dnepropetrovskaya obl., \n' \
+                     'Kamenskoe, st. Ignatiya Yasyukovicha, 1\n'
 
-COMPANY_ADDRESS_UK = ''
+COMPANY_ADDRESS_UK = '51925, Україна, Дніпропетровська обл.,\n' \
+                     'м. Кам\'янське, вул. Ігнатія Ясюковича, 1\n'
 
 TEL = '+38(067)106-49-94'
 

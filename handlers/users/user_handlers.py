@@ -77,9 +77,20 @@ async def show_about_us(call: CallbackQuery):
 
 @dp.callback_query_handler(text_contains='contacts')
 async def show_contacts(call: CallbackQuery):
+    user_id = call.from_user.id
+    user = await db.get_user(user_id=user_id)
+    title = txt.COMPANY_RU
+    address = txt.COMPANY_ADDRESS_RU
+    if user.languages == 'en':
+        title = txt.COMPANY_EN
+        address = txt.COMPANY_ADDRESS_EN
+    elif user.languages == 'uk':
+        title = txt.COMPANY_UK
+        address = txt.COMPANY_ADDRESS_UK
+
     await call.message.answer_venue(48.5260340474648, 34.610616658895474,
-                                    title=txt.COMPANY_RU,
-                                    address=txt.COMPANY_ADDRESS_RU
+                                    title=title,
+                                    address=address
                                     )
     await call.message.answer_contact(phone_number=txt.TEL,
                                       first_name=txt.EMAIL,
