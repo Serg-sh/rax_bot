@@ -31,7 +31,7 @@ def send_order(order_data: dict[str, str]):
                   'company': 'Рога и Копыта',\n
                   'fio': 'Иванов ИИ',\n
                   'comment': 'Комментарий'}
-    :param order_data: dict
+    :param order_data: dict[str, str]
     :return статус код :int
     """
     json_data = json.dumps(order_data)
