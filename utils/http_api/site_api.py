@@ -23,12 +23,13 @@ async def get_news() -> list:
     return list_news
 
 
-def send_order(order_data: dict):
+def send_order(order_data: dict[str, str]):
     """
-    order_data = {'email': 'test@mail',
-                  'phone': '+380971112233',
-                  'company': 'Рога и Копыта',
-                  'fio': 'Иванов ИИ',
+    Пример данных заявки:\n
+    order_data = {'email': 'test@mail.mail',
+                  'phone': '+380971112233',\n
+                  'company': 'Рога и Копыта',\n
+                  'fio': 'Иванов ИИ',\n
                   'comment': 'Комментарий'}
     :param order_data: dict
     :return статус код :int
