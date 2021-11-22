@@ -11,6 +11,7 @@ async def bot_help(message: types.Message):
             f'/menu - {_("Главаное меню")}',
             f'/admin - {_("Панель администратора")}',
             f'/manager - {_("Панель менеджера")}',
-            f'/help - {_("Получить справку")}')
+            f'/help - {_("Получить справку")}',
+            f'<b>ver. 1.1.1</b>')
     
     await message.answer("\n".join(text))
