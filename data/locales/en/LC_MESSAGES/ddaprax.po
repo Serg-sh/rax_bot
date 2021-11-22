@@ -82,10 +82,8 @@ msgid "Пришлите Ваш email."
 msgstr "Send your email."
 
 #: handlers/users/my_profile_handlers.py:109
-msgid "Вы прислали не действительный email!\n"
-      "Проверьте его правильность и повторите попытку."
-msgstr "You have sent an invalid email! \n "
-       "Please check it is correct and try again."
+msgid "Вы прислали не действительный email!\nПроверьте его правильность и повторите попытку."
+msgstr "You have sent an invalid email!\nPlease check it is correct and try again."
 
 #: handlers/users/my_profile_handlers.py:119
 msgid "Пришлите название вашей компании."
