@@ -111,14 +111,18 @@ class DBCommands:
         managers_id = [str(user.user_id) for user in managers]
         return managers_id
 
-    async def get_clients_user_id(self) -> list[str]:
+    async def get_clients_user_id(self, language=None) -> list[str]:
         """
         Возвращает список строк ид пользователей со
         статусом is_manager == False и is_admin == False
+        Если language not None фильтрует еще по language
+        :param language: str
         :return list[str]
         """
         clients_all = await User.query.where(User.is_manager == False).gino.all()
         clients = [user for user in clients_all if user.is_admin == False]
+        if language:
+            clients = [user for user in clients if user.languages == language]
         clients_id = [str(user.user_id) for user in clients]
         return clients_id
 

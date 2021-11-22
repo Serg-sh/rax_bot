@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-11-22 11:36+0200\n"
+"POT-Creation-Date: 2021-11-22 15:27+0200\n"
 "PO-Revision-Date: 2021-11-02 00:16+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk\n"
@@ -45,17 +45,19 @@ msgid "Вы завершили сеанс"
 msgstr "Ви завершили сеанс"
 
 #: handlers/users/mailing_handlers.py:19 handlers/users/mailing_handlers.py:60
-#: handlers/users/mailing_handlers.py:101
+#: handlers/users/mailing_handlers.py:108
+#: handlers/users/mailing_handlers.py:115
+#: handlers/users/mailing_handlers.py:122
+#: handlers/users/mailing_handlers.py:129
 msgid "Пришлите текст рассылки"
 msgstr "Надішліть текст розсилки"
 
 #: handlers/users/mailing_handlers.py:45 handlers/users/mailing_handlers.py:86
-#: handlers/users/mailing_handlers.py:127
 msgid "Рассылка выполнена."
 msgstr "Розсилка виконана."
 
 #: handlers/users/mailing_handlers.py:53 handlers/users/mailing_handlers.py:94
-#: handlers/users/mailing_handlers.py:135
+#: handlers/users/mailing_handlers.py:164
 msgid "Рассылка отменена."
 msgstr "Розсилку скасовано."
 
@@ -86,15 +88,15 @@ msgid "Вы прислали не действительный email!\n"
 msgstr "Ви надіслали не дійсний email!\n"
        "Перевірте його правильність і спробуйте ще раз."
 
-#: handlers/users/my_profile_handlers.py:118
+#: handlers/users/my_profile_handlers.py:119
 msgid "Пришлите название вашей компании."
 msgstr "Надішліть назву вашої компанії."
 
-#: handlers/users/my_profile_handlers.py:134
+#: handlers/users/my_profile_handlers.py:135
 msgid "Пришлите Ваш пароль."
 msgstr "Надішліть Ваш пароль."
 
-#: handlers/users/my_profile_handlers.py:147
+#: handlers/users/my_profile_handlers.py:148
 msgid "Пароль успешно изменен"
 msgstr "Пароль успішно змінено"
 
@@ -132,7 +134,7 @@ msgstr "Наша продукція"
 
 #: keyboards/inline/admin_keyboards.py:9
 msgid "Создать рассылку для клиентов"
-msgstr "Створити розсилку для кліеєетів"
+msgstr "Створити розсилку для клієнтів"
 
 #: keyboards/inline/admin_keyboards.py:11
 msgid "Рассылка для админов"
@@ -178,11 +180,11 @@ msgstr "Задати питання менеджеру"
 msgid "Завершить сеанс"
 msgstr "Завершити сеанс"
 
-#: keyboards/inline/mailing_keyboards.py:6
+#: keyboards/inline/mailing_keyboards.py:7
 msgid "Разослать рассылку"
 msgstr "Надіслати розсилку"
 
-#: keyboards/inline/mailing_keyboards.py:7
+#: keyboards/inline/mailing_keyboards.py:8
 msgid "Отменить"
 msgstr "Відминити"
 
@@ -428,4 +430,16 @@ msgstr "або введено не коректний ІД"
 
 msgid "назначен менеджером"
 msgstr "призначений менеджером"
+
+msgid "Для всех пользователей"
+msgstr "Для всіх користувачів"
+
+msgid "Рассылка выполнена"
+msgstr "Розсилка виконана"
+
+msgid "для"
+msgstr "для"
+
+msgid "пользователей"
+msgstr "користувачів"
 

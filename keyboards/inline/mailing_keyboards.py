@@ -1,4 +1,5 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
 from loader import _
 
 
@@ -10,3 +11,15 @@ def get_markup_mailing() -> InlineKeyboardMarkup:
 
     ])
     return markup_mailing
+
+
+def get_markup_lang_mailing() -> InlineKeyboardMarkup:
+    all_clients = InlineKeyboardButton(text=_('Для всех пользователей'), callback_data='all_clients_mailing')
+    uk_clients = InlineKeyboardButton(text='Українська', callback_data='uk_clients_mailing')
+    ru_clients = InlineKeyboardButton(text='Русский', callback_data='ru_clients_mailing')
+    en_clients = InlineKeyboardButton(text='English', callback_data='en_clients_mailing')
+    markup_lang_mailing = InlineKeyboardMarkup(inline_keyboard=[
+        [all_clients],
+        [uk_clients, ru_clients, en_clients],
+    ])
+    return markup_lang_mailing

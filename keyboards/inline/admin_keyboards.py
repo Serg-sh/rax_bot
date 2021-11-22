@@ -7,7 +7,7 @@ def get_markup_admin_main() -> InlineKeyboardMarkup:
     production_button = InlineKeyboardButton(text=_('Наша продукция'),
                                              callback_data='production')
     mailing_button_for_clients = InlineKeyboardButton(text=_('Создать рассылку для клиентов'),
-                                                      callback_data='clients_mailing')
+                                                      callback_data='choice_mailing_language')
     mailing_button_for_admins = InlineKeyboardButton(text=_('Рассылка для админов'),
                                                      callback_data='admins_mailing')
     mailing_button_for_managers = InlineKeyboardButton(text=_('Рассылка для менеджеров'),

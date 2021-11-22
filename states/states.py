@@ -14,6 +14,7 @@ class MailingManagers(StatesGroup):
 class MailingClients(StatesGroup):
     Text = State()
     SendToClients = State()
+    Language = State()
 
 
 class SetPermissions(StatesGroup):

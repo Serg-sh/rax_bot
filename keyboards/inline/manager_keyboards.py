@@ -5,7 +5,7 @@ from loader import _
 def get_markup_manager_main() -> InlineKeyboardMarkup:
     production_button = InlineKeyboardButton(text=_('Наша продукция'), callback_data='production')
     clients_mailing_button = InlineKeyboardButton(text=_('Создать рассылку для пользователей'),
-                                                  callback_data='clients_mailing')
+                                                  callback_data='choice_mailing_language')
     managers_mailing_button = InlineKeyboardButton(text=_('Создать рассылку для менеджеров'),
                                                    callback_data='managers_mailing')
 

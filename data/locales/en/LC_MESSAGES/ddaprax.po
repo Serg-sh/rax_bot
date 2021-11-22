@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-11-22 11:36+0200\n"
+"POT-Creation-Date: 2021-11-22 15:27+0200\n"
 "PO-Revision-Date: 2021-11-02 00:16+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -44,17 +44,19 @@ msgid "Вы завершили сеанс"
 msgstr "You have ended your session"
 
 #: handlers/users/mailing_handlers.py:19 handlers/users/mailing_handlers.py:60
-#: handlers/users/mailing_handlers.py:101
+#: handlers/users/mailing_handlers.py:108
+#: handlers/users/mailing_handlers.py:115
+#: handlers/users/mailing_handlers.py:122
+#: handlers/users/mailing_handlers.py:129
 msgid "Пришлите текст рассылки"
 msgstr "Send the text of the newsletter"
 
 #: handlers/users/mailing_handlers.py:45 handlers/users/mailing_handlers.py:86
-#: handlers/users/mailing_handlers.py:127
 msgid "Рассылка выполнена."
 msgstr "Newsletter completed."
 
 #: handlers/users/mailing_handlers.py:53 handlers/users/mailing_handlers.py:94
-#: handlers/users/mailing_handlers.py:135
+#: handlers/users/mailing_handlers.py:164
 msgid "Рассылка отменена."
 msgstr "The newsletter has been canceled."
 
@@ -85,15 +87,15 @@ msgid "Вы прислали не действительный email!\n"
 msgstr "You have sent an invalid email! \n "
        "Please check it is correct and try again."
 
-#: handlers/users/my_profile_handlers.py:118
+#: handlers/users/my_profile_handlers.py:119
 msgid "Пришлите название вашей компании."
 msgstr "Send your company name."
 
-#: handlers/users/my_profile_handlers.py:134
+#: handlers/users/my_profile_handlers.py:135
 msgid "Пришлите Ваш пароль."
 msgstr "Send your password."
 
-#: handlers/users/my_profile_handlers.py:147
+#: handlers/users/my_profile_handlers.py:148
 msgid "Пароль успешно изменен"
 msgstr "Password changed successfully"
 
@@ -177,11 +179,11 @@ msgstr "Ask a question to the manager"
 msgid "Завершить сеанс"
 msgstr "End session"
 
-#: keyboards/inline/mailing_keyboards.py:6
+#: keyboards/inline/mailing_keyboards.py:7
 msgid "Разослать рассылку"
 msgstr "Send out the newsletter"
 
-#: keyboards/inline/mailing_keyboards.py:7
+#: keyboards/inline/mailing_keyboards.py:8
 msgid "Отменить"
 msgstr "Cancel"
 
@@ -427,3 +429,15 @@ msgstr "or incorrect ID entered"
 
 msgid "назначен менеджером"
 msgstr "appointed by the manager"
+
+msgid "Для всех пользователей"
+msgstr "For all users"
+
+msgid "Рассылка выполнена"
+msgstr "Newsletter completed"
+
+msgid "для"
+msgstr "for"
+
+msgid "пользователей"
+msgstr "users"
