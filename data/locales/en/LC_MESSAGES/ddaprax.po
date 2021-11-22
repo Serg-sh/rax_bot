@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-11-03 15:32+0200\n"
+"POT-Creation-Date: 2021-11-22 11:36+0200\n"
 "PO-Revision-Date: 2021-11-02 00:16+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -18,191 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: handlers/users/start.py - manual
-msgid "Добрый День"
-msgstr "Good day"
-
-msgid "ПРИВЕТСТВУЕМ ВАС В ТЕЛЕГРАММ БОТЕ ДДАП-РАКС"
-msgstr "WELCOME TO YOU IN TELEGRAMS BOT DDAP-RAX"
-
-msgid "Для продолжения работы воспользуйтесь ГЛАВНЫМ МЕНЮ"
-msgstr "To continue working, use the MAIN MENU"
-
-msgid "Вы не указали контактные данные"
-msgstr "You did not provide contact information"
-
-msgid "укажите их в личном профиле"
-msgstr "indicate them in your personal profile"
-
-#: handlers/users/user_handlers.py - manual
-msgid "Поделиться ссылкой на БОТ ДДАП-РАКС"
-msgstr "Share a link to BOT DDAP-RAX"
-
-#: handlers/users/send_message.py - manual
-msgid "Вам пришло сообщение"
-msgstr "You've got a message"
-
-msgid "Для ответа нажмите кнопку ниже"
-msgstr "To answer, click the button below"
-
-#: handlers/users/my_profile_handlers.py - manual
-msgid "ИД"
-msgstr "ID"
-
-msgid "Язык"
-msgstr "Language"
-
-msgid "Имя"
-msgstr "Name"
-
-msgid "Телефон"
-msgstr "Phone"
-
-msgid "Компания"
-msgstr "Company"
-
-msgid "Пароль"
-msgstr "Password"
-
-msgid "Не указан"
-msgstr "Not specified"
-
-msgid "Не указано"
-msgstr "Not indicated"
-
-msgid "Установлен"
-msgstr "Set"
-
-msgid "Неустановлен"
-msgstr "Not Set"
-
-msgid "успешно записан в Ваш профиль"
-msgstr "successfully added to your profile"
-
-msgid "Выберите язык"
-msgstr "Choose language"
-
-msgid "Язык успешно изменен"
-msgstr "Language changed successfully"
-
-msgid "Наберите /start для применения настроек"
-msgstr "Type /start to apply the settings"
-
-msgid "Название компании"
-msgstr "Name of the company"
-
-msgid "успешно записано в Ваш профиль"
-msgstr "successfully added to your profile"
-
-#: handlers/users/mailing_handlers.py - manual
-msgid "Текст рассылки"
-msgstr "Newsletter Text"
-
-#: handlers/users/help.py - manual
-msgid "Список команд"
-msgstr "List of commands"
-
-msgid "Запустить бота"
-msgstr "Start bot"
-
-msgid "Главаное меню"
-msgstr "Main menu"
-
-msgid "Получить справку"
-msgstr "Get Help"
-
-#: handlers/users/echo.py - manual
-msgid "Эхо Вашего сообщения без состояния"
-msgstr "Echo your message without a state"
-
-msgid "Эхо в состоянии"
-msgstr "Echo in a state"
-
-msgid "Содержание сообщения"
-msgstr "Message content"
-
-#: handlers/users/chat_handlers.py - manual
-msgid "Для связи с менеджером, укажите контактные данные"
-msgstr "To contact the manager, indicate your contact information"
-
-msgid "в разделе мой профиль"
-msgstr "in the section my profile"
-
-msgid "Для открытия или завершения чата"
-msgstr "To open or end a chat"
-
-msgid "Сделайте выбор"
-msgstr "Make a choice"
-
-msgid "В данный момент все менеджеры заняты"
-msgstr "All managers are busy at the moment"
-
-msgid "Попробуйте позже"
-msgstr "Try again later"
-
-msgid "Вы обратились в чат ДДАП-РАКС"
-msgstr "You have contacted the DDAP-RAX chat"
-
-msgid "Ждем ответа менеджера"
-msgstr "We are waiting for the manager's response"
-
-msgid "С вами хочет связаться пользователь"
-msgstr "User wants to contact you"
-
-msgid "Вы на связи с пользователем"
-msgstr "You are connected with the user"
-
-msgid "Чтобы завершить общение нажмите на кнопку"
-msgstr "To end the conversation, click the button"
-
-msgid "Менеджер"
-msgstr "Manager"
-
-msgid "на связи"
-msgstr "connected"
-
-msgid "Можете задать Ваш вопрос"
-msgstr "You can ask your question"
-
-msgid "Для закрытия чата с медеджером, нажмите на кнопку"
-msgstr "To close the chat with the manager, click on the button"
-
-#: handlers/users/admin_handlers.py - manual
-msgid "Колличество пользователей бота"
-msgstr "Number of bot users"
-
-msgid "Администраторы бота"
-msgstr "Bot admins"
-
-msgid "Менеджеры бота"
-msgstr "Bot managers"
-
-msgid "ИД клиента"
-msgstr "Client ID"
-
-msgid "Пользователь"
-msgstr "User"
-
-msgid "назначен администратором"
-msgstr "appointed by the administrator"
-
-msgid "Что - то пошло не так"
-msgstr "Something went wrong"
-
-msgid "пользователь с ИД"
-msgstr "user ID"
-
-msgid "не зарегистрирован"
-msgstr "not registered"
-
-msgid "или введен не корректный ИД"
-msgstr "or incorrect ID entered"
-
-msgid "назначен менеджером"
-msgstr "appointed by the manager"
-
-#___________________
-
+# ___________________
 #: handlers/users/admin_handlers.py:29
 msgid "Меню администратора"
 msgstr "Admin panel"
@@ -227,18 +43,18 @@ msgstr "User has ended the session"
 msgid "Вы завершили сеанс"
 msgstr "You have ended your session"
 
-#: handlers/users/mailing_handlers.py:19 handlers/users/mailing_handlers.py:57
-#: handlers/users/mailing_handlers.py:95
+#: handlers/users/mailing_handlers.py:19 handlers/users/mailing_handlers.py:60
+#: handlers/users/mailing_handlers.py:101
 msgid "Пришлите текст рассылки"
 msgstr "Send the text of the newsletter"
 
-#: handlers/users/mailing_handlers.py:44 handlers/users/mailing_handlers.py:82
-#: handlers/users/mailing_handlers.py:120
+#: handlers/users/mailing_handlers.py:45 handlers/users/mailing_handlers.py:86
+#: handlers/users/mailing_handlers.py:127
 msgid "Рассылка выполнена."
 msgstr "Newsletter completed."
 
-#: handlers/users/mailing_handlers.py:51 handlers/users/mailing_handlers.py:89
-#: handlers/users/mailing_handlers.py:127
+#: handlers/users/mailing_handlers.py:53 handlers/users/mailing_handlers.py:94
+#: handlers/users/mailing_handlers.py:135
 msgid "Рассылка отменена."
 msgstr "The newsletter has been canceled."
 
@@ -250,23 +66,34 @@ msgstr "Manager menu"
 msgid "Недостаточно прав доступа."
 msgstr "Not enough access rights."
 
-#: handlers/users/my_profile_handlers.py:44
+#: handlers/users/my_profile_handlers.py:47
 msgid "Пришлите Ваш контактный номер телефона."
 msgstr "Send your contact phone number."
 
-#: handlers/users/my_profile_handlers.py:92
+#: handlers/users/my_profile_handlers.py:71 keyboards/default/main_menu.py:7
+#: keyboards/default/main_menu.py:20 keyboards/default/main_menu.py:33
+msgid "Мой профиль"
+msgstr "My profile"
+
+#: handlers/users/my_profile_handlers.py:97
 msgid "Пришлите Ваш email."
 msgstr "Send your email."
 
-#: handlers/users/my_profile_handlers.py:108
+#: handlers/users/my_profile_handlers.py:109
+msgid "Вы прислали не действительный email!\n"
+      "Проверьте его правильность и повторите попытку."
+msgstr "You have sent an invalid email! \n "
+       "Please check it is correct and try again."
+
+#: handlers/users/my_profile_handlers.py:118
 msgid "Пришлите название вашей компании."
 msgstr "Send your company name."
 
-#: handlers/users/my_profile_handlers.py:124
+#: handlers/users/my_profile_handlers.py:134
 msgid "Пришлите Ваш пароль."
 msgstr "Send your password."
 
-#: handlers/users/my_profile_handlers.py:137
+#: handlers/users/my_profile_handlers.py:147
 msgid "Пароль успешно изменен"
 msgstr "Password changed successfully"
 
@@ -282,16 +109,11 @@ msgstr "Send your question"
 msgid "Сообщение отпрвлено, ожидайте ответа."
 msgstr "Message sent, await reply."
 
-#: handlers/users/user_handlers.py:16 handlers/users/user_handlers.py:27
+#: handlers/users/user_handlers.py:18 handlers/users/user_handlers.py:29
 #: keyboards/default/main_menu.py:6 keyboards/default/main_menu.py:17
 #: keyboards/default/main_menu.py:31
 msgid "Главное меню"
 msgstr "Main Menu"
-
-#: keyboards/default/main_menu.py:7 keyboards/default/main_menu.py:20
-#: keyboards/default/main_menu.py:33
-msgid "Мой профиль"
-msgstr "My profile"
 
 #: keyboards/default/main_menu.py:18
 msgid "Панель администратора"
@@ -339,19 +161,19 @@ msgstr "Back to the menu"
 msgid "Показать всех пользователей"
 msgstr "Show all users"
 
-#: keyboards/inline/chat_keyboards.py:41
+#: keyboards/inline/chat_keyboards.py:40
 msgid "Ответить пользователю"
 msgstr "Reply to user"
 
-#: keyboards/inline/chat_keyboards.py:51 keyboards/inline/user_keyboards.py:54
+#: keyboards/inline/chat_keyboards.py:50 keyboards/inline/user_keyboards.py:54
 msgid "Написать 1 сообщение менеджеру"
 msgstr "Ask a question to the manager"
 
-#: keyboards/inline/chat_keyboards.py:53 keyboards/inline/user_keyboards.py:56
+#: keyboards/inline/chat_keyboards.py:52 keyboards/inline/user_keyboards.py:56
 msgid "Начать чат с менеджером"
 msgstr "Ask a question to the manager"
 
-#: keyboards/inline/chat_keyboards.py:66 keyboards/inline/chat_keyboards.py:77
+#: keyboards/inline/chat_keyboards.py:65 keyboards/inline/chat_keyboards.py:76
 msgid "Завершить сеанс"
 msgstr "End session"
 
@@ -432,3 +254,176 @@ msgstr "Change language"
 msgid "Больше новостей на сайте"
 msgstr "More news on the site"
 
+msgid "Добрый День"
+msgstr "Good day"
+
+msgid "ПРИВЕТСТВУЕМ ВАС В ТЕЛЕГРАММ БОТЕ ДДАП-РАКС"
+msgstr "WELCOME TO YOU IN TELEGRAMS BOT DDAP-RAX"
+
+msgid "Для продолжения работы воспользуйтесь ГЛАВНЫМ МЕНЮ"
+msgstr "To continue working, use the MAIN MENU"
+
+msgid "Вы не указали контактные данные"
+msgstr "You did not provide contact information"
+
+msgid "укажите их в личном профиле"
+msgstr "indicate them in your personal profile"
+
+msgid "Поделиться ссылкой на БОТ ДДАП-РАКС"
+msgstr "Share a link to BOT DDAP-RAX"
+
+msgid "Вам пришло сообщение"
+msgstr "You've got a message"
+
+msgid "Для ответа нажмите кнопку ниже"
+msgstr "To answer, click the button below"
+
+msgid "ИД"
+msgstr "ID"
+
+msgid "Язык"
+msgstr "Language"
+
+msgid "Имя"
+msgstr "Name"
+
+msgid "Телефон"
+msgstr "Phone"
+
+msgid "Компания"
+msgstr "Company"
+
+msgid "Пароль"
+msgstr "Password"
+
+msgid "Не указан"
+msgstr "Not specified"
+
+msgid "Не указано"
+msgstr "Not indicated"
+
+msgid "Установлен"
+msgstr "Set"
+
+msgid "Неустановлен"
+msgstr "Not Set"
+
+msgid "успешно записан в Ваш профиль"
+msgstr "successfully added to your profile"
+
+msgid "Выберите язык"
+msgstr "Choose language"
+
+msgid "Язык успешно изменен"
+msgstr "Language changed successfully"
+
+msgid "Наберите /start для применения настроек"
+msgstr "Type /start to apply the settings"
+
+msgid "Название компании"
+msgstr "Name of the company"
+
+msgid "успешно записано в Ваш профиль"
+msgstr "successfully added to your profile"
+
+msgid "Текст рассылки"
+msgstr "Newsletter Text"
+
+msgid "Список команд"
+msgstr "List of commands"
+
+msgid "Запустить бота"
+msgstr "Start bot"
+
+msgid "Главаное меню"
+msgstr "Main menu"
+
+msgid "Получить справку"
+msgstr "Get Help"
+
+msgid "Эхо Вашего сообщения без состояния"
+msgstr "Echo your message without a state"
+
+msgid "Эхо в состоянии"
+msgstr "Echo in a state"
+
+msgid "Содержание сообщения"
+msgstr "Message content"
+
+msgid "Для связи с менеджером, укажите контактные данные"
+msgstr "To contact the manager, indicate your contact information"
+
+msgid "в разделе мой профиль"
+msgstr "in the section my profile"
+
+msgid "Для открытия или завершения чата"
+msgstr "To open or end a chat"
+
+msgid "Сделайте выбор"
+msgstr "Make a choice"
+
+msgid "В данный момент все менеджеры заняты"
+msgstr "All managers are busy at the moment"
+
+msgid "Попробуйте позже"
+msgstr "Try again later"
+
+msgid "Вы обратились в чат ДДАП-РАКС"
+msgstr "You have contacted the DDAP-RAX chat"
+
+msgid "Ждем ответа менеджера"
+msgstr "We are waiting for the manager's response"
+
+msgid "С вами хочет связаться пользователь"
+msgstr "User wants to contact you"
+
+msgid "Вы на связи с пользователем"
+msgstr "You are connected with the user"
+
+msgid "Чтобы завершить общение нажмите на кнопку"
+msgstr "To end the conversation, click the button"
+
+msgid "Менеджер"
+msgstr "Manager"
+
+msgid "на связи"
+msgstr "connected"
+
+msgid "Можете задать Ваш вопрос"
+msgstr "You can ask your question"
+
+msgid "Для закрытия чата с медеджером, нажмите на кнопку"
+msgstr "To close the chat with the manager, click on the button"
+
+msgid "Колличество пользователей бота"
+msgstr "Number of bot users"
+
+msgid "Администраторы бота"
+msgstr "Bot admins"
+
+msgid "Менеджеры бота"
+msgstr "Bot managers"
+
+msgid "ИД клиента"
+msgstr "Client ID"
+
+msgid "Пользователь"
+msgstr "User"
+
+msgid "назначен администратором"
+msgstr "appointed by the administrator"
+
+msgid "Что - то пошло не так"
+msgstr "Something went wrong"
+
+msgid "пользователь с ИД"
+msgstr "user ID"
+
+msgid "не зарегистрирован"
+msgstr "not registered"
+
+msgid "или введен не корректный ИД"
+msgstr "or incorrect ID entered"
+
+msgid "назначен менеджером"
+msgstr "appointed by the manager"

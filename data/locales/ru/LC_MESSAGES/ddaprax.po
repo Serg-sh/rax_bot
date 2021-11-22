@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-11-03 15:32+0200\n"
+"POT-Creation-Date: 2021-11-22 11:36+0200\n"
 "PO-Revision-Date: 2021-11-02 00:16+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -43,18 +43,18 @@ msgstr ""
 msgid "Вы завершили сеанс"
 msgstr ""
 
-#: handlers/users/mailing_handlers.py:19 handlers/users/mailing_handlers.py:57
-#: handlers/users/mailing_handlers.py:95
+#: handlers/users/mailing_handlers.py:19 handlers/users/mailing_handlers.py:60
+#: handlers/users/mailing_handlers.py:101
 msgid "Пришлите текст рассылки"
 msgstr ""
 
-#: handlers/users/mailing_handlers.py:44 handlers/users/mailing_handlers.py:82
-#: handlers/users/mailing_handlers.py:120
+#: handlers/users/mailing_handlers.py:45 handlers/users/mailing_handlers.py:86
+#: handlers/users/mailing_handlers.py:127
 msgid "Рассылка выполнена."
 msgstr ""
 
-#: handlers/users/mailing_handlers.py:51 handlers/users/mailing_handlers.py:89
-#: handlers/users/mailing_handlers.py:127
+#: handlers/users/mailing_handlers.py:53 handlers/users/mailing_handlers.py:94
+#: handlers/users/mailing_handlers.py:135
 msgid "Рассылка отменена."
 msgstr ""
 
@@ -66,23 +66,34 @@ msgstr ""
 msgid "Недостаточно прав доступа."
 msgstr ""
 
-#: handlers/users/my_profile_handlers.py:44
+#: handlers/users/my_profile_handlers.py:47
 msgid "Пришлите Ваш контактный номер телефона."
 msgstr ""
 
-#: handlers/users/my_profile_handlers.py:92
+#: handlers/users/my_profile_handlers.py:71 keyboards/default/main_menu.py:7
+#: keyboards/default/main_menu.py:20 keyboards/default/main_menu.py:33
+msgid "Мой профиль"
+msgstr ""
+
+#: handlers/users/my_profile_handlers.py:97
 msgid "Пришлите Ваш email."
 msgstr ""
 
-#: handlers/users/my_profile_handlers.py:108
+#: handlers/users/my_profile_handlers.py:109
+msgid ""
+"Вы прислали не действительный email!\n"
+"Проверьте его правильность и повторите попытку."
+msgstr ""
+
+#: handlers/users/my_profile_handlers.py:118
 msgid "Пришлите название вашей компании."
 msgstr ""
 
-#: handlers/users/my_profile_handlers.py:124
+#: handlers/users/my_profile_handlers.py:134
 msgid "Пришлите Ваш пароль."
 msgstr ""
 
-#: handlers/users/my_profile_handlers.py:137
+#: handlers/users/my_profile_handlers.py:147
 msgid "Пароль успешно изменен"
 msgstr ""
 
@@ -98,15 +109,10 @@ msgstr ""
 msgid "Сообщение отпрвлено, ожидайте ответа."
 msgstr ""
 
-#: handlers/users/user_handlers.py:16 handlers/users/user_handlers.py:27
+#: handlers/users/user_handlers.py:18 handlers/users/user_handlers.py:29
 #: keyboards/default/main_menu.py:6 keyboards/default/main_menu.py:17
 #: keyboards/default/main_menu.py:31
 msgid "Главное меню"
-msgstr ""
-
-#: keyboards/default/main_menu.py:7 keyboards/default/main_menu.py:20
-#: keyboards/default/main_menu.py:33
-msgid "Мой профиль"
 msgstr ""
 
 #: keyboards/default/main_menu.py:18
@@ -155,19 +161,19 @@ msgstr ""
 msgid "Показать всех пользователей"
 msgstr ""
 
-#: keyboards/inline/chat_keyboards.py:41
+#: keyboards/inline/chat_keyboards.py:40
 msgid "Ответить пользователю"
 msgstr ""
 
-#: keyboards/inline/chat_keyboards.py:51 keyboards/inline/user_keyboards.py:54
+#: keyboards/inline/chat_keyboards.py:50 keyboards/inline/user_keyboards.py:54
 msgid "Написать 1 сообщение менеджеру"
 msgstr ""
 
-#: keyboards/inline/chat_keyboards.py:53 keyboards/inline/user_keyboards.py:56
+#: keyboards/inline/chat_keyboards.py:52 keyboards/inline/user_keyboards.py:56
 msgid "Начать чат с менеджером"
 msgstr ""
 
-#: keyboards/inline/chat_keyboards.py:66 keyboards/inline/chat_keyboards.py:77
+#: keyboards/inline/chat_keyboards.py:65 keyboards/inline/chat_keyboards.py:76
 msgid "Завершить сеанс"
 msgstr ""
 

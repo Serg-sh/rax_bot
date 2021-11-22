@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-11-03 15:32+0200\n"
+"POT-Creation-Date: 2021-11-22 11:36+0200\n"
 "PO-Revision-Date: 2021-11-02 00:16+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk\n"
@@ -19,191 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: handlers/users/start.py - manual
-msgid "Добрый День"
-msgstr "Добрий День"
-
-msgid "ПРИВЕТСТВУЕМ ВАС В ТЕЛЕГРАММ БОТЕ ДДАП-РАКС"
-msgstr "ВІТАЄМО ВАС У ТЕЛЕГРАММ БОТІ ДДАП-РАКС"
-
-msgid "Для продолжения работы воспользуйтесь ГЛАВНЫМ МЕНЮ"
-msgstr "Для продовження роботи скористайтесь ГОЛОВНИМ МЕНЮ"
-
-msgid "Вы не указали контактные данные"
-msgstr "Ви не вказали контактні дані"
-
-msgid "укажите их в личном профиле"
-msgstr "вкажіть їх в особистому профілі"
-
-#: handlers/users/user_handlers.py - manual
-msgid "Поделиться ссылкой на БОТ ДДАП-РАКС"
-msgstr "Подiлитись посиланням на БОТ ДДАП-РАКС"
-
-#: handlers/users/send_message.py - manual
-msgid "Вам пришло сообщение"
-msgstr ""
-
-msgid "Для ответа нажмите кнопку ниже"
-msgstr ""
-
-#: handlers/users/my_profile_handlers.py - manual
-msgid "ИД:"
-msgstr "ІД"
-
-msgid "Язык:"
-msgstr "Мова"
-
-msgid "Имя"
-msgstr "Ім'я"
-
-msgid "Телефон"
-msgstr "Телефон"
-
-msgid "Компания"
-msgstr "Компанія"
-
-msgid "Пароль"
-msgstr "Пароль"
-
-msgid "Не указан"
-msgstr "Не вказано"
-
-msgid "Не указано"
-msgstr "Не вказано"
-
-msgid "Установлен"
-msgstr "Встановленний"
-
-msgid "Неустановлен"
-msgstr "Не встановлений"
-
-msgid "успешно записан в Ваш профиль"
-msgstr "успішно записаний у Ваш профіль"
-
-msgid "Выберите язык"
-msgstr "Виберіть мову"
-
-msgid "Язык успешно изменен"
-msgstr "Мова успішно змінена"
-
-msgid "Наберите /start для применения настроек"
-msgstr "Наберіть /start для застосування налаштувань"
-
-msgid "Название компании"
-msgstr "Назва компанії"
-
-msgid "успешно записано в Ваш профиль"
-msgstr "успішно записано у Ваш профіль"
-
-#: handlers/users/mailing_handlers.py - manual
-msgid "Текст рассылки"
-msgstr "Текст розсилки"
-
-#: handlers/users/help.py - manual
-msgid "Список команд"
-msgstr ""
-
-msgid "Запустить бота"
-msgstr "Список команд"
-
-msgid "Главаное меню"
-msgstr "Головне меню"
-
-msgid "Получить справку"
-msgstr "Отримати довідку"
-
-#: handlers/users/echo.py - manual
-msgid "Эхо Вашего сообщения без состояния"
-msgstr "Відлуння Вашого повідомлення без стану"
-
-msgid "Эхо в состоянии"
-msgstr "Відлуння в стані"
-
-msgid "Содержание сообщения"
-msgstr "Зміст повідомлення"
-
-#: handlers/users/chat_handlers.py - manual
-msgid "Для связи с менеджером, укажите контактные данные"
-msgstr "Для зв'язку з менеджером вкажіть контактні дані"
-
-msgid "в разделе мой профиль"
-msgstr "у розділі мій профіль"
-
-msgid "Для открытия или завершения чата"
-msgstr "Для відкриття або завершення чату"
-
-msgid "Сделайте выбор"
-msgstr "Зробіть вибір"
-
-msgid "В данный момент все менеджеры заняты"
-msgstr "На даний момент усі менеджери зайняті"
-
-msgid "Попробуйте позже"
-msgstr "Спробуй пізніше"
-
-msgid "Вы обратились в чат ДДАП-РАКС"
-msgstr "Ви звернулися до чату ДДАП-РАКС"
-
-msgid "Ждем ответа менеджера"
-msgstr "Чекаємо на відповідь менеджера"
-
-msgid "С вами хочет связаться пользователь"
-msgstr "З вами хоче зв'язатися користувач"
-
-msgid "Вы на связи с пользователем"
-msgstr "Ви на зв'язку з користувачем"
-
-msgid "Чтобы завершить общение нажмите на кнопку"
-msgstr "Щоб завершити спілкування, натисніть на кнопку"
-
-msgid "Менеджер"
-msgstr "Менеджер"
-
-msgid "на связи"
-msgstr "на зв'язку"
-
-msgid "Можете задать Ваш вопрос"
-msgstr "Можете поставити Ваше запитання"
-
-msgid "Для закрытия чата с медеджером, нажмите на кнопку"
-msgstr "Щоб закрити чат з медеджером, натисніть на кнопку"
-
-#: handlers/users/admin_handlers.py - manual
-msgid "Колличество пользователей бота"
-msgstr "Кількість користувачів бота"
-
-msgid "Администраторы бота"
-msgstr "Адміністратори бота"
-
-msgid "Менеджеры бота"
-msgstr "Менеджери бота"
-
-msgid "ИД клиента"
-msgstr "ІД клієнта"
-
-msgid "Пользователь"
-msgstr "Користувач"
-
-msgid "назначен администратором"
-msgstr "призначений адміністратором"
-
-msgid "Что - то пошло не так"
-msgstr "Щось пішло не так"
-
-msgid "пользователь с ИД"
-msgstr "користувач з ІД"
-
-msgid "не зарегистрирован"
-msgstr "не зареєстрований"
-
-msgid "или введен не корректный ИД"
-msgstr "або введено не коректний ІД"
-
-msgid "назначен менеджером"
-msgstr "призначений менеджером"
-
-
-#-----------------------------------
+# -----------------------------------
 #: handlers/users/admin_handlers.py:29
 msgid "Меню администратора"
 msgstr "Меню адміністратора"
@@ -228,18 +44,18 @@ msgstr "Користувач завершив сеанс"
 msgid "Вы завершили сеанс"
 msgstr "Ви завершили сеанс"
 
-#: handlers/users/mailing_handlers.py:19 handlers/users/mailing_handlers.py:57
-#: handlers/users/mailing_handlers.py:95
+#: handlers/users/mailing_handlers.py:19 handlers/users/mailing_handlers.py:60
+#: handlers/users/mailing_handlers.py:101
 msgid "Пришлите текст рассылки"
 msgstr "Надішліть текст розсилки"
 
-#: handlers/users/mailing_handlers.py:44 handlers/users/mailing_handlers.py:82
-#: handlers/users/mailing_handlers.py:120
+#: handlers/users/mailing_handlers.py:45 handlers/users/mailing_handlers.py:86
+#: handlers/users/mailing_handlers.py:127
 msgid "Рассылка выполнена."
 msgstr "Розсилка виконана."
 
-#: handlers/users/mailing_handlers.py:51 handlers/users/mailing_handlers.py:89
-#: handlers/users/mailing_handlers.py:127
+#: handlers/users/mailing_handlers.py:53 handlers/users/mailing_handlers.py:94
+#: handlers/users/mailing_handlers.py:135
 msgid "Рассылка отменена."
 msgstr "Розсилку скасовано."
 
@@ -251,23 +67,34 @@ msgstr "Меню менеджера"
 msgid "Недостаточно прав доступа."
 msgstr "Недостатньо прав доступу."
 
-#: handlers/users/my_profile_handlers.py:44
+#: handlers/users/my_profile_handlers.py:47
 msgid "Пришлите Ваш контактный номер телефона."
 msgstr "Надішліть Ваш контактний номер телефону."
 
-#: handlers/users/my_profile_handlers.py:92
+#: handlers/users/my_profile_handlers.py:71 keyboards/default/main_menu.py:7
+#: keyboards/default/main_menu.py:20 keyboards/default/main_menu.py:33
+msgid "Мой профиль"
+msgstr "Мій профіль"
+
+#: handlers/users/my_profile_handlers.py:97
 msgid "Пришлите Ваш email."
 msgstr "Надішліть Ваш email."
 
-#: handlers/users/my_profile_handlers.py:108
+#: handlers/users/my_profile_handlers.py:109
+msgid "Вы прислали не действительный email!\n"
+      "Проверьте его правильность и повторите попытку."
+msgstr "Ви надіслали не дійсний email!\n"
+       "Перевірте його правильність і спробуйте ще раз."
+
+#: handlers/users/my_profile_handlers.py:118
 msgid "Пришлите название вашей компании."
 msgstr "Надішліть назву вашої компанії."
 
-#: handlers/users/my_profile_handlers.py:124
+#: handlers/users/my_profile_handlers.py:134
 msgid "Пришлите Ваш пароль."
 msgstr "Надішліть Ваш пароль."
 
-#: handlers/users/my_profile_handlers.py:137
+#: handlers/users/my_profile_handlers.py:147
 msgid "Пароль успешно изменен"
 msgstr "Пароль успішно змінено"
 
@@ -283,16 +110,11 @@ msgstr "Відправте Ваше запитання"
 msgid "Сообщение отпрвлено, ожидайте ответа."
 msgstr "Повідомлення надіслано, чекайте відповіді."
 
-#: handlers/users/user_handlers.py:16 handlers/users/user_handlers.py:27
+#: handlers/users/user_handlers.py:18 handlers/users/user_handlers.py:29
 #: keyboards/default/main_menu.py:6 keyboards/default/main_menu.py:17
 #: keyboards/default/main_menu.py:31
 msgid "Главное меню"
 msgstr "Головне меню"
-
-#: keyboards/default/main_menu.py:7 keyboards/default/main_menu.py:20
-#: keyboards/default/main_menu.py:33
-msgid "Мой профиль"
-msgstr "Мій профіль"
 
 #: keyboards/default/main_menu.py:18
 msgid "Панель администратора"
@@ -340,19 +162,19 @@ msgstr "Назад у меню"
 msgid "Показать всех пользователей"
 msgstr "Показати всіх корристувачів"
 
-#: keyboards/inline/chat_keyboards.py:41
+#: keyboards/inline/chat_keyboards.py:40
 msgid "Ответить пользователю"
 msgstr "Відповісти користувачу"
 
-#: keyboards/inline/chat_keyboards.py:51 keyboards/inline/user_keyboards.py:54
+#: keyboards/inline/chat_keyboards.py:50 keyboards/inline/user_keyboards.py:54
 msgid "Написать 1 сообщение менеджеру"
 msgstr "Задати питання менеджеру"
 
-#: keyboards/inline/chat_keyboards.py:53 keyboards/inline/user_keyboards.py:56
+#: keyboards/inline/chat_keyboards.py:52 keyboards/inline/user_keyboards.py:56
 msgid "Начать чат с менеджером"
 msgstr "Задати питання менеджеру"
 
-#: keyboards/inline/chat_keyboards.py:66 keyboards/inline/chat_keyboards.py:77
+#: keyboards/inline/chat_keyboards.py:65 keyboards/inline/chat_keyboards.py:76
 msgid "Завершить сеанс"
 msgstr "Завершити сеанс"
 
@@ -432,3 +254,178 @@ msgstr "Змінити мову"
 #: keyboards/inline/user_keyboards.py:94
 msgid "Больше новостей на сайте"
 msgstr "Більше новин на сайті"
+
+msgid "Добрый День"
+msgstr "Добрий День"
+
+msgid "ПРИВЕТСТВУЕМ ВАС В ТЕЛЕГРАММ БОТЕ ДДАП-РАКС"
+msgstr "ВІТАЄМО ВАС У ТЕЛЕГРАММ БОТІ ДДАП-РАКС"
+
+msgid "Для продолжения работы воспользуйтесь ГЛАВНЫМ МЕНЮ"
+msgstr "Для продовження роботи скористайтесь ГОЛОВНИМ МЕНЮ"
+
+msgid "Вы не указали контактные данные"
+msgstr "Ви не вказали контактні дані"
+
+msgid "укажите их в личном профиле"
+msgstr "вкажіть їх в особистому профілі"
+
+msgid "Поделиться ссылкой на БОТ ДДАП-РАКС"
+msgstr "Подiлитись посиланням на БОТ ДДАП-РАКС"
+
+msgid "Вам пришло сообщение"
+msgstr ""
+
+msgid "Для ответа нажмите кнопку ниже"
+msgstr ""
+
+msgid "ИД:"
+msgstr "ІД"
+
+msgid "Язык:"
+msgstr "Мова"
+
+msgid "Имя"
+msgstr "Ім'я"
+
+msgid "Телефон"
+msgstr "Телефон"
+
+msgid "Компания"
+msgstr "Компанія"
+
+msgid "Пароль"
+msgstr "Пароль"
+
+msgid "Не указан"
+msgstr "Не вказано"
+
+msgid "Не указано"
+msgstr "Не вказано"
+
+msgid "Установлен"
+msgstr "Встановленний"
+
+msgid "Неустановлен"
+msgstr "Не встановлений"
+
+msgid "успешно записан в Ваш профиль"
+msgstr "успішно записаний у Ваш профіль"
+
+msgid "Выберите язык"
+msgstr "Виберіть мову"
+
+msgid "Язык успешно изменен"
+msgstr "Мова успішно змінена"
+
+msgid "Наберите /start для применения настроек"
+msgstr "Наберіть /start для застосування налаштувань"
+
+msgid "Название компании"
+msgstr "Назва компанії"
+
+msgid "успешно записано в Ваш профиль"
+msgstr "успішно записано у Ваш профіль"
+
+msgid "Текст рассылки"
+msgstr "Текст розсилки"
+
+msgid "Список команд"
+msgstr ""
+
+msgid "Запустить бота"
+msgstr "Список команд"
+
+msgid "Главаное меню"
+msgstr "Головне меню"
+
+msgid "Получить справку"
+msgstr "Отримати довідку"
+
+msgid "Эхо Вашего сообщения без состояния"
+msgstr "Відлуння Вашого повідомлення без стану"
+
+msgid "Эхо в состоянии"
+msgstr "Відлуння в стані"
+
+msgid "Содержание сообщения"
+msgstr "Зміст повідомлення"
+
+msgid "Для связи с менеджером, укажите контактные данные"
+msgstr "Для зв'язку з менеджером вкажіть контактні дані"
+
+msgid "в разделе мой профиль"
+msgstr "у розділі мій профіль"
+
+msgid "Для открытия или завершения чата"
+msgstr "Для відкриття або завершення чату"
+
+msgid "Сделайте выбор"
+msgstr "Зробіть вибір"
+
+msgid "В данный момент все менеджеры заняты"
+msgstr "На даний момент усі менеджери зайняті"
+
+msgid "Попробуйте позже"
+msgstr "Спробуй пізніше"
+
+msgid "Вы обратились в чат ДДАП-РАКС"
+msgstr "Ви звернулися до чату ДДАП-РАКС"
+
+msgid "Ждем ответа менеджера"
+msgstr "Чекаємо на відповідь менеджера"
+
+msgid "С вами хочет связаться пользователь"
+msgstr "З вами хоче зв'язатися користувач"
+
+msgid "Вы на связи с пользователем"
+msgstr "Ви на зв'язку з користувачем"
+
+msgid "Чтобы завершить общение нажмите на кнопку"
+msgstr "Щоб завершити спілкування, натисніть на кнопку"
+
+msgid "Менеджер"
+msgstr "Менеджер"
+
+msgid "на связи"
+msgstr "на зв'язку"
+
+msgid "Можете задать Ваш вопрос"
+msgstr "Можете поставити Ваше запитання"
+
+msgid "Для закрытия чата с медеджером, нажмите на кнопку"
+msgstr "Щоб закрити чат з медеджером, натисніть на кнопку"
+
+msgid "Колличество пользователей бота"
+msgstr "Кількість користувачів бота"
+
+msgid "Администраторы бота"
+msgstr "Адміністратори бота"
+
+msgid "Менеджеры бота"
+msgstr "Менеджери бота"
+
+msgid "ИД клиента"
+msgstr "ІД клієнта"
+
+msgid "Пользователь"
+msgstr "Користувач"
+
+msgid "назначен администратором"
+msgstr "призначений адміністратором"
+
+msgid "Что - то пошло не так"
+msgstr "Щось пішло не так"
+
+msgid "пользователь с ИД"
+msgstr "користувач з ІД"
+
+msgid "не зарегистрирован"
+msgstr "не зареєстрований"
+
+msgid "или введен не корректный ИД"
+msgstr "або введено не коректний ІД"
+
+msgid "назначен менеджером"
+msgstr "призначений менеджером"
+

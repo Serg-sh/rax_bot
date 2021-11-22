@@ -102,8 +102,14 @@ async def get_user_email(call: CallbackQuery):
 async def set_user_email(message: Message, state: FSMContext):
     email = message.text
     await state.reset_state()
-    await db.set_email(email=email)
-    await message.answer(text=f'Email {email} {_("успешно записан в Ваш профиль")}.')
+    if validators.email(email):
+        await db.set_email(email=email)
+        await message.answer(text=f'Email {email} {_("успешно записан в Ваш профиль")}.')
+    else:
+        await message.answer(text=_('Вы прислали не действительный email!\n'
+                                    'Проверьте его правильность и повторите попытку.'))
+        await sleep(1)
+
     await show_my_profile(message)
 
 
