@@ -4,6 +4,10 @@ from loader import _
 
 
 def get_markup_admin_main() -> InlineKeyboardMarkup:
+    """
+    Возвращает инлайн клавиатуру основного меню администратора
+    :return: InlineKeyboardMarkup
+    """
     production_button = InlineKeyboardButton(text=_('Наша продукция'),
                                              callback_data='production')
     mailing_button_for_clients = InlineKeyboardButton(text=_('Создать рассылку для клиентов'),
@@ -31,6 +35,10 @@ def get_markup_admin_main() -> InlineKeyboardMarkup:
 
 # Кнопка назад в меню администратора
 def get_markup_to_admin_menu() -> InlineKeyboardMarkup:
+    """
+    Возвращает инлайн клавиатуру с кнопкой назад в меню администратора
+    :return: InlineKeyboardMarkup
+    """
     button_back_to_admin_menu = InlineKeyboardButton(text=_('Назад в админ-меню'),
                                                      callback_data='back_to_admin_menu')
 
@@ -42,6 +50,10 @@ def get_markup_to_admin_menu() -> InlineKeyboardMarkup:
 
 # показать всех пользователей
 def get_markup_show_all_users() -> InlineKeyboardMarkup:
+    """
+    Возвращает инлайн клавиатуру с кнопкой показать всех пользователей
+    :return: InlineKeyboardMarkup
+    """
     button_show_all_users = InlineKeyboardButton(text=_('Показать всех пользователей'),
                                                  callback_data='show_all_user')
 

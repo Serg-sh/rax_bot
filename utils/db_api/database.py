@@ -151,6 +151,14 @@ class DBCommands:
         return all_news
 
     async def add_new_news(self, news) -> News:
+        """
+        Проверяет есть ли передаваемая новость в БД
+        по news['title'], если есть возвращает ее объектом News,
+        если нет, тогда записывает ее в БД и возвращает новый
+        объект News
+        :param news: dict
+        :return: News
+        """
         title = news['title']
         old_news = await self.get_news(title=title)
         if old_news:
@@ -165,32 +173,67 @@ class DBCommands:
 
     # Запись чтение языковых параметров
     async def set_language(self, language):
+        """
+        Записыват в БД язык интерфейса пользователя,
+        ид пользователя берется из types.User.get_current().id
+        :param language: str[Union('ru', 'uk', 'en')]
+        :return:
+        """
         user_id = types.User.get_current().id
         user = await self.get_user(user_id)
         await user.update(languages=language).apply()
 
     async def get_language(self):
+        """
+        Возвращает строку с языком пользователя,
+        пользователь берется из types.User.get_current()
+        :return User.languages: str
+        """
         user = types.User.get_current()
         user = await self.get_user(user.id)
         return user.languages
 
     # Запись / чтение личных данных пользователя
     async def set_email(self, email):
+        """
+        Записыват в БД email пользователя,
+        ид пользователя берется из types.User.get_current().id
+        :param email: str
+        :return:
+        """
         user_id = types.User.get_current().id
         user = await self.get_user(user_id)
         await user.update(email=email).apply()
 
     async def set_phone(self, phone):
+        """
+        Записыват в БД phone пользователя,
+        ид пользователя берется из types.User.get_current().id
+        :param phone: str
+        :return:
+        """
         user_id = types.User.get_current().id
         user = await self.get_user(user_id)
         await user.update(phone=phone).apply()
 
     async def set_company_name(self, company_name):
+        """
+        Записыват в БД название компании пользователя,
+        ид пользователя берется из types.User.get_current().id
+        :param company_name: str
+        :return:
+        """
         user_id = types.User.get_current().id
         user = await self.get_user(user_id)
         await user.update(company_name=company_name).apply()
 
     async def set_password(self, password):
+        """
+        Записыват в БД password пользователя,
+        ид пользователя берется из types.User.get_current().id
+        :param password: bytes
+        :return:
+        """
         user_id = types.User.get_current().id
         user = await self.get_user(user_id)
         await user.update(password=password).apply()
@@ -201,6 +244,10 @@ class DBCommands:
 
 
 async def create_db():
+    """
+        Создает БД
+    :return:
+    """
     await db.set_bind(f'postgresql://{db_user}:{db_pass}@{db_host}/{db_name}')
     db.gino: GinoSchemaVisitor
     # await db.gino.drop_all()

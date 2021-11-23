@@ -3,6 +3,10 @@ from loader import _
 
 
 def get_markup_manager_main() -> InlineKeyboardMarkup:
+    """
+    Возвращает инлайн клавиатуру основного меню менеджера
+    :return: InlineKeyboardMarkup
+    """
     production_button = InlineKeyboardButton(text=_('Наша продукция'), callback_data='production')
     clients_mailing_button = InlineKeyboardButton(text=_('Создать рассылку для пользователей'),
                                                   callback_data='choice_mailing_language')
@@ -19,6 +23,10 @@ def get_markup_manager_main() -> InlineKeyboardMarkup:
 
 # Кнопка назад в меню менеджера
 def get_markup_to_manager_menu() -> InlineKeyboardMarkup:
+    """
+    Возвращает инлайн клавиатуру с кнопкой назад в меню менеджера
+    :return: InlineKeyboardMarkup
+    """
     button_back_to_manager_menu = InlineKeyboardButton(text=_('Назад в меню менджера'),
                                                        callback_data='back_to_manager_menu')
 
