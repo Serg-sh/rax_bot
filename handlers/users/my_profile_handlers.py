@@ -61,7 +61,7 @@ async def set_user_phone(message: Message, state: FSMContext):
 @dp.callback_query_handler(text_contains='get_user_language')
 async def get_user_language(call: CallbackQuery):
     await call.message.edit_reply_markup()
-    await call.message.answer(text=f'<b>{_("Выберите язык")}</b>', reply_markup=ukb.markup_languages)
+    await call.message.answer(text=f'<b>{_("Выберите язык")}</b>', reply_markup=ukb.get_markup_languages())
 
 
 async def change_lang(call: CallbackQuery, language: str):

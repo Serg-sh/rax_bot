@@ -1,4 +1,4 @@
-from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, inline_keyboard
 
 from data import urls
 from loader import _
@@ -12,10 +12,10 @@ def get_markup_main() -> InlineKeyboardMarkup:
                                        url=urls.SITE)
     my_account_button = InlineKeyboardButton(text=_('Кабинет клиента'),
                                              url=urls.MY_ACCOUNT)
-    # production_button = InlineKeyboardButton(text=_('Наша продукция'),
-    #                                          callback_data='production')
     production_button = InlineKeyboardButton(text=_('Наша продукция'),
-                                             url=urls.PRODUCTS)
+                                             callback_data='productions_menu')
+    # production_button = InlineKeyboardButton(text=_('Наша продукция'),
+    #                                          url=urls.PRODUCTS)
     services_button = InlineKeyboardButton(text=_('Наши услуги'),
                                            callback_data='services')
     # manager_chat_button = InlineKeyboardButton(text=_('Задать вопрос менеджеру'),
@@ -88,7 +88,7 @@ def get_markup_my_profile() -> InlineKeyboardMarkup:
 
 
 # Клавиатура новости
-def get_markup_news():
+def get_markup_news() -> InlineKeyboardMarkup:
     prev_button = InlineKeyboardButton(text='⬅',
                                        callback_data='prev_news')
     details_button = InlineKeyboardButton(text=_('Больше новостей на сайте'),
@@ -107,12 +107,33 @@ def get_markup_news():
 
 
 # Клавиатура языки
-ru_button = InlineKeyboardButton(text='Русский', callback_data='ru_language')
-en_button = InlineKeyboardButton(text='English', callback_data='en_language')
-uk_button = InlineKeyboardButton(text='Українська', callback_data='uk_language')
+def get_markup_languages() -> InlineKeyboardMarkup:
+    ru_button = InlineKeyboardButton(text='Русский', callback_data='ru_language')
+    en_button = InlineKeyboardButton(text='English', callback_data='en_language')
+    uk_button = InlineKeyboardButton(text='Українська', callback_data='uk_language')
 
-markup_languages = InlineKeyboardMarkup(inline_keyboard=[
-    [uk_button],
-    [ru_button],
-    [en_button],
-])
+    markup_languages = InlineKeyboardMarkup(inline_keyboard=[
+        [uk_button],
+        [ru_button],
+        [en_button],
+    ])
+    return markup_languages
+
+
+# Клавиатура для раздела "продукция"
+def get_markup_prod_menu() -> InlineKeyboardMarkup:
+    products_on_site_btn = InlineKeyboardButton(text='Вся продукция на сайте', url=urls.PRODUCTS)
+    products_uk_sng_btn = InlineKeyboardButton(text='Для Украины и СНГ', callback_data='region_uk_sng')
+    products_eu_btn = InlineKeyboardButton(text='Для Европы', callback_data='region_eu')
+    products_na_btn = InlineKeyboardButton(text='Для Северной Америки', callback_data='region_na')
+    button_back_to_main_menu = InlineKeyboardButton(text=_('Назад в меню'), callback_data='back_to_main_menu')
+
+    markup_prod_menu = InlineKeyboardMarkup(inline_keyboard=[
+        [products_on_site_btn],
+        [products_uk_sng_btn],
+        [products_eu_btn],
+        [products_na_btn],
+        [button_back_to_main_menu],
+    ])
+    return markup_prod_menu
+

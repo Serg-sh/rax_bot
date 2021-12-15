@@ -1,4 +1,5 @@
 import json
+from pprint import pprint
 
 import requests
 
@@ -31,8 +32,13 @@ async def get_news() -> list:
     return list_news
 
 
+def get_productions():
+    request = requests.get(config.api_url_productions, headers=headers)
+    data = request.json()
+    list_productions = data.get('rows')  #список словарей(на каждый продукт)
 
-
+    pprint(list_productions)
+    print(type(list_productions))
 
 
 

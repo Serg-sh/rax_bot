@@ -20,7 +20,10 @@ api_pass = env.str("PASS_API")  # пароль для доступа к api
 api_url_news_ru = env.str("API_URL_NEWS_RU")  # url для получения новостей с апи сайта на рус. языке
 api_url_news_uk = env.str("API_URL_NEWS_UK")  # url для получения новостей с апи сайта на укр. языке
 api_url_news_en = env.str("API_URL_NEWS_EN")  # url для получения новостей с апи сайта на анг. языке
+
 api_order_url = env.str("API_ORDER_URL")  # url для отправки заявки через апи сайта
+
+api_url_productions = env.str("API_PRODUCTS_URL")  # url для получения продуктов с апи сайта на анг. языке
 
 I18N_DOMAIN = "ddaprax"
 BASE_DIR = Path(__file__).parent
