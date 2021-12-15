@@ -3,15 +3,12 @@ from aiogram.types import CallbackQuery
 import keyboards.inline.user_keyboards as ukb
 from loader import dp
 from utils.db_api import database
+from utils.http_api import site_api
 
 db = database.DBCommands()
 
 
-def language_insert(user_language, api_link):
-    user_language += '/'
-    if user_language == 'en/':
-        user_language = ''
-    return api_link[:20] + user_language + api_link[20:]
+
 
 
 @dp.callback_query_handler(text_contains='show_news')
@@ -23,7 +20,7 @@ async def show_news(call: CallbackQuery, news_id: int = None):
     news = all_news[-1]
     if news_id:
         news = await db.get_news(news_id=news_id)
-    url_news = language_insert(user_language, news.api_link)
+    url_news = site_api.get_link_with_language(user_language, news.api_link)
     text = f'<b>{news.title}</b>\n' \
            f'{url_news}\n' \
            f'ИД: {news.id}'

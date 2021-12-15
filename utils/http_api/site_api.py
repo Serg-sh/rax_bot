@@ -14,6 +14,14 @@ headers = {
 }
 
 
+def get_link_with_language(user_language: str, api_link: str):
+    user_language += '/'
+    if user_language == 'en/':
+        user_language = ''
+    return api_link[:20] + user_language + api_link[20:]
+
+
+# Получает список новостей с сайта
 async def get_news() -> list:
     request = requests.get(config.api_url_news_ru, headers=headers)
     data = request.json()
@@ -23,6 +31,20 @@ async def get_news() -> list:
     return list_news
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Отправка заявки на сайт менеджеру
 def send_order(order_data: dict[str, str]):
     """
     Пример данных заявки:\n
