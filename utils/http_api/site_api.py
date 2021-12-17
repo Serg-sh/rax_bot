@@ -32,16 +32,14 @@ async def get_news() -> list:
     return list_news
 
 
-def get_productions():
-    request = requests.get(config.api_url_productions, headers=headers)
+def get_productions(language='en'):
+    link = get_link_with_language(language, config.api_url_productions)
+    request = requests.get(link, headers=headers)
     data = request.json()
     list_productions = data.get('rows')  #список словарей(на каждый продукт)
+    return list_productions
 
-    pprint(list_productions)
-    print(type(list_productions))
-
-
-
+pprint(get_productions('ru'))
 
 
 
