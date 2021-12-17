@@ -14,14 +14,14 @@ async def prod_menu(call: CallbackQuery):
 
 @dp.callback_query_handler(text_contains='region_uk_sng')
 async def prod_region_uk_sng(call: CallbackQuery):
-    await call.message.answer(text='данный раздел находится в разработке')
+    pass
 
 
 @dp.callback_query_handler(text_contains='region_eu')
 async def prod_region_eu(call: CallbackQuery):
-    await call.message.answer(text='данный раздел находится в разработке')
+    pass
 
 
 @dp.callback_query_handler(text_contains='region_na')
 async def prod_region_na(call: CallbackQuery):
-    await call.message.answer(text='данный раздел находится в разработке')
+    pass
