@@ -122,10 +122,10 @@ def get_markup_languages() -> InlineKeyboardMarkup:
 
 # Клавиатура для раздела "продукция"
 def get_markup_prod_menu() -> InlineKeyboardMarkup:
-    products_on_site_btn = InlineKeyboardButton(text='Вся продукция на сайте', url=urls.PRODUCTS)
-    products_uk_sng_btn = InlineKeyboardButton(text='Для Украины и СНГ', callback_data='region_uk_sng')
-    products_eu_btn = InlineKeyboardButton(text='Для Европы', callback_data='region_eu')
-    products_na_btn = InlineKeyboardButton(text='Для Северной Америки', callback_data='region_na')
+    products_on_site_btn = InlineKeyboardButton(text=_('Вся продукция на сайте'), url=urls.PRODUCTS)
+    products_uk_sng_btn = InlineKeyboardButton(text=_('Для Украины и СНГ'), callback_data='region_uk_sng')
+    products_eu_btn = InlineKeyboardButton(text=_('Для Европы'), callback_data='region_eu')
+    products_na_btn = InlineKeyboardButton(text=_('Для Северной Америки'), callback_data='region_na')
     button_back_to_main_menu = InlineKeyboardButton(text=_('Назад в меню'), callback_data='back_to_main_menu')
 
     markup_prod_menu = InlineKeyboardMarkup(inline_keyboard=[
