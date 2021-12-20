@@ -1,5 +1,4 @@
 import json
-from pprint import pprint
 
 import requests
 
@@ -32,20 +31,13 @@ async def get_news() -> list:
     return list_news
 
 
+# Получает список продукции с сайта (каждый продукт в словаре)
 def get_productions(language='en'):
     link = get_link_with_language(language, config.api_url_productions)
     request = requests.get(link, headers=headers)
     data = request.json()
-    list_productions = data.get('rows')  #список словарей(на каждый продукт)
+    list_productions = data.get('rows')  # список словарей(на каждый продукт)
     return list_productions
-
-pprint(get_productions('ru'))
-
-
-
-
-
-
 
 
 # Отправка заявки на сайт менеджеру

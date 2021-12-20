@@ -1,4 +1,4 @@
-from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, inline_keyboard
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from data import urls
 from loader import _
@@ -137,3 +137,6 @@ def get_markup_prod_menu() -> InlineKeyboardMarkup:
     ])
     return markup_prod_menu
 
+
+def get_btn_back_to_prod_menu():
+    return InlineKeyboardButton(text=_('<< Назад'), callback_data='back_to_prod_menu')
