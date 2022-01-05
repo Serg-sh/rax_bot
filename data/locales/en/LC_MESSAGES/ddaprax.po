@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-11-22 15:27+0200\n"
+"POT-Creation-Date: 2022-01-05 15:01+0200\n"
 "PO-Revision-Date: 2021-11-02 00:16+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -97,6 +97,14 @@ msgstr "Send your password."
 msgid "Пароль успешно изменен"
 msgstr "Password changed successfully"
 
+#: handlers/users/productions_handlers.py:33
+msgid "Подробнее"
+msgstr "More details"
+
+#: handlers/users/productions_handlers.py:43
+msgid "Каталог нашей продукции"
+msgstr "Product catalog"
+
 #: handlers/users/send_message.py:10
 msgid "Для отправки сообщения менеджеру, нажмите на кнопку ниже!"
 msgstr "To send a message to the manager, click on the button below!"
@@ -123,41 +131,41 @@ msgstr "Admin panel"
 msgid "Панель менеджера"
 msgstr "Manager panel"
 
-#: keyboards/inline/admin_keyboards.py:7
-#: keyboards/inline/manager_keyboards.py:6
-#: keyboards/inline/user_keyboards.py:17
+#: keyboards/inline/admin_keyboards.py:11
+#: keyboards/inline/manager_keyboards.py:10
+#: keyboards/inline/user_keyboards.py:15
 msgid "Наша продукция"
 msgstr "Productions"
 
-#: keyboards/inline/admin_keyboards.py:9
+#: keyboards/inline/admin_keyboards.py:13
 msgid "Создать рассылку для клиентов"
 msgstr "Create a newsletter for clients"
 
-#: keyboards/inline/admin_keyboards.py:11
+#: keyboards/inline/admin_keyboards.py:15
 msgid "Рассылка для админов"
 msgstr "Newsletter for admins"
 
-#: keyboards/inline/admin_keyboards.py:13
+#: keyboards/inline/admin_keyboards.py:17
 msgid "Рассылка для менеджеров"
 msgstr "Newsletter for managers"
 
-#: keyboards/inline/admin_keyboards.py:15
+#: keyboards/inline/admin_keyboards.py:19
 msgid "Статистика бота"
 msgstr "Bot statistics"
 
-#: keyboards/inline/admin_keyboards.py:17
+#: keyboards/inline/admin_keyboards.py:21
 msgid "Добавить администратора"
 msgstr "Add admin"
 
-#: keyboards/inline/admin_keyboards.py:19
+#: keyboards/inline/admin_keyboards.py:23
 msgid "Добавить менеджера"
 msgstr "Add manager"
 
-#: keyboards/inline/admin_keyboards.py:34
+#: keyboards/inline/admin_keyboards.py:42
 msgid "Назад в админ-меню"
 msgstr "Back to the menu"
 
-#: keyboards/inline/admin_keyboards.py:45
+#: keyboards/inline/admin_keyboards.py:57
 msgid "Показать всех пользователей"
 msgstr "Show all users"
 
@@ -185,15 +193,19 @@ msgstr "Send out the newsletter"
 msgid "Отменить"
 msgstr "Cancel"
 
-#: keyboards/inline/manager_keyboards.py:7
+#: keyboards/inline/mailing_keyboards.py:17
+msgid "Для всех пользователей"
+msgstr "For all users"
+
+#: keyboards/inline/manager_keyboards.py:11
 msgid "Создать рассылку для пользователей"
 msgstr "Create newsletter for users"
 
-#: keyboards/inline/manager_keyboards.py:9
+#: keyboards/inline/manager_keyboards.py:13
 msgid "Создать рассылку для менеджеров"
 msgstr "Create a newsletter for managers"
 
-#: keyboards/inline/manager_keyboards.py:22
+#: keyboards/inline/manager_keyboards.py:30
 msgid "Назад в меню менджера"
 msgstr "Back to the menu"
 
@@ -226,7 +238,7 @@ msgid "О нас"
 msgstr "About Us"
 
 #: keyboards/inline/user_keyboards.py:43 keyboards/inline/user_keyboards.py:58
-#: keyboards/inline/user_keyboards.py:98
+#: keyboards/inline/user_keyboards.py:98 keyboards/inline/user_keyboards.py:129
 msgid "Назад в меню"
 msgstr "Back to the menu"
 
@@ -254,8 +266,25 @@ msgstr "Change language"
 msgid "Больше новостей на сайте"
 msgstr "More news on the site"
 
-msgid "Добрый День"
-msgstr "Good day"
+#: keyboards/inline/user_keyboards.py:125
+msgid "Вся продукция на сайте"
+msgstr "All products on the site"
+
+#: keyboards/inline/user_keyboards.py:126
+msgid "Для Украины и СНГ"
+msgstr "For Ukraine and CIS"
+
+#: keyboards/inline/user_keyboards.py:127
+msgid "Для Европы"
+msgstr "For Europe"
+
+#: keyboards/inline/user_keyboards.py:128
+msgid "Для Северной Америки"
+msgstr "For North America"
+
+#: keyboards/inline/user_keyboards.py:142
+msgid "<< Назад"
+msgstr "<< Back"
 
 msgid "ПРИВЕТСТВУЕМ ВАС В ТЕЛЕГРАММ БОТЕ ДДАП-РАКС"
 msgstr "WELCOME TO YOU IN TELEGRAMS BOT DDAP-RAX"
@@ -439,3 +468,12 @@ msgstr "for"
 
 msgid "пользователей"
 msgstr "users"
+
+msgid "Регион"
+msgstr "Region"
+
+msgid "Спецификация"
+msgstr "Specification"
+
+msgid "Марка стали"
+msgstr "Steel grade"

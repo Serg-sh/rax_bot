@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-11-22 15:27+0200\n"
+"POT-Creation-Date: 2022-01-05 15:01+0200\n"
 "PO-Revision-Date: 2021-11-02 00:16+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk\n"
@@ -98,6 +98,14 @@ msgstr "Надішліть Ваш пароль."
 msgid "Пароль успешно изменен"
 msgstr "Пароль успішно змінено"
 
+#: handlers/users/productions_handlers.py:33
+msgid "Подробнее"
+msgstr "Детальніше"
+
+#: handlers/users/productions_handlers.py:43
+msgid "Каталог нашей продукции"
+msgstr "Каталог нашої продукції"
+
 #: handlers/users/send_message.py:10
 msgid "Для отправки сообщения менеджеру, нажмите на кнопку ниже!"
 msgstr "Щоб надіслати повідомлення менеджеру, натисніть на кнопку нижче!"
@@ -124,41 +132,41 @@ msgstr "Панель адміністратора"
 msgid "Панель менеджера"
 msgstr "Панель менеджера"
 
-#: keyboards/inline/admin_keyboards.py:7
-#: keyboards/inline/manager_keyboards.py:6
-#: keyboards/inline/user_keyboards.py:17
+#: keyboards/inline/admin_keyboards.py:11
+#: keyboards/inline/manager_keyboards.py:10
+#: keyboards/inline/user_keyboards.py:15
 msgid "Наша продукция"
 msgstr "Наша продукція"
 
-#: keyboards/inline/admin_keyboards.py:9
+#: keyboards/inline/admin_keyboards.py:13
 msgid "Создать рассылку для клиентов"
 msgstr "Створити розсилку для клієнтів"
 
-#: keyboards/inline/admin_keyboards.py:11
+#: keyboards/inline/admin_keyboards.py:15
 msgid "Рассылка для админов"
 msgstr "Розсилка для адмінов"
 
-#: keyboards/inline/admin_keyboards.py:13
+#: keyboards/inline/admin_keyboards.py:17
 msgid "Рассылка для менеджеров"
 msgstr "Розсилка для менеджерів"
 
-#: keyboards/inline/admin_keyboards.py:15
+#: keyboards/inline/admin_keyboards.py:19
 msgid "Статистика бота"
 msgstr "Статистика бота"
 
-#: keyboards/inline/admin_keyboards.py:17
+#: keyboards/inline/admin_keyboards.py:21
 msgid "Добавить администратора"
 msgstr "Додати адміністратора"
 
-#: keyboards/inline/admin_keyboards.py:19
+#: keyboards/inline/admin_keyboards.py:23
 msgid "Добавить менеджера"
 msgstr "Додати менеджера"
 
-#: keyboards/inline/admin_keyboards.py:34
+#: keyboards/inline/admin_keyboards.py:42
 msgid "Назад в админ-меню"
 msgstr "Назад у меню"
 
-#: keyboards/inline/admin_keyboards.py:45
+#: keyboards/inline/admin_keyboards.py:57
 msgid "Показать всех пользователей"
 msgstr "Показати всіх корристувачів"
 
@@ -186,15 +194,19 @@ msgstr "Надіслати розсилку"
 msgid "Отменить"
 msgstr "Відминити"
 
-#: keyboards/inline/manager_keyboards.py:7
+#: keyboards/inline/mailing_keyboards.py:17
+msgid "Для всех пользователей"
+msgstr "Для всіх користувачів"
+
+#: keyboards/inline/manager_keyboards.py:11
 msgid "Создать рассылку для пользователей"
 msgstr "Створити розсилку для користувачів"
 
-#: keyboards/inline/manager_keyboards.py:9
+#: keyboards/inline/manager_keyboards.py:13
 msgid "Создать рассылку для менеджеров"
 msgstr "Створити розсилку для менеджерів"
 
-#: keyboards/inline/manager_keyboards.py:22
+#: keyboards/inline/manager_keyboards.py:30
 msgid "Назад в меню менджера"
 msgstr "Назад у меню"
 
@@ -227,7 +239,7 @@ msgid "О нас"
 msgstr "Про нас"
 
 #: keyboards/inline/user_keyboards.py:43 keyboards/inline/user_keyboards.py:58
-#: keyboards/inline/user_keyboards.py:98
+#: keyboards/inline/user_keyboards.py:98 keyboards/inline/user_keyboards.py:129
 msgid "Назад в меню"
 msgstr "Назад у меню"
 
@@ -255,83 +267,21 @@ msgstr "Змінити мову"
 msgid "Больше новостей на сайте"
 msgstr "Більше новин на сайті"
 
-msgid "Добрый День"
-msgstr "Добрий День"
+#: keyboards/inline/user_keyboards.py:125
+msgid "Вся продукция на сайте"
+msgstr "Вся продукція на сайті"
 
-msgid "ПРИВЕТСТВУЕМ ВАС В ТЕЛЕГРАММ БОТЕ ДДАП-РАКС"
-msgstr "ВІТАЄМО ВАС У ТЕЛЕГРАММ БОТІ ДДАП-РАКС"
+#: keyboards/inline/user_keyboards.py:126
+msgid "Для Украины и СНГ"
+msgstr "Для України та СНД"
 
-msgid "Для продолжения работы воспользуйтесь ГЛАВНЫМ МЕНЮ"
-msgstr "Для продовження роботи скористайтесь ГОЛОВНИМ МЕНЮ"
+#: keyboards/inline/user_keyboards.py:127
+msgid "Для Европы"
+msgstr "Для Європи"
 
-msgid "Вы не указали контактные данные"
-msgstr "Ви не вказали контактні дані"
-
-msgid "укажите их в личном профиле"
-msgstr "вкажіть їх в особистому профілі"
-
-msgid "Поделиться ссылкой на БОТ ДДАП-РАКС"
-msgstr "Подiлитись посиланням на БОТ ДДАП-РАКС"
-
-msgid "Вам пришло сообщение"
-msgstr ""
-
-msgid "Для ответа нажмите кнопку ниже"
-msgstr ""
-
-msgid "ИД:"
-msgstr "ІД"
-
-msgid "Язык:"
-msgstr "Мова"
-
-msgid "Имя"
-msgstr "Ім'я"
-
-msgid "Телефон"
-msgstr "Телефон"
-
-msgid "Компания"
-msgstr "Компанія"
-
-msgid "Пароль"
-msgstr "Пароль"
-
-msgid "Не указан"
-msgstr "Не вказано"
-
-msgid "Не указано"
-msgstr "Не вказано"
-
-msgid "Установлен"
-msgstr "Встановленний"
-
-msgid "Неустановлен"
-msgstr "Не встановлений"
-
-msgid "успешно записан в Ваш профиль"
-msgstr "успішно записаний у Ваш профіль"
-
-msgid "Выберите язык"
-msgstr "Виберіть мову"
-
-msgid "Язык успешно изменен"
-msgstr "Мова успішно змінена"
-
-msgid "Наберите /start для применения настроек"
-msgstr "Наберіть /start для застосування налаштувань"
-
-msgid "Название компании"
-msgstr "Назва компанії"
-
-msgid "успешно записано в Ваш профиль"
-msgstr "успішно записано у Ваш профіль"
-
-msgid "Текст рассылки"
-msgstr "Текст розсилки"
-
-msgid "Список команд"
-msgstr ""
+#: keyboards/inline/user_keyboards.py:128
+msgid "Для Северной Америки"
+msgstr "Для Північної Америки"
 
 msgid "Запустить бота"
 msgstr "Список команд"
@@ -441,3 +391,17 @@ msgstr "для"
 msgid "пользователей"
 msgstr "користувачів"
 
+#~ msgid "для"
+#~ msgstr "для"
+
+#~ msgid "пользователей"
+#~ msgstr "користувачів"
+
+msgid "Регион"
+msgstr "Регіон"
+
+msgid "Спецификация"
+msgstr "Специфікація"
+
+msgid "Марка стали"
+msgstr "Марка сталі"

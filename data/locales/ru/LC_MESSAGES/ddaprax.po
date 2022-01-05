@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-11-22 15:27+0200\n"
+"POT-Creation-Date: 2022-01-05 15:01+0200\n"
 "PO-Revision-Date: 2021-11-02 00:16+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -99,6 +99,14 @@ msgstr ""
 msgid "Пароль успешно изменен"
 msgstr ""
 
+#: handlers/users/productions_handlers.py:33
+msgid "Подробнее"
+msgstr ""
+
+#: handlers/users/productions_handlers.py:43
+msgid "Каталог нашей продукции"
+msgstr ""
+
 #: handlers/users/send_message.py:10
 msgid "Для отправки сообщения менеджеру, нажмите на кнопку ниже!"
 msgstr ""
@@ -125,41 +133,41 @@ msgstr ""
 msgid "Панель менеджера"
 msgstr ""
 
-#: keyboards/inline/admin_keyboards.py:7
-#: keyboards/inline/manager_keyboards.py:6
-#: keyboards/inline/user_keyboards.py:17
+#: keyboards/inline/admin_keyboards.py:11
+#: keyboards/inline/manager_keyboards.py:10
+#: keyboards/inline/user_keyboards.py:15
 msgid "Наша продукция"
 msgstr ""
 
-#: keyboards/inline/admin_keyboards.py:9
+#: keyboards/inline/admin_keyboards.py:13
 msgid "Создать рассылку для клиентов"
 msgstr ""
 
-#: keyboards/inline/admin_keyboards.py:11
+#: keyboards/inline/admin_keyboards.py:15
 msgid "Рассылка для админов"
 msgstr ""
 
-#: keyboards/inline/admin_keyboards.py:13
+#: keyboards/inline/admin_keyboards.py:17
 msgid "Рассылка для менеджеров"
 msgstr ""
 
-#: keyboards/inline/admin_keyboards.py:15
+#: keyboards/inline/admin_keyboards.py:19
 msgid "Статистика бота"
 msgstr ""
 
-#: keyboards/inline/admin_keyboards.py:17
+#: keyboards/inline/admin_keyboards.py:21
 msgid "Добавить администратора"
 msgstr ""
 
-#: keyboards/inline/admin_keyboards.py:19
+#: keyboards/inline/admin_keyboards.py:23
 msgid "Добавить менеджера"
 msgstr ""
 
-#: keyboards/inline/admin_keyboards.py:34
+#: keyboards/inline/admin_keyboards.py:42
 msgid "Назад в админ-меню"
 msgstr ""
 
-#: keyboards/inline/admin_keyboards.py:45
+#: keyboards/inline/admin_keyboards.py:57
 msgid "Показать всех пользователей"
 msgstr ""
 
@@ -191,15 +199,15 @@ msgstr ""
 msgid "Для всех пользователей"
 msgstr ""
 
-#: keyboards/inline/manager_keyboards.py:7
+#: keyboards/inline/manager_keyboards.py:11
 msgid "Создать рассылку для пользователей"
 msgstr ""
 
-#: keyboards/inline/manager_keyboards.py:9
+#: keyboards/inline/manager_keyboards.py:13
 msgid "Создать рассылку для менеджеров"
 msgstr ""
 
-#: keyboards/inline/manager_keyboards.py:22
+#: keyboards/inline/manager_keyboards.py:30
 msgid "Назад в меню менджера"
 msgstr ""
 
@@ -232,7 +240,7 @@ msgid "О нас"
 msgstr ""
 
 #: keyboards/inline/user_keyboards.py:43 keyboards/inline/user_keyboards.py:58
-#: keyboards/inline/user_keyboards.py:98
+#: keyboards/inline/user_keyboards.py:98 keyboards/inline/user_keyboards.py:129
 msgid "Назад в меню"
 msgstr ""
 
@@ -258,5 +266,25 @@ msgstr ""
 
 #: keyboards/inline/user_keyboards.py:94
 msgid "Больше новостей на сайте"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:125
+msgid "Вся продукция на сайте"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:126
+msgid "Для Украины и СНГ"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:127
+msgid "Для Европы"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:128
+msgid "Для Северной Америки"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:142
+msgid "<< Назад"
 msgstr ""
 
