@@ -35,7 +35,7 @@ async def show_list_productions(call: CallbackQuery, region: tuple):
         markup.add(btn_more_details)
         markup.add(ukb.get_btn_back_to_prod_menu())
         await call.message.answer(text=print_prod_info(item), reply_markup=markup)
-        await sleep(0.3)
+        await sleep(0.2)
 
 
 @dp.callback_query_handler(text_contains='productions_menu')
