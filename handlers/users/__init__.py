@@ -10,6 +10,7 @@ from . import mailing_handlers
 from . import my_profile_handlers
 from . import news_handlers
 from . import productions_handlers
+from . import order_handlers
 
 from . import echo
 
