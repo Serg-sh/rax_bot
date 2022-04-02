@@ -6,7 +6,6 @@ from aiogram.dispatcher.filters.builtin import CommandStart
 from aiogram.types import InputFile, Message, ReplyKeyboardMarkup
 
 from data.config import ADMINS
-from handlers.users.my_profile_handlers import show_my_profile, check_user_data
 from keyboards.default import main_menu as mmkb
 from loader import dp, _
 from utils.db_api import database
@@ -29,12 +28,6 @@ async def bot_start(message: types.Message):
                          reply_markup=get_markup(message,
                                                  admins_id=admins,
                                                  managers_id=managers))
-    await sleep(1)
-    if await check_user_data(message.from_user.id):
-        await message.answer(f'{message.from_user.full_name}. \n'
-                             f'{_("Вы не указали контактные данные")},'
-                             f'{_("укажите их в личном профиле")}.')
-        await show_my_profile(message)
 
 
 def get_markup(message: Message, admins_id: List, managers_id: List) -> ReplyKeyboardMarkup:
