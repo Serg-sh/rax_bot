@@ -40,8 +40,9 @@ async def show_list_productions(call: CallbackQuery, region: tuple):
 
 @dp.callback_query_handler(text_contains='productions_menu')
 async def prod_menu(call: CallbackQuery):
+    user_lang = await db.get_language()
     await call.message.answer(text=_('Каталог нашей продукции'),
-                              reply_markup=ukb.get_markup_prod_menu())
+                              reply_markup=ukb.get_markup_prod_menu(user_lang))
 
 
 @dp.callback_query_handler(text_contains='back_to_prod_menu')

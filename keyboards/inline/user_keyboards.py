@@ -2,6 +2,7 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from data import urls
 from loader import _
+from utils.http_api import site_api
 
 
 # Клавиатура основного меню
@@ -88,11 +89,12 @@ def get_markup_my_profile() -> InlineKeyboardMarkup:
 
 
 # Клавиатура новости
-def get_markup_news() -> InlineKeyboardMarkup:
+def get_markup_news(user_language) -> InlineKeyboardMarkup:
     prev_button = InlineKeyboardButton(text='⬅',
                                        callback_data='prev_news')
     details_button = InlineKeyboardButton(text=_('Больше новостей на сайте'),
-                                          url=urls.NEWS)
+                                          url=site_api.get_link_with_language(user_language=user_language,
+                                                                              api_link=urls.NEWS))
     next_button = InlineKeyboardButton(text='➡',
                                        callback_data='next_news')
     button_back_to_main_menu = InlineKeyboardButton(text=_('Назад в меню'),
@@ -121,8 +123,10 @@ def get_markup_languages() -> InlineKeyboardMarkup:
 
 
 # Клавиатура для раздела "продукция"
-def get_markup_prod_menu() -> InlineKeyboardMarkup:
-    products_on_site_btn = InlineKeyboardButton(text=_('Вся продукция на сайте'), url=urls.PRODUCTS)
+def get_markup_prod_menu(user_language) -> InlineKeyboardMarkup:
+    products_on_site_btn = InlineKeyboardButton(text=_('Вся продукция на сайте'),
+                                                url=site_api.get_link_with_language(user_language=user_language,
+                                                                                    api_link=urls.PRODUCTS))
     products_uk_sng_btn = InlineKeyboardButton(text=_('Для Украины и СНГ'), callback_data='region_uk_sng')
     products_eu_btn = InlineKeyboardButton(text=_('Для Европы'), callback_data='region_eu')
     products_na_btn = InlineKeyboardButton(text=_('Для Северной Америки'), callback_data='region_na')

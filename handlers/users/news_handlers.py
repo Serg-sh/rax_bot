@@ -28,7 +28,7 @@ async def show_news(call: CallbackQuery, state: FSMContext):
            f'{datetime.datetime.fromtimestamp(int(news["created"])).strftime("%d-%m-%Y")}\n' \
            f'{site_api.get_link_with_language(user_language, news["api_link"])}'
     text = text.replace("</p>", "").replace("<p>", "")
-    await call.message.edit_text(text=text, reply_markup=ukb.get_markup_news())
+    await call.message.edit_text(text=text, reply_markup=ukb.get_markup_news(user_language))
 
 
 @dp.callback_query_handler(text_contains='next_news')
