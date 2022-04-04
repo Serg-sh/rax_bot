@@ -266,6 +266,9 @@ msgstr "Change language"
 msgid "Больше новостей на сайте"
 msgstr "More news on the site"
 
+msgid "Добрый День"
+msgstr "Hello"
+
 #: keyboards/inline/user_keyboards.py:125
 msgid "Вся продукция на сайте"
 msgstr "All products on the site"
