@@ -480,3 +480,6 @@ msgstr "Specification"
 
 msgid "Марка стали"
 msgstr "Steel grade"
+
+msgid "МИ З УКРАЇНИ"
+msgstr "WE ARE FROM UKRAINE"

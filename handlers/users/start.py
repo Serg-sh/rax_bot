@@ -23,6 +23,7 @@ async def bot_start(message: types.Message):
     admins = await db.get_admins_user_id()
     admins.extend(ADMINS)
     await message.answer(f'{_("Добрый День")}!  {message.from_user.full_name}!\n\n'
+                         f'🇺🇦🇺🇦🇺🇦 {_("МИ З УКРАЇНИ")} 🇺🇦🇺🇦🇺🇦\n\n'
                          f'{_("ПРИВЕТСТВУЕМ ВАС В ТЕЛЕГРАММ БОТЕ ДДАП-РАКС")} \n\n'
                          f'{_("Для продолжения работы воспользуйтесь ГЛАВНЫМ МЕНЮ")}.\n',
                          reply_markup=get_markup(message,
