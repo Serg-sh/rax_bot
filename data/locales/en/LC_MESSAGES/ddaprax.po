@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-01-05 15:01+0200\n"
+"POT-Creation-Date: 2023-04-04 13:17+0300\n"
 "PO-Revision-Date: 2021-11-02 00:16+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -82,8 +82,12 @@ msgid "Пришлите Ваш email."
 msgstr "Send your email."
 
 #: handlers/users/my_profile_handlers.py:109
-msgid "Вы прислали не действительный email!\nПроверьте его правильность и повторите попытку."
-msgstr "You have sent an invalid email!\nPlease check it is correct and try again."
+msgid ""
+"Вы прислали не действительный email!\n"
+"Проверьте его правильность и повторите попытку."
+msgstr ""
+"You have sent an invalid email!\n"
+"Please check it is correct and try again."
 
 #: handlers/users/my_profile_handlers.py:119
 msgid "Пришлите название вашей компании."
@@ -101,7 +105,7 @@ msgstr "Password changed successfully"
 msgid "Подробнее"
 msgstr "More details"
 
-#: handlers/users/productions_handlers.py:43
+#: handlers/users/productions_handlers.py:44
 msgid "Каталог нашей продукции"
 msgstr "Product catalog"
 
@@ -117,7 +121,7 @@ msgstr "Send your question"
 msgid "Сообщение отпрвлено, ожидайте ответа."
 msgstr "Message sent, await reply."
 
-#: handlers/users/user_handlers.py:18 handlers/users/user_handlers.py:29
+#: handlers/users/user_handlers.py:19 handlers/users/user_handlers.py:31
 #: keyboards/default/main_menu.py:6 keyboards/default/main_menu.py:17
 #: keyboards/default/main_menu.py:31
 msgid "Главное меню"
@@ -133,7 +137,7 @@ msgstr "Manager panel"
 
 #: keyboards/inline/admin_keyboards.py:11
 #: keyboards/inline/manager_keyboards.py:10
-#: keyboards/inline/user_keyboards.py:15
+#: keyboards/inline/user_keyboards.py:17
 msgid "Наша продукция"
 msgstr "Productions"
 
@@ -173,11 +177,11 @@ msgstr "Show all users"
 msgid "Ответить пользователю"
 msgstr "Reply to user"
 
-#: keyboards/inline/chat_keyboards.py:50 keyboards/inline/user_keyboards.py:54
+#: keyboards/inline/chat_keyboards.py:50 keyboards/inline/user_keyboards.py:56
 msgid "Написать 1 сообщение менеджеру"
 msgstr "Ask a question to the manager"
 
-#: keyboards/inline/chat_keyboards.py:52 keyboards/inline/user_keyboards.py:56
+#: keyboards/inline/chat_keyboards.py:52 keyboards/inline/user_keyboards.py:58
 msgid "Начать чат с менеджером"
 msgstr "Ask a question to the manager"
 
@@ -209,85 +213,86 @@ msgstr "Create a newsletter for managers"
 msgid "Назад в меню менджера"
 msgstr "Back to the menu"
 
-#: keyboards/inline/user_keyboards.py:9
+#: keyboards/inline/user_keyboards.py:11
 msgid "Новости компании"
 msgstr "News"
 
-#: keyboards/inline/user_keyboards.py:11
+#: keyboards/inline/user_keyboards.py:13
 msgid "Сайт компании"
 msgstr "Site"
 
-#: keyboards/inline/user_keyboards.py:13
+#: keyboards/inline/user_keyboards.py:15
 msgid "Кабинет клиента"
 msgstr "Client's Cabinet"
 
-#: keyboards/inline/user_keyboards.py:19
+#: keyboards/inline/user_keyboards.py:21
 msgid "Наши услуги"
 msgstr "Services"
 
-#: keyboards/inline/user_keyboards.py:23
+#: keyboards/inline/user_keyboards.py:25
 msgid "Задать вопрос менеджеру"
 msgstr "Ask a question to the manager"
 
-#: keyboards/inline/user_keyboards.py:25
+#: keyboards/inline/user_keyboards.py:27
 msgid "Наши контакты"
 msgstr "Our contacts"
 
-#: keyboards/inline/user_keyboards.py:27
+#: keyboards/inline/user_keyboards.py:29
 msgid "О нас"
 msgstr "About Us"
 
-#: keyboards/inline/user_keyboards.py:43 keyboards/inline/user_keyboards.py:58
-#: keyboards/inline/user_keyboards.py:98 keyboards/inline/user_keyboards.py:129
+#: keyboards/inline/user_keyboards.py:45 keyboards/inline/user_keyboards.py:60
+#: keyboards/inline/user_keyboards.py:101
+#: keyboards/inline/user_keyboards.py:143
 msgid "Назад в меню"
 msgstr "Back to the menu"
 
-#: keyboards/inline/user_keyboards.py:70
+#: keyboards/inline/user_keyboards.py:72
 msgid "Изменить телефон"
 msgstr "Change phone"
 
-#: keyboards/inline/user_keyboards.py:72
+#: keyboards/inline/user_keyboards.py:74
 msgid "Изменить email"
 msgstr "Change email"
 
-#: keyboards/inline/user_keyboards.py:74
+#: keyboards/inline/user_keyboards.py:76
 msgid "Изменить название компании"
 msgstr "Change company name"
 
-#: keyboards/inline/user_keyboards.py:76
+#: keyboards/inline/user_keyboards.py:78
 msgid "Изменить пароль"
 msgstr "Change password"
 
-#: keyboards/inline/user_keyboards.py:78
+#: keyboards/inline/user_keyboards.py:80
 msgid "Изменить язык"
 msgstr "Change language"
 
-#: keyboards/inline/user_keyboards.py:94
+#: keyboards/inline/user_keyboards.py:96
 msgid "Больше новостей на сайте"
 msgstr "More news on the site"
 
-msgid "Добрый День"
-msgstr "Hello"
-
-#: keyboards/inline/user_keyboards.py:125
+#: keyboards/inline/user_keyboards.py:132
 msgid "Вся продукция на сайте"
 msgstr "All products on the site"
 
-#: keyboards/inline/user_keyboards.py:126
+#: keyboards/inline/user_keyboards.py:140
 msgid "Для Украины и СНГ"
 msgstr "For Ukraine and CIS"
 
-#: keyboards/inline/user_keyboards.py:127
+#: keyboards/inline/user_keyboards.py:141
 msgid "Для Европы"
 msgstr "For Europe"
 
-#: keyboards/inline/user_keyboards.py:128
+#: keyboards/inline/user_keyboards.py:142
 msgid "Для Северной Америки"
 msgstr "For North America"
 
-#: keyboards/inline/user_keyboards.py:142
+#: keyboards/inline/user_keyboards.py:156
 msgid "<< Назад"
 msgstr "<< Back"
+
+msgid "Добрый День"
+msgstr "Hello"
 
 msgid "ПРИВЕТСТВУЕМ ВАС В ТЕЛЕГРАММ БОТЕ ДДАП-РАКС"
 msgstr "WELCOME TO YOU IN TELEGRAMS BOT DDAP-RAX"
@@ -460,9 +465,6 @@ msgstr "or incorrect ID entered"
 msgid "назначен менеджером"
 msgstr "appointed by the manager"
 
-msgid "Для всех пользователей"
-msgstr "For all users"
-
 msgid "Рассылка выполнена"
 msgstr "Newsletter completed"
 
@@ -483,3 +485,4 @@ msgstr "Steel grade"
 
 msgid "МИ З УКРАЇНИ"
 msgstr "WE ARE FROM UKRAINE"
+

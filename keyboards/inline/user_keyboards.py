@@ -1,4 +1,5 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from aiogram.types.web_app_info import WebAppInfo
 
 from data import urls
 from loader import _
@@ -12,7 +13,7 @@ def get_markup_main() -> InlineKeyboardMarkup:
     site_button = InlineKeyboardButton(text=_('Сайт компании'),
                                        url=urls.SITE)
     my_account_button = InlineKeyboardButton(text=_('Кабинет клиента'),
-                                             url=urls.MY_ACCOUNT)
+                                             web_app=WebAppInfo(url=urls.MY_ACCOUNT))
     production_button = InlineKeyboardButton(text=_('Наша продукция'),
                                              callback_data='productions_menu')
     # production_button = InlineKeyboardButton(text=_('Наша продукция'),
@@ -124,9 +125,18 @@ def get_markup_languages() -> InlineKeyboardMarkup:
 
 # Клавиатура для раздела "продукция"
 def get_markup_prod_menu(user_language) -> InlineKeyboardMarkup:
+    # products_on_site_btn = InlineKeyboardButton(text=_('Вся продукция на сайте'),
+    #                                             url=site_api.get_link_with_language(user_language=user_language,
+    #                                                                                 api_link=urls.PRODUCTS))
+
     products_on_site_btn = InlineKeyboardButton(text=_('Вся продукция на сайте'),
-                                                url=site_api.get_link_with_language(user_language=user_language,
-                                                                                    api_link=urls.PRODUCTS))
+                                                web_app=WebAppInfo(
+                                                    url=site_api.get_link_with_language(user_language=user_language,
+                                                                                        api_link=urls.PRODUCTS)))
+
+
+
+
     products_uk_sng_btn = InlineKeyboardButton(text=_('Для Украины и СНГ'), callback_data='region_uk_sng')
     products_eu_btn = InlineKeyboardButton(text=_('Для Европы'), callback_data='region_eu')
     products_na_btn = InlineKeyboardButton(text=_('Для Северной Америки'), callback_data='region_na')

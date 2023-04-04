@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-01-05 15:01+0200\n"
+"POT-Creation-Date: 2023-04-04 13:17+0300\n"
 "PO-Revision-Date: 2021-11-02 00:16+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk\n"
@@ -83,8 +83,12 @@ msgid "Пришлите Ваш email."
 msgstr "Надішліть Ваш email."
 
 #: handlers/users/my_profile_handlers.py:109
-msgid "Вы прислали не действительный email!\nПроверьте его правильность и повторите попытку."
-msgstr "Ви надіслали не дійсний email!\nПеревірте його правильність і спробуйте ще раз."
+msgid ""
+"Вы прислали не действительный email!\n"
+"Проверьте его правильность и повторите попытку."
+msgstr ""
+"Ви надіслали не дійсний email!\n"
+"Перевірте його правильність і спробуйте ще раз."
 
 #: handlers/users/my_profile_handlers.py:119
 msgid "Пришлите название вашей компании."
@@ -102,7 +106,7 @@ msgstr "Пароль успішно змінено"
 msgid "Подробнее"
 msgstr "Детальніше"
 
-#: handlers/users/productions_handlers.py:43
+#: handlers/users/productions_handlers.py:44
 msgid "Каталог нашей продукции"
 msgstr "Каталог нашої продукції"
 
@@ -118,7 +122,7 @@ msgstr "Відправте Ваше запитання"
 msgid "Сообщение отпрвлено, ожидайте ответа."
 msgstr "Повідомлення надіслано, чекайте відповіді."
 
-#: handlers/users/user_handlers.py:18 handlers/users/user_handlers.py:29
+#: handlers/users/user_handlers.py:19 handlers/users/user_handlers.py:31
 #: keyboards/default/main_menu.py:6 keyboards/default/main_menu.py:17
 #: keyboards/default/main_menu.py:31
 msgid "Главное меню"
@@ -134,7 +138,7 @@ msgstr "Панель менеджера"
 
 #: keyboards/inline/admin_keyboards.py:11
 #: keyboards/inline/manager_keyboards.py:10
-#: keyboards/inline/user_keyboards.py:15
+#: keyboards/inline/user_keyboards.py:17
 msgid "Наша продукция"
 msgstr "Наша продукція"
 
@@ -174,11 +178,11 @@ msgstr "Показати всіх корристувачів"
 msgid "Ответить пользователю"
 msgstr "Відповісти користувачу"
 
-#: keyboards/inline/chat_keyboards.py:50 keyboards/inline/user_keyboards.py:54
+#: keyboards/inline/chat_keyboards.py:50 keyboards/inline/user_keyboards.py:56
 msgid "Написать 1 сообщение менеджеру"
 msgstr "Задати питання менеджеру"
 
-#: keyboards/inline/chat_keyboards.py:52 keyboards/inline/user_keyboards.py:56
+#: keyboards/inline/chat_keyboards.py:52 keyboards/inline/user_keyboards.py:58
 msgid "Начать чат с менеджером"
 msgstr "Задати питання менеджеру"
 
@@ -210,62 +214,89 @@ msgstr "Створити розсилку для менеджерів"
 msgid "Назад в меню менджера"
 msgstr "Назад у меню"
 
-#: keyboards/inline/user_keyboards.py:9
+#: keyboards/inline/user_keyboards.py:11
 msgid "Новости компании"
 msgstr "Новини компаніі"
 
-#: keyboards/inline/user_keyboards.py:11
+#: keyboards/inline/user_keyboards.py:13
 msgid "Сайт компании"
 msgstr "Сайт компаніі"
 
-#: keyboards/inline/user_keyboards.py:13
+#: keyboards/inline/user_keyboards.py:15
 msgid "Кабинет клиента"
 msgstr "Кабінет клієнта"
 
-#: keyboards/inline/user_keyboards.py:19
+#: keyboards/inline/user_keyboards.py:21
 msgid "Наши услуги"
 msgstr "Наші послуги"
 
-#: keyboards/inline/user_keyboards.py:23
+#: keyboards/inline/user_keyboards.py:25
 msgid "Задать вопрос менеджеру"
 msgstr "Задати питання менеджеру"
 
-#: keyboards/inline/user_keyboards.py:25
+#: keyboards/inline/user_keyboards.py:27
 msgid "Наши контакты"
 msgstr "Наші контакти"
 
-#: keyboards/inline/user_keyboards.py:27
+#: keyboards/inline/user_keyboards.py:29
 msgid "О нас"
 msgstr "Про нас"
 
-#: keyboards/inline/user_keyboards.py:43 keyboards/inline/user_keyboards.py:58
-#: keyboards/inline/user_keyboards.py:98 keyboards/inline/user_keyboards.py:129
+#: keyboards/inline/user_keyboards.py:45 keyboards/inline/user_keyboards.py:60
+#: keyboards/inline/user_keyboards.py:101
+#: keyboards/inline/user_keyboards.py:143
 msgid "Назад в меню"
 msgstr "Назад у меню"
 
-#: keyboards/inline/user_keyboards.py:70
+#: keyboards/inline/user_keyboards.py:72
 msgid "Изменить телефон"
 msgstr "Змінити телефон"
 
-#: keyboards/inline/user_keyboards.py:72
+#: keyboards/inline/user_keyboards.py:74
 msgid "Изменить email"
 msgstr "Змінити email"
 
-#: keyboards/inline/user_keyboards.py:74
+#: keyboards/inline/user_keyboards.py:76
 msgid "Изменить название компании"
 msgstr "Змінити назву компанії"
 
-#: keyboards/inline/user_keyboards.py:76
+#: keyboards/inline/user_keyboards.py:78
 msgid "Изменить пароль"
 msgstr "Змінити пароль"
 
-#: keyboards/inline/user_keyboards.py:78
+#: keyboards/inline/user_keyboards.py:80
 msgid "Изменить язык"
 msgstr "Змінити мову"
 
-#: keyboards/inline/user_keyboards.py:94
+#: keyboards/inline/user_keyboards.py:96
 msgid "Больше новостей на сайте"
 msgstr "Більше новин на сайті"
+
+#: keyboards/inline/user_keyboards.py:132
+msgid "Вся продукция на сайте"
+msgstr "Вся продукція на сайті"
+
+#: keyboards/inline/user_keyboards.py:140
+msgid "Для Украины и СНГ"
+msgstr "Для України та СНД"
+
+#: keyboards/inline/user_keyboards.py:141
+msgid "Для Европы"
+msgstr "Для Європи"
+
+#: keyboards/inline/user_keyboards.py:142
+msgid "Для Северной Америки"
+msgstr "Для Північної Америки"
+
+#: keyboards/inline/user_keyboards.py:156
+msgid "<< Назад"
+msgstr ""
+
+msgid "для"
+msgstr "для"
+
+msgid "пользователей"
+msgstr "користувачів"
 
 msgid "Добрый День"
 msgstr "Доброго дня"
@@ -315,22 +346,6 @@ msgstr "Не вказано"
 msgid "Не указано"
 msgstr "Не вказано"
 
-#: keyboards/inline/user_keyboards.py:125
-msgid "Вся продукция на сайте"
-msgstr "Вся продукція на сайті"
-
-#: keyboards/inline/user_keyboards.py:126
-msgid "Для Украины и СНГ"
-msgstr "Для України та СНД"
-
-#: keyboards/inline/user_keyboards.py:127
-msgid "Для Европы"
-msgstr "Для Європи"
-
-#: keyboards/inline/user_keyboards.py:128
-msgid "Для Северной Америки"
-msgstr "Для Північної Америки"
-
 msgid "успешно записан в Ваш профиль"
 msgstr "успішно записаний у Ваш профіль"
 
@@ -353,7 +368,7 @@ msgid "Текст рассылки"
 msgstr "Текст розсилки"
 
 msgid "Список команд"
-msgstr "Список команд""
+msgstr "Список команд\""
 
 msgid "Запустить бота"
 msgstr "Запустити бота"
@@ -451,23 +466,8 @@ msgstr "або введено не коректний ІД"
 msgid "назначен менеджером"
 msgstr "призначений менеджером"
 
-msgid "Для всех пользователей"
-msgstr "Для всіх користувачів"
-
 msgid "Рассылка выполнена"
 msgstr "Розсилка виконана"
-
-msgid "для"
-msgstr "для"
-
-msgid "пользователей"
-msgstr "користувачів"
-
-#~ msgid "для"
-#~ msgstr "для"
-
-#~ msgid "пользователей"
-#~ msgstr "користувачів"
 
 msgid "Регион"
 msgstr "Регіон"
@@ -477,3 +477,4 @@ msgstr "Специфікація"
 
 msgid "Марка стали"
 msgstr "Марка сталі"
+

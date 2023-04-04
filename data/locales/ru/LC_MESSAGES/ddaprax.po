@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-01-05 15:01+0200\n"
+"POT-Creation-Date: 2023-04-04 13:17+0300\n"
 "PO-Revision-Date: 2021-11-02 00:16+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -103,7 +103,7 @@ msgstr ""
 msgid "Подробнее"
 msgstr ""
 
-#: handlers/users/productions_handlers.py:43
+#: handlers/users/productions_handlers.py:44
 msgid "Каталог нашей продукции"
 msgstr ""
 
@@ -119,7 +119,7 @@ msgstr ""
 msgid "Сообщение отпрвлено, ожидайте ответа."
 msgstr ""
 
-#: handlers/users/user_handlers.py:18 handlers/users/user_handlers.py:29
+#: handlers/users/user_handlers.py:19 handlers/users/user_handlers.py:31
 #: keyboards/default/main_menu.py:6 keyboards/default/main_menu.py:17
 #: keyboards/default/main_menu.py:31
 msgid "Главное меню"
@@ -135,7 +135,7 @@ msgstr ""
 
 #: keyboards/inline/admin_keyboards.py:11
 #: keyboards/inline/manager_keyboards.py:10
-#: keyboards/inline/user_keyboards.py:15
+#: keyboards/inline/user_keyboards.py:17
 msgid "Наша продукция"
 msgstr ""
 
@@ -175,11 +175,11 @@ msgstr ""
 msgid "Ответить пользователю"
 msgstr ""
 
-#: keyboards/inline/chat_keyboards.py:50 keyboards/inline/user_keyboards.py:54
+#: keyboards/inline/chat_keyboards.py:50 keyboards/inline/user_keyboards.py:56
 msgid "Написать 1 сообщение менеджеру"
 msgstr ""
 
-#: keyboards/inline/chat_keyboards.py:52 keyboards/inline/user_keyboards.py:56
+#: keyboards/inline/chat_keyboards.py:52 keyboards/inline/user_keyboards.py:58
 msgid "Начать чат с менеджером"
 msgstr ""
 
@@ -211,80 +211,81 @@ msgstr ""
 msgid "Назад в меню менджера"
 msgstr ""
 
-#: keyboards/inline/user_keyboards.py:9
+#: keyboards/inline/user_keyboards.py:11
 msgid "Новости компании"
 msgstr ""
 
-#: keyboards/inline/user_keyboards.py:11
+#: keyboards/inline/user_keyboards.py:13
 msgid "Сайт компании"
 msgstr ""
 
-#: keyboards/inline/user_keyboards.py:13
+#: keyboards/inline/user_keyboards.py:15
 msgid "Кабинет клиента"
 msgstr ""
 
-#: keyboards/inline/user_keyboards.py:19
+#: keyboards/inline/user_keyboards.py:21
 msgid "Наши услуги"
 msgstr ""
 
-#: keyboards/inline/user_keyboards.py:23
+#: keyboards/inline/user_keyboards.py:25
 msgid "Задать вопрос менеджеру"
 msgstr ""
 
-#: keyboards/inline/user_keyboards.py:25
+#: keyboards/inline/user_keyboards.py:27
 msgid "Наши контакты"
 msgstr ""
 
-#: keyboards/inline/user_keyboards.py:27
+#: keyboards/inline/user_keyboards.py:29
 msgid "О нас"
 msgstr ""
 
-#: keyboards/inline/user_keyboards.py:43 keyboards/inline/user_keyboards.py:58
-#: keyboards/inline/user_keyboards.py:98 keyboards/inline/user_keyboards.py:129
+#: keyboards/inline/user_keyboards.py:45 keyboards/inline/user_keyboards.py:60
+#: keyboards/inline/user_keyboards.py:101
+#: keyboards/inline/user_keyboards.py:143
 msgid "Назад в меню"
 msgstr ""
 
-#: keyboards/inline/user_keyboards.py:70
+#: keyboards/inline/user_keyboards.py:72
 msgid "Изменить телефон"
 msgstr ""
 
-#: keyboards/inline/user_keyboards.py:72
+#: keyboards/inline/user_keyboards.py:74
 msgid "Изменить email"
 msgstr ""
 
-#: keyboards/inline/user_keyboards.py:74
+#: keyboards/inline/user_keyboards.py:76
 msgid "Изменить название компании"
 msgstr ""
 
-#: keyboards/inline/user_keyboards.py:76
+#: keyboards/inline/user_keyboards.py:78
 msgid "Изменить пароль"
 msgstr ""
 
-#: keyboards/inline/user_keyboards.py:78
+#: keyboards/inline/user_keyboards.py:80
 msgid "Изменить язык"
 msgstr ""
 
-#: keyboards/inline/user_keyboards.py:94
+#: keyboards/inline/user_keyboards.py:96
 msgid "Больше новостей на сайте"
 msgstr ""
 
-#: keyboards/inline/user_keyboards.py:125
+#: keyboards/inline/user_keyboards.py:132
 msgid "Вся продукция на сайте"
 msgstr ""
 
-#: keyboards/inline/user_keyboards.py:126
+#: keyboards/inline/user_keyboards.py:140
 msgid "Для Украины и СНГ"
 msgstr ""
 
-#: keyboards/inline/user_keyboards.py:127
+#: keyboards/inline/user_keyboards.py:141
 msgid "Для Европы"
 msgstr ""
 
-#: keyboards/inline/user_keyboards.py:128
+#: keyboards/inline/user_keyboards.py:142
 msgid "Для Северной Америки"
 msgstr ""
 
-#: keyboards/inline/user_keyboards.py:142
+#: keyboards/inline/user_keyboards.py:156
 msgid "<< Назад"
 msgstr ""
 
