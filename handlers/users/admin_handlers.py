@@ -45,7 +45,7 @@ async def show_bot_statistics(call: CallbackQuery):
                                    f'{print_users(is_admin_users)}')
     await call.message.answer(text=f'<b>{_("Менеджеры бота")}:</b>\n'
                                    f'{print_users(is_manager_users)}',
-                              reply_markup=akb.get_markup_show_all_users())
+                              reply_markup=akb.get_markup_show_all_users().row(akb.get_button_back_to_admin_menu()))
 
 
 @dp.callback_query_handler(text_contains='show_all_user')
@@ -58,7 +58,7 @@ async def show_all_user(call: CallbackQuery):
                 f'    ● <b>{_("Компания")}: </b>{user.company_name}\n' \
                 f'    ● <b>{_("Телефон")}.: </b>{user.phone}\n' \
                 f'    ● <b>Email: </b>{user.email}\n'
-    await call.message.answer(text=text)
+    await call.message.answer(text=text, reply_markup=akb.get_markup_to_admin_menu())
 
 
 # Установка прав администратора

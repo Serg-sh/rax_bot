@@ -53,8 +53,8 @@ def get_markup_to_main_menu() -> InlineKeyboardMarkup:
 
 # Клавиатура чат - сообщение медеджеру
 def get_markup_chat_message() -> InlineKeyboardMarkup:
-    manager_message_button = InlineKeyboardButton(text=_('Написать 1 сообщение менеджеру'),
-                                                  callback_data='message_to_manager')
+    # manager_message_button = InlineKeyboardButton(text=_('Написать 1 сообщение менеджеру'),
+    #                                               callback_data='message_to_manager')
     manager_chat_button = InlineKeyboardButton(text=_('Начать чат с менеджером'),
                                                callback_data='chat_with_manager')
     button_back_to_main_ = InlineKeyboardButton(text=_('Назад в меню'),
@@ -134,12 +134,15 @@ def get_markup_prod_menu(user_language) -> InlineKeyboardMarkup:
                                                     url=site_api.get_link_with_language(user_language=user_language,
                                                                                         api_link=urls.PRODUCTS)))
 
-
-
-
-    products_uk_sng_btn = InlineKeyboardButton(text=_('Для Украины и СНГ'), callback_data='region_uk_sng')
-    products_eu_btn = InlineKeyboardButton(text=_('Для Европы'), callback_data='region_eu')
-    products_na_btn = InlineKeyboardButton(text=_('Для Северной Америки'), callback_data='region_na')
+    products_uk_sng_btn = InlineKeyboardButton(text=_('Для Украины и СНГ'), web_app=WebAppInfo(
+        url=site_api.get_link_with_language(user_language=user_language,
+                                            api_link=urls.PRODUCTS_FOR_UKR)))
+    products_eu_btn = InlineKeyboardButton(text=_('Для Европы'), web_app=WebAppInfo(
+        url=site_api.get_link_with_language(user_language=user_language,
+                                            api_link=urls.PRODUCTS_FOR_EU)))
+    products_na_btn = InlineKeyboardButton(text=_('Для Северной Америки'), web_app=WebAppInfo(
+        url=site_api.get_link_with_language(user_language=user_language,
+                                            api_link=urls.PRODUCTS_FOR_NA)))
     button_back_to_main_menu = InlineKeyboardButton(text=_('Назад в меню'), callback_data='back_to_main_menu')
 
     markup_prod_menu = InlineKeyboardMarkup(inline_keyboard=[

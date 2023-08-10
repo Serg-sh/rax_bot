@@ -3,13 +3,20 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from loader import _
 
 
+# button_back_to_admin_menu = InlineKeyboardButton(text=_('Назад в админ-менюю'),
+#                                                  callback_data='back_to_admin_menu')
+def get_button_back_to_admin_menu():
+    return InlineKeyboardButton(text=_('Назад в админ-меню'),
+                                callback_data='back_to_admin_menu')
+
+
 def get_markup_admin_main() -> InlineKeyboardMarkup:
     """
     Возвращает инлайн клавиатуру основного меню администратора
     :return: InlineKeyboardMarkup
     """
-    production_button = InlineKeyboardButton(text=_('Наша продукция'),
-                                             callback_data='production')
+    # production_button = InlineKeyboardButton(text=_('Наша продукция'),
+    #                                          callback_data='production')
     mailing_button_for_clients = InlineKeyboardButton(text=_('Создать рассылку для клиентов'),
                                                       callback_data='choice_mailing_language')
     mailing_button_for_admins = InlineKeyboardButton(text=_('Рассылка для админов'),
@@ -24,7 +31,7 @@ def get_markup_admin_main() -> InlineKeyboardMarkup:
                                               callback_data='add_manager')
 
     markup_admin_main = InlineKeyboardMarkup(inline_keyboard=[
-        [production_button],
+        # [production_button],
         [mailing_button_for_clients],
         [mailing_button_for_admins, mailing_button_for_managers],
         [statistics_button],
@@ -39,11 +46,9 @@ def get_markup_to_admin_menu() -> InlineKeyboardMarkup:
     Возвращает инлайн клавиатуру с кнопкой назад в меню администратора
     :return: InlineKeyboardMarkup
     """
-    button_back_to_admin_menu = InlineKeyboardButton(text=_('Назад в админ-меню'),
-                                                     callback_data='back_to_admin_menu')
 
     markup_to_admin_menu = InlineKeyboardMarkup(inline_keyboard=[
-        [button_back_to_admin_menu]
+        [get_button_back_to_admin_menu()]
     ])
     return markup_to_admin_menu
 
