@@ -111,13 +111,12 @@ def get_markup_news(user_language) -> InlineKeyboardMarkup:
 
 # Клавиатура языки
 def get_markup_languages() -> InlineKeyboardMarkup:
-    ru_button = InlineKeyboardButton(text='Русский', callback_data='ru_language')
+    # ru_button = InlineKeyboardButton(text='Русский', callback_data='ru_language')
     en_button = InlineKeyboardButton(text='English', callback_data='en_language')
     uk_button = InlineKeyboardButton(text='Українська', callback_data='uk_language')
 
     markup_languages = InlineKeyboardMarkup(inline_keyboard=[
         [uk_button],
-        [ru_button],
         [en_button],
     ])
     return markup_languages
