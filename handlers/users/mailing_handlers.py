@@ -1,6 +1,6 @@
 from asyncio import sleep
 
-from aiogram.dispatcher import FSMContext
+from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery, Message
 
 import keyboards.inline.mailing_keyboards as mk

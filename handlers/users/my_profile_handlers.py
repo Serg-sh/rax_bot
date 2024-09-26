@@ -2,9 +2,9 @@ from asyncio import sleep
 
 import bcrypt
 import validators
-from aiogram.dispatcher import FSMContext
-from aiogram.dispatcher.filters import Text
+from aiogram.fsm.context import FSMContext
 from aiogram.types import Message, CallbackQuery
+from aiogram.utils.formatting import Text
 
 import keyboards.inline.user_keyboards as ukb
 from loader import dp, _

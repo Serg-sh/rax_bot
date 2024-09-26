@@ -1,5 +1,6 @@
 from aiogram import types
-from aiogram.dispatcher import FSMContext
+from aiogram.fsm.context import FSMContext
+
 from aiogram.types import CallbackQuery
 
 from handlers.users.my_profile_handlers import check_user_data

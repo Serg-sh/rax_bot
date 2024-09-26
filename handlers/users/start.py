@@ -2,7 +2,8 @@ from asyncio import sleep
 from typing import List
 
 from aiogram import types
-from aiogram.dispatcher.filters.builtin import CommandStart
+from aiogram.filters import CommandStart
+
 from aiogram.types import InputFile, Message, ReplyKeyboardMarkup
 
 from data.config import ADMINS

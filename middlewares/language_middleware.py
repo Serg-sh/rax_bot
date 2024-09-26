@@ -1,6 +1,6 @@
 from typing import Tuple, Any, Optional
 
-from aiogram.contrib.middlewares.i18n import I18nMiddleware
+from aiogram.utils.i18n import I18nMiddleware
 
 from data.config import I18N_DOMAIN, LOCALES_DIR
 from utils.db_api import database

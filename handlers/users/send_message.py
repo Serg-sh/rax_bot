@@ -1,5 +1,5 @@
-from aiogram.dispatcher import FSMContext
-from aiogram.types import CallbackQuery, Message, ContentTypes
+from aiogram.fsm.context import FSMContext
+from aiogram.types import CallbackQuery, Message
 
 from keyboards.inline.chat_keyboards import chat_keyboard, chat_callback
 from loader import dp, bot, _
@@ -22,7 +22,7 @@ async def send_to_manager(call: CallbackQuery, state: FSMContext, callback_data:
     await state.update_data(second_id=user_id)
 
 
-@dp.message_handler(state='wait_for_ask', content_types=ContentTypes.ANY)
+@dp.message_handler(state='wait_for_ask')
 async def get_support_message(message: Message, state: FSMContext):
     data = await state.get_data()
     second_id = data.get('second_id')

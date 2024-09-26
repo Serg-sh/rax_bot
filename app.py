@@ -1,8 +1,11 @@
-from aiogram.utils import executor
-import middlewares
+import asyncio
+
+
+# import middlewares
 import filters
 import handlers
-from loader import dp
+from handlers.users.start import bot_start
+
 from utils.db_api.database import create_db
 from utils.notify_admins import on_startup_notify
 from utils.set_bot_commands import set_default_commands
@@ -21,6 +24,10 @@ async def on_startup(dispatcher):
     # Добавляем новые новости в базу бота
     # await site_api.get_news()
 
+async def main():
+    from loader import bot, dp
+    await dp.start_polling(bot, on_startup=on_startup)
+
 
 if __name__ == '__main__':
-    executor.start_polling(dp, on_startup=on_startup)
+    asyncio.run(main())

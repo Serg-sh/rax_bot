@@ -1,5 +1,7 @@
+from typing import List
 from aiogram import types
-from gino import Gino
+from gino.api import Gino
+
 from gino.schema import GinoSchemaVisitor
 from sqlalchemy import Column, Integer, BigInteger, String, Sequence, Boolean, LargeBinary
 from sqlalchemy import sql
@@ -90,7 +92,7 @@ class DBCommands:
         return total
 
     # Возвращает список строк ид админив
-    async def get_admins_user_id(self) -> list[str]:
+    async def get_admins_user_id(self) -> List[str]:
         """
         Возвращает список строк ид пользователей со
         статусом is_admin == True
@@ -101,7 +103,7 @@ class DBCommands:
         return admins_id
 
     # Возвращает список строк ид менеджеров
-    async def get_managers_user_id(self) -> list[str]:
+    async def get_managers_user_id(self) -> List[str]:
         """
         Возвращает список строк ид пользователей со
         статусом is_manager == True
@@ -142,7 +144,7 @@ class DBCommands:
         news = await News.query.where(News.id == news_id).gino.first()
         return news
 
-    async def get_all_news(self) -> list[News]:
+    async def get_all_news(self) -> List[News]:
         """
         Возвращает список объектов News отсортированный по полю id
         :return: list[News]

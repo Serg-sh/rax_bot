@@ -1,13 +1,13 @@
-from aiogram import types
-from aiogram.dispatcher.handler import CancelHandler
-from aiogram.dispatcher.middlewares import BaseMiddleware
+from aiogram import types, BaseMiddleware
+from aiogram.dispatcher.event.bases import CancelHandler
 
-from loader import dp
+
 
 
 class ChatMiddleware(BaseMiddleware):
 
     async def on_pre_process_message(self, message: types.Message, data: dict):
+        from loader import dp
         # Для начала достанем состояние текущего пользователя,
         # так как state: FSMContext нам сюда не прилетит
         state = dp.current_state(chat=message.from_user.id, user=message.from_user.id)

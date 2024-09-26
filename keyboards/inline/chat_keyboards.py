@@ -1,7 +1,8 @@
 import random
 
+from aiogram.filters.callback_data import CallbackData
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from aiogram.utils.callback_data import CallbackData
+
 
 from loader import dp, _
 from utils.db_api import database

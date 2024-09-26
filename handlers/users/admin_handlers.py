@@ -1,6 +1,7 @@
-from aiogram.dispatcher import FSMContext
-from aiogram.dispatcher.filters import Text, Command
+from aiogram.filters import Command
+from aiogram.fsm.context import FSMContext
 from aiogram.types import Message, CallbackQuery
+from aiogram.utils.formatting import Text
 
 import keyboards.inline.admin_keyboards as akb
 from data.config import ADMINS

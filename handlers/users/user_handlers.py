@@ -1,7 +1,8 @@
 from asyncio import sleep
 
-from aiogram.dispatcher.filters import Command, Text
+from aiogram.filters import Command
 from aiogram.types import CallbackQuery, Message, InputFile
+from aiogram.utils.formatting import Text
 
 import data.texts as txt
 import keyboards.inline.user_keyboards as ukb

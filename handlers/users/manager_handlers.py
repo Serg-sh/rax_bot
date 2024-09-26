@@ -1,5 +1,6 @@
-from aiogram.dispatcher.filters import Text, Command
+from aiogram.filters import Command
 from aiogram.types import Message, CallbackQuery
+from aiogram.utils.formatting import Text
 
 from data.config import MANAGERS
 from keyboards.inline import manager_keyboards as mkb

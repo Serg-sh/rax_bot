@@ -1,5 +1,6 @@
 import datetime
-from aiogram.dispatcher import FSMContext
+
+from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery
 
 import keyboards.inline.user_keyboards as ukb
