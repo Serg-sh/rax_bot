@@ -1,14 +1,17 @@
 from aiogram import Bot, Dispatcher
-from aiogram.enums import ParseMode
+from aiogram.utils.i18n import gettext as get_text
 from aiogram.fsm.storage.memory import MemoryStorage
-
 from data import config
+from middlewares.chat_middleware import ChatMiddleware
 from middlewares.language_middleware import setup_middleware
+from middlewares.throttling import ThrottlingMiddleware
 
-bot = Bot(token=config.BOT_TOKEN, parse_mode=ParseMode.HTML)
+bot = Bot(token=config.BOT_TOKEN)
 storage = MemoryStorage()
 dp = Dispatcher(storage=storage)
 
-i18n = setup_middleware(dp)
+dp.update.middleware(setup_middleware())
+dp.update.middleware(ThrottlingMiddleware())
+dp.update.middleware(ChatMiddleware())
 
-_ = i18n.gettext
+_ = get_text

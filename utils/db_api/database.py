@@ -1,12 +1,9 @@
 from typing import List
 from aiogram import types
-from gino.api import Gino
-
-from gino.schema import GinoSchemaVisitor
+from gino import Gino
 from sqlalchemy import Column, Integer, BigInteger, String, Sequence, Boolean, LargeBinary
-from sqlalchemy import sql
 
-from data.config import db_host, db_user, db_pass, db_name
+from data.config import db_host, db_port, db_user, db_pass, db_name
 
 db = Gino()
 
@@ -23,234 +20,171 @@ class User(db.Model):
     phone = Column(String(20))
     company_name = Column(String(200))
     password = Column(LargeBinary())
-    query: sql.Select
 
 
 class Production(db.Model):
     __tablename__ = 'productions'
-    id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
+    id = Column(Integer, Sequence('prod_id_seq'), primary_key=True)
     name = Column(String(200))
     text = Column(String)
     photo = Column(String(250))
     drawing = Column(String(250))
     price = Column(Integer)
-    query: sql.Select
 
 
 class News(db.Model):
     __tablename__ = 'news'
-    id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
+    id = Column(Integer, Sequence('news_id_seq'), primary_key=True)
     title = Column(String(500))
     text = Column(String)
     date = Column(String(10))
     api_link = Column(String(300))
-    query: sql.Select
 
 
 class DBCommands:
-    # Операции с пользователями
+    # Операції з користувачами
     async def get_user(self, user_id) -> User:
         """
-        Возвращает клас User из БД по ИД
-        :param user_id:
-        :return object: User
+        Повертає об'єкт User з БД за user_id
         """
-        user = await User.query.where(User.user_id == user_id).gino.first()
-        return user
+        return await User.query.where(User.user_id == user_id).gino.first()
 
-    async def get_all_users(self):
+    async def get_all_users(self) -> List[User]:
         """
-        Возвращает список всех User из БД
-        :return list: User
+        Повертає список всіх користувачів з БД
         """
-        users = await User.query.gino.all()
-        return users
+        return await User.query.gino.all()
 
     async def add_new_user(self) -> User:
         """
-        Возвращает класс User из БД, проверяя по ИД из телеги,
-        если нет в БД, тогда создает новую запись в БД и
-        затем возвращает новый объект User
-        :return object: User
+        Додає нового користувача до БД, якщо він ще не існує
         """
         user = types.User.get_current()
         old_user = await self.get_user(user.id)
         if old_user:
             return old_user
-        new_user = User()
-        new_user.user_id = user.id
-        new_user.full_name = user.full_name
+        new_user = User(user_id=user.id, full_name=user.full_name)
         await new_user.create()
         return new_user
 
-    async def count_users(self):
+    async def count_users(self) -> int:
         """
-        Возвращает количество записей из таблицы users
-        :return int:
+        Повертає кількість користувачів у БД
         """
-        total = await db.func.count(User.id).gino.scalar()
-        return total
+        return await db.func.count(User.id).gino.scalar()
 
-    # Возвращает список строк ид админив
     async def get_admins_user_id(self) -> List[str]:
         """
-        Возвращает список строк ид пользователей со
-        статусом is_admin == True
-        :return list[str]
+        Повертає список ID користувачів з правами адміністратора
         """
         admins = await User.query.where(User.is_admin == True).gino.all()
-        admins_id = [str(user.user_id) for user in admins]
-        return admins_id
+        return [str(user.user_id) for user in admins]
 
-    # Возвращает список строк ид менеджеров
     async def get_managers_user_id(self) -> List[str]:
         """
-        Возвращает список строк ид пользователей со
-        статусом is_manager == True
-        :return list[str]
+        Повертає список ID менеджерів
         """
         managers = await User.query.where(User.is_manager == True).gino.all()
-        managers_id = [str(user.user_id) for user in managers]
-        return managers_id
+        return [str(user.user_id) for user in managers]
 
-    async def get_clients_user_id(self, language=None) -> list[str]:
+    async def get_clients_user_id(self, language=None) -> List[str]:
         """
-        Возвращает список строк ид пользователей со
-        статусом is_manager == False и is_admin == False
-        Если language not None фильтрует еще по language
-        :param language: str
-        :return list[str]
+        Повертає список ID клієнтів (не адміністратори і не менеджери)
         """
-        clients_all = await User.query.where(User.is_manager == False).gino.all()
-        clients = [user for user in clients_all if user.is_admin == False]
+        clients_query = User.query.where((User.is_manager == False) & (User.is_admin == False))
         if language:
-            clients = [user for user in clients if user.languages == language]
-        clients_id = [str(user.user_id) for user in clients]
-        return clients_id
+            clients_query = clients_query.where(User.languages == language)
+        clients = await clients_query.gino.all()
+        return [str(user.user_id) for user in clients]
 
-    # новости
+    # Операції з новинами
     async def get_news(self, title=None, news_id=None) -> News:
         """
-        Возвращает объект News по полю title, если title = None,
-        тогда возвращает News по полю news_id, если news_id = None,
-        тогда возвращает None
-        :param title:
-        :param news_id:
-        :return object News
+        Повертає об'єкт News за назвою або ID
         """
         if title:
-            news = await News.query.where(News.title == title).gino.first()
-            return news
-        news = await News.query.where(News.id == news_id).gino.first()
-        return news
+            return await News.query.where(News.title == title).gino.first()
+        return await News.query.where(News.id == news_id).gino.first()
 
     async def get_all_news(self) -> List[News]:
         """
-        Возвращает список объектов News отсортированный по полю id
-        :return: list[News]
+        Повертає список всіх новин
         """
-        all_news = await News.query.order_by('id').gino.all()
-        return all_news
+        return await News.query.order_by(News.id).gino.all()
 
     async def add_new_news(self, news) -> News:
         """
-        Проверяет есть ли передаваемая новость в БД
-        по news['title'], если есть возвращает ее объектом News,
-        если нет, тогда записывает ее в БД и возвращает новый
-        объект News
-        :param news: dict
-        :return: News
+        Додає нову новину до БД, якщо такої ще немає
         """
         title = news['title']
         old_news = await self.get_news(title=title)
         if old_news:
             return old_news
-        new_news = News()
-        new_news.title = news['title']
-        new_news.text = news['body']
-        new_news.date = news['created']
-        new_news.api_link = news['api_link']
+        new_news = News(title=news['title'], text=news['body'], date=news['created'], api_link=news['api_link'])
         await new_news.create()
         return new_news
 
-    # Запись чтение языковых параметров
-    async def set_language(self, language):
+    # Операції з мовними параметрами
+    async def set_language(self, language: str):
         """
-        Записыват в БД язык интерфейса пользователя,
-        ид пользователя берется из types.User.get_current().id
-        :param language: str[Union('ru', 'uk', 'en')]
-        :return:
+        Оновлює мову користувача
         """
         user_id = types.User.get_current().id
         user = await self.get_user(user_id)
         await user.update(languages=language).apply()
 
-    async def get_language(self):
+    async def get_language(self) -> str:
         """
-        Возвращает строку с языком пользователя,
-        пользователь берется из types.User.get_current()
-        :return User.languages: str
+        Повертає мову поточного користувача
         """
         user = types.User.get_current()
         user = await self.get_user(user.id)
         return user.languages
 
-    # Запись / чтение личных данных пользователя
-    async def set_email(self, email):
+    # Операції з особистими даними користувача
+    async def set_email(self, email: str):
         """
-        Записыват в БД email пользователя,
-        ид пользователя берется из types.User.get_current().id
-        :param email: str
-        :return:
+        Оновлює email користувача
         """
         user_id = types.User.get_current().id
         user = await self.get_user(user_id)
         await user.update(email=email).apply()
 
-    async def set_phone(self, phone):
+    async def set_phone(self, phone: str):
         """
-        Записыват в БД phone пользователя,
-        ид пользователя берется из types.User.get_current().id
-        :param phone: str
-        :return:
+        Оновлює телефон користувача
         """
         user_id = types.User.get_current().id
         user = await self.get_user(user_id)
         await user.update(phone=phone).apply()
 
-    async def set_company_name(self, company_name):
+    async def set_company_name(self, company_name: str):
         """
-        Записыват в БД название компании пользователя,
-        ид пользователя берется из types.User.get_current().id
-        :param company_name: str
-        :return:
+        Оновлює назву компанії користувача
         """
         user_id = types.User.get_current().id
         user = await self.get_user(user_id)
         await user.update(company_name=company_name).apply()
 
-    async def set_password(self, password):
+    async def set_password(self, password: bytes):
         """
-        Записыват в БД password пользователя,
-        ид пользователя берется из types.User.get_current().id
-        :param password: bytes
-        :return:
+        Оновлює пароль користувача
         """
         user_id = types.User.get_current().id
         user = await self.get_user(user_id)
         await user.update(password=password).apply()
 
-    async def get_productions(self):
-        productions = await Production.query.gino.all()
-        return productions
+    # Операції з продукцією
+    async def get_productions(self) -> List[Production]:
+        """
+        Повертає список всіх продуктів
+        """
+        return await Production.query.gino.all()
 
 
 async def create_db():
     """
-        Создает БД
-    :return:
+    Створює БД
     """
-    await db.set_bind(f'postgresql://{db_user}:{db_pass}@{db_host}/{db_name}')
-    db.gino: GinoSchemaVisitor
-    # await db.gino.drop_all()
+    await db.set_bind(f"asyncpg://{db_user}:{db_pass}@{db_host}:{db_port}/{db_name}")
     await db.gino.create_all()

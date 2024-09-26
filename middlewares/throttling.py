@@ -1,36 +1,26 @@
-import asyncio
-
-from aiogram import types, Dispatcher, BaseMiddleware
-from aiogram.dispatcher import DEFAULT_RATE_LIMIT
-from aiogram.dispatcher.handler import CancelHandler, current_handler
-from aiogram.exceptions import Throttled
+import time
+from aiogram import types, BaseMiddleware
+from aiogram.dispatcher.event.bases import CancelHandler
 
 
 class ThrottlingMiddleware(BaseMiddleware):
-    """
-    Simple middleware
-    """
+    def __init__(self, limit: int = 5):
+        self.rate_limit = limit  # Секунди
+        self.cache = {}  # Словник для зберігання часу останніх запитів користувачів
+        super().__init__()
 
-    def __init__(self, limit=DEFAULT_RATE_LIMIT, key_prefix='antiflood_'):
-        self.rate_limit = limit
-        self.prefix = key_prefix
-        super(ThrottlingMiddleware, self).__init__()
+    async def __call__(self, handler, *args, **kwargs):
+        # Виклик оригінального механізму обмеження
+        await super().__call__(handler, *args, **kwargs)
 
     async def on_process_message(self, message: types.Message, data: dict):
-        handler = current_handler.get()
-        dispatcher = Dispatcher.get_current()
-        if handler:
-            limit = getattr(handler, "throttling_rate_limit", self.rate_limit)
-            key = getattr(handler, "throttling_key", f"{self.prefix}_{handler.__name__}")
-        else:
-            limit = self.rate_limit
-            key = f"{self.prefix}_message"
-        try:
-            await dispatcher.throttle(key, rate=limit)
-        except Throttled as t:
-            await self.message_throttled(message, t)
-            raise CancelHandler()
+        user_id = message.from_user.id
+        current_time = time.time()
 
-    async def message_throttled(self, message: types.Message, throttled: Throttled):
-        if throttled.exceeded_count <= 2:
-            await message.reply("Too many requests!")
+        if user_id in self.cache:
+            last_time = self.cache[user_id]
+            if current_time - last_time < self.rate_limit:
+                await message.answer("Занадто часті запити. Повторіть пізніше.")
+                raise CancelHandler()
+
+        self.cache[user_id] = current_time

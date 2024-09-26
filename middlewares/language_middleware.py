@@ -1,20 +1,22 @@
-from typing import Tuple, Any, Optional
-
 from aiogram.utils.i18n import I18nMiddleware
+from aiogram.types import TelegramObject
+from typing import Dict, Any
 
 from data.config import I18N_DOMAIN, LOCALES_DIR
-from utils.db_api import database
+from utils.db_api.database import db  # Імпортуємо методи для роботи з базою даних
 
-db = database.DBCommands()
+class MyACLMiddleware(I18nMiddleware):
+    # Метод для отримання локалі користувача
+    async def get_locale(self, event: TelegramObject, data: Dict[str, Any]) -> str:
+        # Отримуємо користувача з бази даних
+        user = await db.add_new_user()  # Використовуємо функцію з вашої бази
+        if user and user.languages:
+            return user.languages  # Повертаємо мову користувача
+        return 'uk'  # Мова за замовчуванням, якщо не вказано
 
-
-class ACLMiddleware(I18nMiddleware):
-    async def get_user_locale(self, action: str, args: Tuple[Any]) -> Optional[str]:
-        user = await db.add_new_user()
-        return user.languages
-
-
-def setup_middleware(dp):
-    i18n = ACLMiddleware(I18N_DOMAIN, LOCALES_DIR)
-    dp.middleware.setup(i18n)
+# Функція для налаштування middleware
+def setup_middleware():
+    # Ініціалізація ACLMiddleware на основі I18nMiddleware
+    i18n = MyACLMiddleware(I18N_DOMAIN, LOCALES_DIR)
     return i18n
+

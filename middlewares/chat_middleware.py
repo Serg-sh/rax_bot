@@ -22,3 +22,7 @@ class ChatMiddleware(BaseMiddleware):
 
             # Не пропустим дальше обработку в хендлеры
             raise CancelHandler()
+
+    async def __call__(self, handler, *args, **kwargs):
+        # Виклик оригінального механізму обмеження
+        await super().__call__(handler, *args, **kwargs)
