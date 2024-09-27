@@ -2,7 +2,7 @@ from asyncio import sleep
 
 from aiogram.types import CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
 
-import keyboards.inline.user_keyboards as ukb
+import keyboard.inline.user_keyboards as ukb
 from loader import dp, _
 from utils.db_api import database
 from utils.http_api import site_api

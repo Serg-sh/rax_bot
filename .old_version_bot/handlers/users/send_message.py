@@ -1,7 +1,7 @@
 from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery, Message
 
-from keyboards.inline.chat_keyboards import chat_keyboard, chat_callback
+from keyboard.inline.chat_keyboards import chat_keyboard, chat_callback
 from loader import dp, bot, _
 
 

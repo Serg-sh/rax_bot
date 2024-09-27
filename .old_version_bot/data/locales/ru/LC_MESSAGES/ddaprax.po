@@ -1,0 +1,291 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-04-04 13:17+0300\n"
+"PO-Revision-Date: 2021-11-02 00:16+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: handlers/users/admin_handlers.py:29
+msgid "Меню администратора"
+msgstr ""
+
+#: handlers/users/admin_handlers.py:67 handlers/users/admin_handlers.py:91
+msgid "Пришлите ИД пользователя."
+msgstr ""
+
+#: handlers/users/chat_handlers.py:68
+msgid "Пользователь завершил сеанс."
+msgstr ""
+
+#: handlers/users/chat_handlers.py:96
+msgid "Дождитесь ответа менеджара или отмените сеанс"
+msgstr ""
+
+#: handlers/users/chat_handlers.py:108
+msgid "Пользователь завершил сеанс"
+msgstr ""
+
+#: handlers/users/chat_handlers.py:110
+msgid "Вы завершили сеанс"
+msgstr ""
+
+#: handlers/users/mailing_handlers.py:19 handlers/users/mailing_handlers.py:60
+#: handlers/users/mailing_handlers.py:108
+#: handlers/users/mailing_handlers.py:115
+#: handlers/users/mailing_handlers.py:122
+#: handlers/users/mailing_handlers.py:129
+msgid "Пришлите текст рассылки"
+msgstr ""
+
+#: handlers/users/mailing_handlers.py:45 handlers/users/mailing_handlers.py:86
+msgid "Рассылка выполнена."
+msgstr ""
+
+#: handlers/users/mailing_handlers.py:53 handlers/users/mailing_handlers.py:94
+#: handlers/users/mailing_handlers.py:164
+msgid "Рассылка отменена."
+msgstr ""
+
+#: handlers/users/manager_handlers.py:19
+msgid "Меню менеджера"
+msgstr ""
+
+#: handlers/users/manager_handlers.py:21
+msgid "Недостаточно прав доступа."
+msgstr ""
+
+#: handlers/users/my_profile_handlers.py:47
+msgid "Пришлите Ваш контактный номер телефона."
+msgstr ""
+
+#: handlers/users/my_profile_handlers.py:71 keyboards/default/main_menu.py:7
+#: keyboards/default/main_menu.py:20 keyboards/default/main_menu.py:33
+msgid "Мой профиль"
+msgstr ""
+
+#: handlers/users/my_profile_handlers.py:97
+msgid "Пришлите Ваш email."
+msgstr ""
+
+#: handlers/users/my_profile_handlers.py:109
+msgid ""
+"Вы прислали не действительный email!\n"
+"Проверьте его правильность и повторите попытку."
+msgstr ""
+
+#: handlers/users/my_profile_handlers.py:119
+msgid "Пришлите название вашей компании."
+msgstr ""
+
+#: handlers/users/my_profile_handlers.py:135
+msgid "Пришлите Ваш пароль."
+msgstr ""
+
+#: handlers/users/my_profile_handlers.py:148
+msgid "Пароль успешно изменен"
+msgstr ""
+
+#: handlers/users/productions_handlers.py:33
+msgid "Подробнее"
+msgstr ""
+
+#: handlers/users/productions_handlers.py:44
+msgid "Каталог нашей продукции"
+msgstr ""
+
+#: handlers/users/send_message.py:10
+msgid "Для отправки сообщения менеджеру, нажмите на кнопку ниже!"
+msgstr ""
+
+#: handlers/users/send_message.py:20
+msgid "Отпаравьте Ваш вопрос"
+msgstr ""
+
+#: handlers/users/send_message.py:34
+msgid "Сообщение отпрвлено, ожидайте ответа."
+msgstr ""
+
+#: handlers/users/user_handlers.py:19 handlers/users/user_handlers.py:31
+#: keyboards/default/main_menu.py:6 keyboards/default/main_menu.py:17
+#: keyboards/default/main_menu.py:31
+msgid "Главное меню"
+msgstr ""
+
+#: keyboards/default/main_menu.py:18
+msgid "Панель администратора"
+msgstr ""
+
+#: keyboards/default/main_menu.py:19 keyboards/default/main_menu.py:32
+msgid "Панель менеджера"
+msgstr ""
+
+#: keyboards/inline/admin_keyboards.py:11
+#: keyboards/inline/manager_keyboards.py:10
+#: keyboards/inline/user_keyboards.py:17
+msgid "Наша продукция"
+msgstr ""
+
+#: keyboards/inline/admin_keyboards.py:13
+msgid "Создать рассылку для клиентов"
+msgstr ""
+
+#: keyboards/inline/admin_keyboards.py:15
+msgid "Рассылка для админов"
+msgstr ""
+
+#: keyboards/inline/admin_keyboards.py:17
+msgid "Рассылка для менеджеров"
+msgstr ""
+
+#: keyboards/inline/admin_keyboards.py:19
+msgid "Статистика бота"
+msgstr ""
+
+#: keyboards/inline/admin_keyboards.py:21
+msgid "Добавить администратора"
+msgstr ""
+
+#: keyboards/inline/admin_keyboards.py:23
+msgid "Добавить менеджера"
+msgstr ""
+
+#: keyboards/inline/admin_keyboards.py:42
+msgid "Назад в админ-меню"
+msgstr ""
+
+#: keyboards/inline/admin_keyboards.py:57
+msgid "Показать всех пользователей"
+msgstr ""
+
+#: keyboards/inline/chat_keyboards.py:40
+msgid "Ответить пользователю"
+msgstr ""
+
+#: keyboards/inline/chat_keyboards.py:50 keyboards/inline/user_keyboards.py:56
+msgid "Написать 1 сообщение менеджеру"
+msgstr ""
+
+#: keyboards/inline/chat_keyboards.py:52 keyboards/inline/user_keyboards.py:58
+msgid "Начать чат с менеджером"
+msgstr ""
+
+#: keyboards/inline/chat_keyboards.py:65 keyboards/inline/chat_keyboards.py:76
+msgid "Завершить сеанс"
+msgstr ""
+
+#: keyboards/inline/mailing_keyboards.py:7
+msgid "Разослать рассылку"
+msgstr ""
+
+#: keyboards/inline/mailing_keyboards.py:8
+msgid "Отменить"
+msgstr ""
+
+#: keyboards/inline/mailing_keyboards.py:17
+msgid "Для всех пользователей"
+msgstr ""
+
+#: keyboards/inline/manager_keyboards.py:11
+msgid "Создать рассылку для пользователей"
+msgstr ""
+
+#: keyboards/inline/manager_keyboards.py:13
+msgid "Создать рассылку для менеджеров"
+msgstr ""
+
+#: keyboards/inline/manager_keyboards.py:30
+msgid "Назад в меню менджера"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:11
+msgid "Новости компании"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:13
+msgid "Сайт компании"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:15
+msgid "Кабинет клиента"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:21
+msgid "Наши услуги"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:25
+msgid "Задать вопрос менеджеру"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:27
+msgid "Наши контакты"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:29
+msgid "О нас"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:45 keyboards/inline/user_keyboards.py:60
+#: keyboards/inline/user_keyboards.py:101
+#: keyboards/inline/user_keyboards.py:143
+msgid "Назад в меню"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:72
+msgid "Изменить телефон"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:74
+msgid "Изменить email"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:76
+msgid "Изменить название компании"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:78
+msgid "Изменить пароль"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:80
+msgid "Изменить язык"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:96
+msgid "Больше новостей на сайте"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:132
+msgid "Вся продукция на сайте"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:140
+msgid "Для Украины и СНГ"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:141
+msgid "Для Европы"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:142
+msgid "Для Северной Америки"
+msgstr ""
+
+#: keyboards/inline/user_keyboards.py:156
+msgid "<< Назад"
+msgstr ""
+

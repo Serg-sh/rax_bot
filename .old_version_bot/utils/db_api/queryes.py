@@ -1,30 +1,30 @@
 
-from aiogram.types.user import User as Tg_user
-from sqlalchemy import select
+# from aiogram.types.user import User as Tg_user
+# from sqlalchemy import select
+#
+# from utils.db_api.database import get_async_session
+# from utils.db_api.models import User
 
-from utils.db_api.database import get_async_session
-from utils.db_api.models import User
 
-
-class UserDBQuery:
-#     # Операції з користувачами
-
-    async def add_new_user(self, user) -> User:
-        """
-        Додає нового користувача до БД, якщо він ще не існує
-        """
-
-        print(user.user_id)
-        async for session in get_async_session():
-            result = await session.execute(select(User).where(User.user_id == user.user_id))
-            user = result.scalars().first()
-            if user:
-                return user
-            else:
-                user = User(user_id=user.id, full_name=user.full_name)
-                session.add(user)
-                await session.commit()
-            return user
+# class UserDBQuery:
+# #     # Операції з користувачами
+#
+#     async def add_new_user(self, user) -> User:
+#         """
+#         Додає нового користувача до БД, якщо він ще не існує
+#         """
+#
+#         print(user.user_id)
+#         async for session in get_async_session():
+#             result = await session.execute(select(User).where(User.user_id == user.user_id))
+#             user = result.scalars().first()
+#             if user:
+#                 return user
+#             else:
+#                 user = User(user_id=user.id, full_name=user.full_name)
+#                 session.add(user)
+#                 await session.commit()
+#             return user
 
 
 #

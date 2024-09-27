@@ -3,7 +3,7 @@ from aiogram.types import Message, CallbackQuery
 from aiogram.utils.formatting import Text
 
 from data.config import MANAGERS
-from keyboards.inline import manager_keyboards as mkb
+from keyboard.inline import manager_keyboards as mkb
 from loader import dp, _
 from utils.db_api import database
 

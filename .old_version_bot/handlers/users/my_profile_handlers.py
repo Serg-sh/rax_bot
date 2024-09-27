@@ -6,7 +6,7 @@ from aiogram.fsm.context import FSMContext
 from aiogram.types import Message, CallbackQuery
 from aiogram.utils.formatting import Text
 
-import keyboards.inline.user_keyboards as ukb
+import keyboard.inline.user_keyboards as ukb
 from loader import dp, _
 from states.states import SetUserProfile
 from utils.db_api import database

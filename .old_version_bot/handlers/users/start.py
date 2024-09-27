@@ -7,7 +7,7 @@ from aiogram.filters import CommandStart
 from aiogram.types import InputFile, Message, ReplyKeyboardMarkup
 
 from data.config import ADMINS
-from keyboards.default import main_menu as mmkb
+from keyboard.default import main_menu as mmkb
 from loader import dp, _
 from utils.db_api import database, queryes
 

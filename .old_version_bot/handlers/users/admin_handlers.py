@@ -3,7 +3,7 @@ from aiogram.fsm.context import FSMContext
 from aiogram.types import Message, CallbackQuery
 from aiogram.utils.formatting import Text
 
-import keyboards.inline.admin_keyboards as akb
+import keyboard.inline.admin_keyboards as akb
 from data.config import ADMINS
 from loader import dp, _
 from states.states import SetPermissions

@@ -3,9 +3,9 @@ from asyncio import sleep
 from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery, Message
 
-import keyboards.inline.mailing_keyboards as mk
-from keyboards.inline import admin_keyboards as akb
-from keyboards.inline import manager_keyboards as mkb
+import keyboard.inline.mailing_keyboards as mk
+from keyboard.inline import admin_keyboards as akb
+from keyboard.inline import manager_keyboards as mkb
 from loader import dp, bot, _
 from states.states import MailingAdmins, MailingManagers, MailingClients
 from utils.db_api import database

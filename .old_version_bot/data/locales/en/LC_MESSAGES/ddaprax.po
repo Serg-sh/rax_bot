@@ -1,0 +1,488 @@
+# English translations for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-04-04 13:17+0300\n"
+"PO-Revision-Date: 2021-11-02 00:16+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+# ___________________
+#: handlers/users/admin_handlers.py:29
+msgid "Меню администратора"
+msgstr "Admin panel"
+
+#: handlers/users/admin_handlers.py:67 handlers/users/admin_handlers.py:91
+msgid "Пришлите ИД пользователя."
+msgstr "Send user ID."
+
+#: handlers/users/chat_handlers.py:68
+msgid "Пользователь завершил сеанс."
+msgstr "User has ended the session."
+
+#: handlers/users/chat_handlers.py:96
+msgid "Дождитесь ответа менеджара или отмените сеанс"
+msgstr "Wait for the manager's response or cancel the session"
+
+#: handlers/users/chat_handlers.py:108
+msgid "Пользователь завершил сеанс"
+msgstr "User has ended the session"
+
+#: handlers/users/chat_handlers.py:110
+msgid "Вы завершили сеанс"
+msgstr "You have ended your session"
+
+#: handlers/users/mailing_handlers.py:19 handlers/users/mailing_handlers.py:60
+#: handlers/users/mailing_handlers.py:108
+#: handlers/users/mailing_handlers.py:115
+#: handlers/users/mailing_handlers.py:122
+#: handlers/users/mailing_handlers.py:129
+msgid "Пришлите текст рассылки"
+msgstr "Send the text of the newsletter"
+
+#: handlers/users/mailing_handlers.py:45 handlers/users/mailing_handlers.py:86
+msgid "Рассылка выполнена."
+msgstr "Newsletter completed."
+
+#: handlers/users/mailing_handlers.py:53 handlers/users/mailing_handlers.py:94
+#: handlers/users/mailing_handlers.py:164
+msgid "Рассылка отменена."
+msgstr "The newsletter has been canceled."
+
+#: handlers/users/manager_handlers.py:19
+msgid "Меню менеджера"
+msgstr "Manager menu"
+
+#: handlers/users/manager_handlers.py:21
+msgid "Недостаточно прав доступа."
+msgstr "Not enough access rights."
+
+#: handlers/users/my_profile_handlers.py:47
+msgid "Пришлите Ваш контактный номер телефона."
+msgstr "Send your contact phone number."
+
+#: handlers/users/my_profile_handlers.py:71 keyboards/default/main_menu.py:7
+#: keyboards/default/main_menu.py:20 keyboards/default/main_menu.py:33
+msgid "Мой профиль"
+msgstr "My profile"
+
+#: handlers/users/my_profile_handlers.py:97
+msgid "Пришлите Ваш email."
+msgstr "Send your email."
+
+#: handlers/users/my_profile_handlers.py:109
+msgid ""
+"Вы прислали не действительный email!\n"
+"Проверьте его правильность и повторите попытку."
+msgstr ""
+"You have sent an invalid email!\n"
+"Please check it is correct and try again."
+
+#: handlers/users/my_profile_handlers.py:119
+msgid "Пришлите название вашей компании."
+msgstr "Send your company name."
+
+#: handlers/users/my_profile_handlers.py:135
+msgid "Пришлите Ваш пароль."
+msgstr "Send your password."
+
+#: handlers/users/my_profile_handlers.py:148
+msgid "Пароль успешно изменен"
+msgstr "Password changed successfully"
+
+#: handlers/users/productions_handlers.py:33
+msgid "Подробнее"
+msgstr "More details"
+
+#: handlers/users/productions_handlers.py:44
+msgid "Каталог нашей продукции"
+msgstr "Product catalog"
+
+#: handlers/users/send_message.py:10
+msgid "Для отправки сообщения менеджеру, нажмите на кнопку ниже!"
+msgstr "To send a message to the manager, click on the button below!"
+
+#: handlers/users/send_message.py:20
+msgid "Отпаравьте Ваш вопрос"
+msgstr "Send your question"
+
+#: handlers/users/send_message.py:34
+msgid "Сообщение отпрвлено, ожидайте ответа."
+msgstr "Message sent, await reply."
+
+#: handlers/users/user_handlers.py:19 handlers/users/user_handlers.py:31
+#: keyboards/default/main_menu.py:6 keyboards/default/main_menu.py:17
+#: keyboards/default/main_menu.py:31
+msgid "Главное меню"
+msgstr "Main Menu"
+
+#: keyboards/default/main_menu.py:18
+msgid "Панель администратора"
+msgstr "Admin panel"
+
+#: keyboards/default/main_menu.py:19 keyboards/default/main_menu.py:32
+msgid "Панель менеджера"
+msgstr "Manager panel"
+
+#: keyboards/inline/admin_keyboards.py:11
+#: keyboards/inline/manager_keyboards.py:10
+#: keyboards/inline/user_keyboards.py:17
+msgid "Наша продукция"
+msgstr "Productions"
+
+#: keyboards/inline/admin_keyboards.py:13
+msgid "Создать рассылку для клиентов"
+msgstr "Create a newsletter for clients"
+
+#: keyboards/inline/admin_keyboards.py:15
+msgid "Рассылка для админов"
+msgstr "Newsletter for admins"
+
+#: keyboards/inline/admin_keyboards.py:17
+msgid "Рассылка для менеджеров"
+msgstr "Newsletter for managers"
+
+#: keyboards/inline/admin_keyboards.py:19
+msgid "Статистика бота"
+msgstr "Bot statistics"
+
+#: keyboards/inline/admin_keyboards.py:21
+msgid "Добавить администратора"
+msgstr "Add admin"
+
+#: keyboards/inline/admin_keyboards.py:23
+msgid "Добавить менеджера"
+msgstr "Add manager"
+
+#: keyboards/inline/admin_keyboards.py:42
+msgid "Назад в админ-меню"
+msgstr "Back to the menu"
+
+#: keyboards/inline/admin_keyboards.py:57
+msgid "Показать всех пользователей"
+msgstr "Show all users"
+
+#: keyboards/inline/chat_keyboards.py:40
+msgid "Ответить пользователю"
+msgstr "Reply to user"
+
+#: keyboards/inline/chat_keyboards.py:50 keyboards/inline/user_keyboards.py:56
+msgid "Написать 1 сообщение менеджеру"
+msgstr "Ask a question to the manager"
+
+#: keyboards/inline/chat_keyboards.py:52 keyboards/inline/user_keyboards.py:58
+msgid "Начать чат с менеджером"
+msgstr "Ask a question to the manager"
+
+#: keyboards/inline/chat_keyboards.py:65 keyboards/inline/chat_keyboards.py:76
+msgid "Завершить сеанс"
+msgstr "End session"
+
+#: keyboards/inline/mailing_keyboards.py:7
+msgid "Разослать рассылку"
+msgstr "Send out the newsletter"
+
+#: keyboards/inline/mailing_keyboards.py:8
+msgid "Отменить"
+msgstr "Cancel"
+
+#: keyboards/inline/mailing_keyboards.py:17
+msgid "Для всех пользователей"
+msgstr "For all users"
+
+#: keyboards/inline/manager_keyboards.py:11
+msgid "Создать рассылку для пользователей"
+msgstr "Create newsletter for users"
+
+#: keyboards/inline/manager_keyboards.py:13
+msgid "Создать рассылку для менеджеров"
+msgstr "Create a newsletter for managers"
+
+#: keyboards/inline/manager_keyboards.py:30
+msgid "Назад в меню менджера"
+msgstr "Back to the menu"
+
+#: keyboards/inline/user_keyboards.py:11
+msgid "Новости компании"
+msgstr "News"
+
+#: keyboards/inline/user_keyboards.py:13
+msgid "Сайт компании"
+msgstr "Site"
+
+#: keyboards/inline/user_keyboards.py:15
+msgid "Кабинет клиента"
+msgstr "Client's Cabinet"
+
+#: keyboards/inline/user_keyboards.py:21
+msgid "Наши услуги"
+msgstr "Services"
+
+#: keyboards/inline/user_keyboards.py:25
+msgid "Задать вопрос менеджеру"
+msgstr "Ask a question to the manager"
+
+#: keyboards/inline/user_keyboards.py:27
+msgid "Наши контакты"
+msgstr "Our contacts"
+
+#: keyboards/inline/user_keyboards.py:29
+msgid "О нас"
+msgstr "About Us"
+
+#: keyboards/inline/user_keyboards.py:45 keyboards/inline/user_keyboards.py:60
+#: keyboards/inline/user_keyboards.py:101
+#: keyboards/inline/user_keyboards.py:143
+msgid "Назад в меню"
+msgstr "Back to the menu"
+
+#: keyboards/inline/user_keyboards.py:72
+msgid "Изменить телефон"
+msgstr "Change phone"
+
+#: keyboards/inline/user_keyboards.py:74
+msgid "Изменить email"
+msgstr "Change email"
+
+#: keyboards/inline/user_keyboards.py:76
+msgid "Изменить название компании"
+msgstr "Change company name"
+
+#: keyboards/inline/user_keyboards.py:78
+msgid "Изменить пароль"
+msgstr "Change password"
+
+#: keyboards/inline/user_keyboards.py:80
+msgid "Изменить язык"
+msgstr "Change language"
+
+#: keyboards/inline/user_keyboards.py:96
+msgid "Больше новостей на сайте"
+msgstr "More news on the site"
+
+#: keyboards/inline/user_keyboards.py:132
+msgid "Вся продукция на сайте"
+msgstr "All products on the site"
+
+#: keyboards/inline/user_keyboards.py:140
+msgid "Для Украины и СНГ"
+msgstr "For Ukraine and CIS"
+
+#: keyboards/inline/user_keyboards.py:141
+msgid "Для Европы"
+msgstr "For Europe"
+
+#: keyboards/inline/user_keyboards.py:142
+msgid "Для Северной Америки"
+msgstr "For North America"
+
+#: keyboards/inline/user_keyboards.py:156
+msgid "<< Назад"
+msgstr "<< Back"
+
+msgid "Добрый День"
+msgstr "Hello"
+
+msgid "ПРИВЕТСТВУЕМ ВАС В ТЕЛЕГРАММ БОТЕ ДДАП-РАКС"
+msgstr "WELCOME TO YOU IN TELEGRAMS BOT DDAP-RAX"
+
+msgid "Для продолжения работы воспользуйтесь ГЛАВНЫМ МЕНЮ"
+msgstr "To continue working, use the MAIN MENU"
+
+msgid "Вы не указали контактные данные"
+msgstr "You did not provide contact information"
+
+msgid "укажите их в личном профиле"
+msgstr "indicate them in your personal profile"
+
+msgid "Поделиться ссылкой на БОТ ДДАП-РАКС"
+msgstr "Share a link to BOT DDAP-RAX"
+
+msgid "Вам пришло сообщение"
+msgstr "You've got a message"
+
+msgid "Для ответа нажмите кнопку ниже"
+msgstr "To answer, click the button below"
+
+msgid "ИД"
+msgstr "ID"
+
+msgid "Язык"
+msgstr "Language"
+
+msgid "Имя"
+msgstr "Name"
+
+msgid "Телефон"
+msgstr "Phone"
+
+msgid "Компания"
+msgstr "Company"
+
+msgid "Пароль"
+msgstr "Password"
+
+msgid "Не указан"
+msgstr "Not specified"
+
+msgid "Не указано"
+msgstr "Not indicated"
+
+msgid "Установлен"
+msgstr "Set"
+
+msgid "Неустановлен"
+msgstr "Not Set"
+
+msgid "успешно записан в Ваш профиль"
+msgstr "successfully added to your profile"
+
+msgid "Выберите язык"
+msgstr "Choose language"
+
+msgid "Язык успешно изменен"
+msgstr "Language changed successfully"
+
+msgid "Наберите /start для применения настроек"
+msgstr "Type /start to apply the settings"
+
+msgid "Название компании"
+msgstr "Name of the company"
+
+msgid "успешно записано в Ваш профиль"
+msgstr "successfully added to your profile"
+
+msgid "Текст рассылки"
+msgstr "Newsletter Text"
+
+msgid "Список команд"
+msgstr "List of commands"
+
+msgid "Запустить бота"
+msgstr "Start bot"
+
+msgid "Главаное меню"
+msgstr "Main menu"
+
+msgid "Получить справку"
+msgstr "Get Help"
+
+msgid "Эхо Вашего сообщения без состояния"
+msgstr "Echo your message without a state"
+
+msgid "Эхо в состоянии"
+msgstr "Echo in a state"
+
+msgid "Содержание сообщения"
+msgstr "Message content"
+
+msgid "Для связи с менеджером, укажите контактные данные"
+msgstr "To contact the manager, indicate your contact information"
+
+msgid "в разделе мой профиль"
+msgstr "in the section my profile"
+
+msgid "Для открытия или завершения чата"
+msgstr "To open or end a chat"
+
+msgid "Сделайте выбор"
+msgstr "Make a choice"
+
+msgid "В данный момент все менеджеры заняты"
+msgstr "All managers are busy at the moment"
+
+msgid "Попробуйте позже"
+msgstr "Try again later"
+
+msgid "Вы обратились в чат ДДАП-РАКС"
+msgstr "You have contacted the DDAP-RAX chat"
+
+msgid "Ждем ответа менеджера"
+msgstr "We are waiting for the manager's response"
+
+msgid "С вами хочет связаться пользователь"
+msgstr "User wants to contact you"
+
+msgid "Вы на связи с пользователем"
+msgstr "You are connected with the user"
+
+msgid "Чтобы завершить общение нажмите на кнопку"
+msgstr "To end the conversation, click the button"
+
+msgid "Менеджер"
+msgstr "Manager"
+
+msgid "на связи"
+msgstr "connected"
+
+msgid "Можете задать Ваш вопрос"
+msgstr "You can ask your question"
+
+msgid "Для закрытия чата с медеджером, нажмите на кнопку"
+msgstr "To close the chat with the manager, click on the button"
+
+msgid "Колличество пользователей бота"
+msgstr "Number of bot users"
+
+msgid "Администраторы бота"
+msgstr "Bot admins"
+
+msgid "Менеджеры бота"
+msgstr "Bot managers"
+
+msgid "ИД клиента"
+msgstr "Client ID"
+
+msgid "Пользователь"
+msgstr "User"
+
+msgid "назначен администратором"
+msgstr "appointed by the administrator"
+
+msgid "Что - то пошло не так"
+msgstr "Something went wrong"
+
+msgid "пользователь с ИД"
+msgstr "user ID"
+
+msgid "не зарегистрирован"
+msgstr "not registered"
+
+msgid "или введен не корректный ИД"
+msgstr "or incorrect ID entered"
+
+msgid "назначен менеджером"
+msgstr "appointed by the manager"
+
+msgid "Рассылка выполнена"
+msgstr "Newsletter completed"
+
+msgid "для"
+msgstr "for"
+
+msgid "пользователей"
+msgstr "users"
+
+msgid "Регион"
+msgstr "Region"
+
+msgid "Спецификация"
+msgstr "Specification"
+
+msgid "Марка стали"
+msgstr "Steel grade"
+
+msgid "МИ З УКРАЇНИ"
+msgstr "WE ARE FROM UKRAINE"
+

@@ -1,19 +1,21 @@
 from aiogram import Bot, Dispatcher
-from aiogram.utils.i18n import gettext as get_text
+from aiogram.types.bot_command import BotCommand
 from aiogram.fsm.storage.memory import MemoryStorage
-from data import config
-from middlewares.chat_middleware import ChatMiddleware
-from middlewares.language_middleware import setup_middleware
-from middlewares.throttling import ThrottlingMiddleware
-from utils.set_bot_commands import set_default_commands
+
+import config
 
 bot = Bot(token=config.BOT_TOKEN)
-storage = MemoryStorage()
-# bot = set_default_commands(bot)
-dp = Dispatcher(storage=storage)
 
-# dp.update.middleware(setup_middleware())
-dp.update.middleware(ThrottlingMiddleware())
-dp.update.middleware(ChatMiddleware())
+dp = Dispatcher(storage=MemoryStorage())
 
-_ = get_text
+
+async def on_startup(dispatcher):
+    print(" Bot Started!")
+
+    # Создаем БД
+    await create_db()
+
+    # Устанавливаем дефолтные команды
+    await bot.set_my_commands([BotCommand(command="start", description="Запустити бота"),
+                               BotCommand(command="help", description="Допомога"),
+                               ])

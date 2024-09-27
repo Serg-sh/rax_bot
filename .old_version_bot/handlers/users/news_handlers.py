@@ -3,7 +3,7 @@ import datetime
 from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery
 
-import keyboards.inline.user_keyboards as ukb
+import keyboard.inline.user_keyboards as ukb
 from loader import dp
 from utils.db_api import database
 from utils.http_api import site_api

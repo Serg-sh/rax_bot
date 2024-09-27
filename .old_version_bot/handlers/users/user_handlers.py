@@ -5,7 +5,7 @@ from aiogram.types import CallbackQuery, Message, InputFile
 from aiogram.utils.formatting import Text
 
 import data.texts as txt
-import keyboards.inline.user_keyboards as ukb
+import keyboard.inline.user_keyboards as ukb
 from loader import dp, bot, _
 from utils.db_api import database
 

@@ -4,9 +4,9 @@ from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery
 
 from handlers.users.my_profile_handlers import check_user_data
-from keyboards.inline.chat_keyboards import chat_callback, check_busy_manager, get_id_manager, chat_keyboard, \
+from keyboard.inline.chat_keyboards import chat_callback, check_busy_manager, get_id_manager, chat_keyboard, \
     cancel_chat, cancel_chat_callback
-import keyboards.inline.user_keyboards as ukb
+import keyboard.inline.user_keyboards as ukb
 from loader import dp, bot, _
 from utils.db_api import database
 
