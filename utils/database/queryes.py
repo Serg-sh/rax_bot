@@ -42,3 +42,21 @@ class UserDBQuery:
             result = await session.execute(select(User))
             users = result.scalars().all()
             return list(users)
+
+    async def get_managers_user_id(self) -> List[int]:
+        async for session in get_async_session():
+            result = await session.execute(select(User).where(User.is_manager == True))
+            managers = result.scalars().all()
+            managers_id = []
+            for manager in managers:
+                managers_id.append(manager.user_id)
+            return managers_id
+
+    async def get_admins_user_id(self) -> List[int]:
+        async for session in get_async_session():
+            result = await session.execute(select(User).where(User.is_admin == True))
+            admins = result.scalars().all()
+            admins_id = []
+            for admin in admins:
+                admins_id.append(admin.user_id)
+            return admins_id

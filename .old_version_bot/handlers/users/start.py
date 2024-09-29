@@ -1,42 +1,32 @@
 from asyncio import sleep
-from typing import List
-
 from aiogram import types
-from aiogram.filters import CommandStart
+from aiogram.types import InputFile
 
-from aiogram.types import InputFile, Message, ReplyKeyboardMarkup
-
-from data.config import ADMINS
-from keyboard.default import main_menu as mmkb
+from config import ADMINS
+from keyboard.default.main_menu import get_markup
 from loader import dp, _
-from utils.db_api import database, queryes
+from utils.database.queryes import UserDBQuery
 
-db = queryes.UserDBQuery()
+db = UserDBQuery()
 
 
 @dp.message_handler(text_contains='start')
 async def bot_start(message: types.Message):
+    user = await message.from_user
+    user = await db.add_user(user)
     logo_rax = InputFile('data/images/logo_rax.jpg')
     await message.answer_photo(photo=logo_rax, parse_mode='HTML')
     await sleep(0.1)
-    # await db.add_new_user(message.from_user)
-    # managers = await db.get_managers_user_id()
-    # admins = await db.get_admins_user_id()
-    # admins.extend(ADMINS)
-    # await message.answer(f'{_("Добрый День")}!  {message.from_user.full_name}!\n\n'
-    #                      f'🇺🇦🇺🇦🇺🇦 {_("МИ З УКРАЇНИ")} 🇺🇦🇺🇦🇺🇦\n\n'
-    #                      f'{_("ПРИВЕТСТВУЕМ ВАС В ТЕЛЕГРАММ БОТЕ ДДАП-РАКС")} \n\n'
-    #                      f'{_("Для продолжения работы воспользуйтесь ГЛАВНЫМ МЕНЮ")}.\n',
-    #                      reply_markup=get_markup(message,
-    #                                              admins_id=admins,
-    #                                              managers_id=managers))
+    managers = await db.get_managers_user_id()
+    admins = await db.get_admins_user_id()
+    admins.extend(ADMINS)
+    await message.answer(f'{_("Добрый День")}!  {message.from_user.full_name}!\n\n'
+                         f'🇺🇦🇺🇦🇺🇦 {_("МИ З УКРАЇНИ")} 🇺🇦🇺🇦🇺🇦\n\n'
+                         f'{_("ПРИВЕТСТВУЕМ ВАС В ТЕЛЕГРАММ БОТЕ ДДАП-РАКС")} \n\n'
+                         f'{_("Для продолжения работы воспользуйтесь ГЛАВНЫМ МЕНЮ")}.\n',
+                         reply_markup=get_markup(user.user_id,
+                                                 admins_id=admins,
+                                                 managers_id=managers))
 
 
-def get_markup(message: Message, admins_id: List, managers_id: List) -> ReplyKeyboardMarkup:
-    user_id = str(message.from_user.id)
-    if user_id in admins_id:
-        return mmkb.get_markup_admin_main_menu()
-    elif user_id in managers_id:
-        return mmkb.get_markup_manager_main()
-    else:
-        return mmkb.get_markup_main_menu()
+

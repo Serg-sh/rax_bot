@@ -12,3 +12,29 @@ msgstr "Help"
 msgid " Вітаю!"
 msgstr " Hello!"
 
+msgid "чим допомогти"
+msgstr
+
+msgid "Головне меню"
+msgstr "Main menu"
+
+msgid "Мій профіль"
+msgstr "My profile"
+
+msgid "Меню адміністратора"
+msgstr "Admins menu"
+
+msgid "Меню менеджера"
+msgstr "Managers menu"
+
+msgid "Доброго дня"
+msgstr
+
+msgid "МИ З УКРАЇНИ"
+msgstr
+
+msgid "Раді вітати Вас у телеграм боті ДДАП-РАКС"
+msgstr
+
+msgid "Для подальшої роботи натисніть ГОЛОВНЕ МЕНЮ"
+msgstr

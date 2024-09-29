@@ -11,7 +11,8 @@ from utils.database.database import create_db
 
 # встановлюємо роутери
 my_routers: List[Router] = [echo_router,
-                            command_router, ]
+                            command_router,
+                            ]
 
 dp.include_routers(*my_routers[::-1])
 
@@ -23,10 +24,12 @@ async def on_startup(dispatcher):
     await create_db()
 
     # Устанавливаем дефолтные команды
-
-    await bot.set_my_commands([BotCommand(command="start", description=_("Запустити бота")),
-                               BotCommand(command="help", description=_("Допомога")),
-                               ])
+    await bot.set_my_commands([
+        BotCommand(command="start", description=_("Запустити бота")),
+        BotCommand(command="admin", description=_("Панель адміністратора")),
+        BotCommand(command="manager", description=_("Панель менеджера")),
+        BotCommand(command="help", description=_("Допомога")),
+    ])
 
 
 async def main():
