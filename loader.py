@@ -1,21 +1,25 @@
+from typing import List
+
 from aiogram import Bot, Dispatcher
-from aiogram.types.bot_command import BotCommand
 from aiogram.fsm.storage.memory import MemoryStorage
 
-import config
 
-bot = Bot(token=config.BOT_TOKEN)
+from config import BOT_TOKEN
 
+from midleware.language import setup_middleware
+
+
+
+
+bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(storage=MemoryStorage())
 
 
-async def on_startup(dispatcher):
-    print(" Bot Started!")
+i18n = setup_middleware()
 
-    # Создаем БД
-    await create_db()
+dp.update.middleware(i18n)
 
-    # Устанавливаем дефолтные команды
-    await bot.set_my_commands([BotCommand(command="start", description="Запустити бота"),
-                               BotCommand(command="help", description="Допомога"),
-                               ])
+
+_ = i18n.i18n.gettext
+
+

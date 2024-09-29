@@ -15,7 +15,7 @@ class User(BaseModel):
     email = Column(String(100), nullable=True, unique=True)
     phone = Column(String(20), nullable=True)
     company_name = Column(String(200), nullable=True)
-    password = Column(LargeBinary(), nullable=False)
+    password = Column(LargeBinary(), nullable=True)
 
 
 class Production(BaseModel):

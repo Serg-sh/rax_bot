@@ -26,6 +26,6 @@ api_order_url = env.str("API_ORDER_URL")  # url для отправки заяв
 
 api_url_productions = env.str("API_PRODUCTS_URL")  # url для получения продуктов с апи сайта на анг. языке
 
-I18N_DOMAIN = "ddaprax"
+I18N_DOMAIN = "bot"
 BASE_DIR = Path(__file__).parent
 LOCALES_DIR = BASE_DIR / "locales"

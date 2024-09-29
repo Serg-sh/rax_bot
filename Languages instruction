@@ -1,0 +1,1 @@
+msgfmt locales/en/LC_MESSAGES/bot.po -o locales/en/LC_MESSAGES/bot.mo
