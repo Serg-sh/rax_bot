@@ -38,12 +38,20 @@ class UserDBQuery:
             return user
 
     async def get_all_users(self) -> List[User]:
+        """
+        Повертає список всіх користувачів з бази
+        :return: List[User]
+        """
         async for session in get_async_session():
             result = await session.execute(select(User))
             users = result.scalars().all()
             return list(users)
 
     async def get_managers_user_id(self) -> List[int]:
+        """
+        Повертає список id всіх менеджерів з бази
+        :return: List[int]
+        """
         async for session in get_async_session():
             result = await session.execute(select(User).where(User.is_manager == True))
             managers = result.scalars().all()
@@ -53,6 +61,10 @@ class UserDBQuery:
             return managers_id
 
     async def get_admins_user_id(self) -> List[int]:
+        """
+        Повертає список id всіх адміністраторів з бази
+        :return: List[int]
+        """
         async for session in get_async_session():
             result = await session.execute(select(User).where(User.is_admin == True))
             admins = result.scalars().all()

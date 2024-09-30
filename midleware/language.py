@@ -20,7 +20,7 @@ class MyI18nMiddleware(I18nMiddleware):
         :return: str: User.languages або default_locale
         """
         if isinstance(event, Update):
-            user_id = event.message.from_user.id
+            user_id = event.event.from_user.id
             user = await db.get_user(user_id)
             if user:
                 return user.languages

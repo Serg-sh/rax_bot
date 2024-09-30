@@ -13,7 +13,7 @@ msgid " Вітаю!"
 msgstr " Hello!"
 
 msgid "чим допомогти"
-msgstr
+msgstr ""
 
 msgid "Головне меню"
 msgstr "Main menu"
@@ -28,13 +28,114 @@ msgid "Меню менеджера"
 msgstr "Managers menu"
 
 msgid "Доброго дня"
-msgstr
+msgstr ""
 
 msgid "МИ З УКРАЇНИ"
-msgstr
+msgstr ""
 
 msgid "Раді вітати Вас у телеграм боті ДДАП-РАКС"
-msgstr
+msgstr ""
 
 msgid "Для подальшої роботи натисніть ГОЛОВНЕ МЕНЮ"
+msgstr ""
+
+msgid "у вас немає прав доступу"
+msgstr ""
+
+msgid "Наші новини"
 msgstr
+
+msgid "Кабінет клієнта"
+msgstr
+
+msgid "Наша продукція"
+msgstr
+
+msgid "Наші послуги"
+msgstr
+
+msgid "Запит до менеджера"
+msgstr
+
+msgid "Наші контакти"
+msgstr
+
+msgid "Про нас"
+msgstr
+
+msgid "Наш сайт"
+msgstr
+
+msgid "Назад у меню"
+msgstr ""
+
+msgid "Відлуння вашого повідомлення"
+msgstr ""
+
+msgid "Відлуння вашого callback_query"
+msgstr ""
+
+sgid "Зміст повідомлення"
+msgstr ""
+
+sgid "Більше новин на сайті"
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+

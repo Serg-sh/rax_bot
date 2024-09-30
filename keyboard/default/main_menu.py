@@ -17,7 +17,7 @@ def get_markup_main_menu() -> ReplyKeyboardMarkup:
 
 
 def get_markup_admin_main_menu() -> ReplyKeyboardMarkup:
-    main_menu_abtn = KeyboardButton(text=_("Главное меню"))
+    main_menu_abtn = KeyboardButton(text=_("Головне меню"))
     admin_panel_abtn = KeyboardButton(text=_("Меню адміністратора"))
     manager_panel_abtn = KeyboardButton(text=_("Меню менеджера"))
     my_profile_abtn = KeyboardButton(text=_("Мій профіль"))
@@ -30,7 +30,7 @@ def get_markup_admin_main_menu() -> ReplyKeyboardMarkup:
 
 
 def get_markup_manager_main() -> ReplyKeyboardMarkup:
-    main_menu_mbtn = KeyboardButton(text=_("Главное меню"))
+    main_menu_mbtn = KeyboardButton(text=_("Головне меню"))
     manager_panel_mbtn = KeyboardButton(text=_("Меню менеджера"))
     my_profile_mbtn = KeyboardButton(text=_("Мій профіль"))
     markup_manager_main = ReplyKeyboardMarkup(keyboard=[

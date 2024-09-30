@@ -6,12 +6,16 @@ from aiogram.types.bot_command import BotCommand
 
 from handlers.user.default_commands import command_router
 from handlers.user.echo import echo_router
+from handlers.user.news import news_router
+from handlers.user.users import user_router
 from loader import dp, bot, _
 from utils.database.database import create_db
 
 # встановлюємо роутери
 my_routers: List[Router] = [echo_router,
                             command_router,
+                            user_router,
+                            news_router,
                             ]
 
 dp.include_routers(*my_routers[::-1])
