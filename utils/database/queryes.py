@@ -13,7 +13,7 @@ class UserDBQuery:
         Додає нового користувача до БД, якщо він ще не існує
         :param current_user:
         :param user:
-        :return:
+        :return:Повертає створеного або наявного user: User
         """
         async for session in get_async_session():
             result = await session.execute(select(User).where(User.user_id == current_user.id))
@@ -30,7 +30,7 @@ class UserDBQuery:
         """
         повертає User з user_id
         :param user_id:
-        :return:
+        :return: user: User
         """
         async for session in get_async_session():
             result = await session.execute(select(User).where(User.user_id == user_id))
@@ -72,3 +72,22 @@ class UserDBQuery:
             for admin in admins:
                 admins_id.append(admin.user_id)
             return admins_id
+
+
+    async def update_user(self, user_id: int, **fields) -> User:
+        """
+        Оновлює значення полів у користувача з user_id у БД
+        :param user_id:
+        :param fields: name_field=value
+        :return: оновлений user: User
+        """
+        async for session in get_async_session():
+            res = await session.execute(select(User).where(User.user_id == user_id))
+            user = res.scalars().first()
+            for field, value in fields.items():
+                if hasattr(user, field):
+                    setattr(user, field, value)
+                else:
+                    raise ValueError(f"Поле '{field}' не існує у моделі User")
+            await session.commit()
+            return user

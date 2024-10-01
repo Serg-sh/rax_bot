@@ -81,6 +81,63 @@ msgstr ""
 sgid "Більше новин на сайті"
 msgstr ""
 
+sgid "Змінити № телефону"
+msgstr ""
+
+sgid "Змінити email"
+msgstr ""
+
+sgid "Змінити назву компанії"
+msgstr ""
+
+sgid "Змінити пароль"
+msgstr ""
+
+sgid "Відсутній"
+msgstr ""
+
+sgid "Не вказано"
+msgstr ""
+
+sgid "Встановлений"
+msgstr ""
+
+sgid "Надішліть Ваш контактний № телефону"
+msgstr ""
+
+sgid "№ тел.:"
+msgstr "успішно додан до Вашого профілю"
+
+sgid "Надішліть Ваш email"
+msgstr ""
+
+sgid "Ви надіслали недійсний email"
+msgstr ""
+
+sgid "Надішліть назву Вашої компанії"
+msgstr ""
+
+sgid "Виберіть мову"
+msgstr ""
+
+sgid "Мова успішно змінена"
+msgstr ""
+
+sgid "Натисніть /start для застосування налаштунків"
+msgstr ""
+
+sgid "Надішліть Ваш пароль"
+msgstr ""
+
+sgid "Пароль успішно змінено"
+msgstr ""
+
+sgid "Змінити мову"
+msgstr ""
+
+sgid ""
+msgstr ""
+
 sgid ""
 msgstr ""
 

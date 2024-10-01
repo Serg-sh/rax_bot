@@ -6,6 +6,7 @@ from aiogram.types.bot_command import BotCommand
 
 from handlers.user.default_commands import command_router
 from handlers.user.echo import echo_router
+from handlers.user.my_profile import my_profile_route
 from handlers.user.news import news_router
 from handlers.user.users import user_router
 from loader import dp, bot, _
@@ -16,6 +17,7 @@ my_routers: List[Router] = [echo_router,
                             command_router,
                             user_router,
                             news_router,
+                            my_profile_route,
                             ]
 
 dp.include_routers(*my_routers[::-1])

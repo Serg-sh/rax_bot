@@ -36,6 +36,39 @@ class InlineKeyboardUser():
         ], )
         return markup_main
 
+    # Клавиатура мой профиль
+    def get_markup_my_profile(self) -> InlineKeyboardMarkup:
+        set_phone_button = InlineKeyboardButton(text=_("Змінити № телефону"),
+                                                callback_data='get_user_phone')
+        set_email_button = InlineKeyboardButton(text=_("Змінити email"),
+                                                callback_data='get_user_email')
+        set_company_name_button = InlineKeyboardButton(text=_("Змінити назву компанії"),
+                                                       callback_data='get_user_company')
+        set_password_button = InlineKeyboardButton(text=_("Змінити пароль"),
+                                                   callback_data='get_user_password')
+        set_language_button = InlineKeyboardButton(text=_("Змінити мову"),
+                                                   callback_data='get_user_language')
+
+        markup_my_profile = InlineKeyboardMarkup(inline_keyboard=[
+            [set_phone_button, set_email_button],
+            [set_company_name_button],
+            [set_language_button],
+            [set_password_button],
+        ], )
+        return markup_my_profile
+
+    # Клавіатура вибору мови
+    def get_markup_languages(self) -> InlineKeyboardMarkup:
+
+        en_button = InlineKeyboardButton(text='English', callback_data='en_language')
+        uk_button = InlineKeyboardButton(text='Українська', callback_data='uk_language')
+
+        markup_languages = InlineKeyboardMarkup(inline_keyboard=[
+            [uk_button],
+            [en_button],
+        ])
+        return markup_languages
+
 
 class InlineKeyboardBack():
     # Клавиатура назад в меню
@@ -57,7 +90,7 @@ class InlineKeyboardNews():
                                            callback_data="prev_news")
         details_button = InlineKeyboardButton(text=_("Більше новин на сайті"),
                                               url=get_link_with_language(user_language=user_language,
-                                                                                  api_link=NEWS))
+                                                                         api_link=NEWS))
         next_button = InlineKeyboardButton(text='➡',
                                            callback_data='next_news')
         button_back_to_main_menu = InlineKeyboardButton(text=_('Назад у меню'),
