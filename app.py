@@ -4,6 +4,7 @@ from typing import List
 from aiogram import Router
 from aiogram.types.bot_command import BotCommand
 
+from handlers.user.contacts import contact_router
 from handlers.user.default_commands import command_router
 from handlers.user.echo import echo_router
 from handlers.user.my_profile import my_profile_route
@@ -18,6 +19,7 @@ my_routers: List[Router] = [echo_router,
                             user_router,
                             news_router,
                             my_profile_route,
+                            contact_router,
                             ]
 
 dp.include_routers(*my_routers[::-1])
