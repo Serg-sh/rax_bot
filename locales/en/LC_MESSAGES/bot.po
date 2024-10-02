@@ -138,13 +138,13 @@ msgstr ""
 sgid "Посилання на бот"
 msgstr ""
 
-sgid ""
+sgid "Створити розсилку для користувачів"
 msgstr ""
 
-sgid ""
+sgid "Створити розсилку для менеджерів"
 msgstr ""
 
-sgid ""
+sgid "Назад у меню менеджера"
 msgstr ""
 
 sgid ""
