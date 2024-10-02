@@ -1,6 +1,6 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
 
-from config import SITE, MY_ACCOUNT, NEWS
+from config import SITE, MY_ACCOUNT, NEWS, PRODUCTS
 from loader import _
 from utils.http.site_api import get_link_with_language
 
@@ -16,7 +16,7 @@ class InlineKeyboardUser():
         my_account_button = InlineKeyboardButton(text=_('Кабінет клієнта'),
                                                  web_app=WebAppInfo(url=MY_ACCOUNT))
         production_button = InlineKeyboardButton(text=_('Наша продукція'),
-                                                 callback_data='productions_menu')
+                                                 web_app=WebAppInfo(url=PRODUCTS))
         services_button = InlineKeyboardButton(text=_('Наші послуги'),
                                                callback_data='services')
         manager_chat_button = InlineKeyboardButton(text=_('Запит до менеджера'),
