@@ -135,7 +135,7 @@ msgstr ""
 sgid "Змінити мову"
 msgstr ""
 
-sgid ""
+sgid "Посилання на бот"
 msgstr ""
 
 sgid ""

@@ -53,41 +53,68 @@ SERVICES_UK = '<strong>ТОВ «ДДАП-РАКС»</strong> надає посл
               'ми відповімо на всі ваші запитання та допоможемо оформити замовлення.\n' \
               'Наша компанія гарантує високу точність при виготовленні та найкоротші терміни виконання замовлення.'
 
-ABOUT_US_0_EN = '<strong>ABOUT DDAP-RAX</strong>\n\n' \
-                'DDAP-RAX is a manufacturer of railway axles, viz. railcar and locomotive axles, axles for diesel ' \
-                '– and trains, for subway and for specialized rolling stock.\n' \
-                'We have been in axles production since 1975. Using the unique rolling process technology – ' \
-                'cross-helical rolling at the Mill of Dneprovsky Iron & Steel Integrated Works – gives us quality ' \
-                'advantages over other technologies such as uniform metal structure on different elements of ' \
-                'axles that prevents the appearance of inner defects, makes the axles much easier in finishing ' \
-                'process and extends machine tools life for our customers; quantity advantages because provides ' \
-                'us with ability to produce axles of different types in total amount – 20 000 pieces per month.'
+ABOUT_US_0_EN = ("<strong>DDAP-RAX</strong> is a Ukrainian machine-building company that specialises exclusively in "
+                 "the manufacture of axles of various stages of processing for the needs of customers in the railway "
+                 "industry.\n\n"
+                 "The company's history dates back to 1991. During this period, we have produced more than 1.5 "
+                 "million axles for the North American, Ukrainian, CIS and EU markets.")
 
-ABOUT_US_0_UK = '<strong>ПРО ДДАП-РАКС</strong>\n\n' \
-                'ДДАП-РАКС – машинобудівна компанія, що виробляє залізничні осі, а саме вагонні осі, ' \
-                'локомотивні осі, осі для дизель – та електропоїздів, метрополітену, а також для ' \
-                'внутрішньозаводського транспорту.\n' \
-                'В осьовому виробництві ми з 1975 р. Використання унікальної технології – поперечно-гвинтової ' \
-                'прокатки на прокатному стані Дніпровського металургійного комбінату – надає нам якісні переваги ' \
-                'перед іншими технологіями, такими як однорідна структура металу на різних елементах осей, ' \
-                'що запобігає появі внутрішніх дефектів, значно спрощує процес чистової обробки осі та продовжує ' \
-                'термін життя інструменту для наших клієнтів; кількісні переваги, оскільки надає нам можливість ' \
-                'виготовляти осі різних типів загальною кількістю – 20 000 штук на місяць.'
+ABOUT_US_1_EN = ("<strong>Advantages of cooperation with us</strong>\n\n"
+                 "  ● high quality products\n"
+                 "  ● optimal prices and delivery times\n"
+                 "  ● wide engineering and production capabilities\n"
+                 "  ● the ability to track the order at all stages through the customer account\n"
+                 "  ● individual approach to the client\n\n"
+                 "We have a complete set of technological equipment, measuring instruments, automatic ultrasonic "
+                 "inspection equipment, magnetic particle inspection equipment for the production of axles to the "
+                 "highest quality standards. Due to the high qualification of the team, design, technological "
+                 "and production experience of our professionals, we are able to fulfill individual customer orders "
+                 "in the segment of construction and repair of rolling stock and traction equipment. The company's "
+                 "own OSI software system allows us to have complete information on axle identification at every "
+                 "stage of the production and order fulfilment process.")
 
-ABOUT_US_1_EN = '<strong>Geographically Desirable</strong>\n\n' \
-                'We are located in the heart of Ukraine and that gives us the ability to effectively organize ' \
-                'the delivery of our products to all corners of the world. We have one of the biggest railway ' \
-                'junction of Ukraine strictly at the Mill territory so we can freight our products practically ' \
-                'right after they have been produced to any part of the European and Asian continent. We work ' \
-                'with the best forwarding teams of professionals in the main Ukrainian ports of the Black Sea, ' \
-                'such as Odesa and Chornomorsk, and guarantee fast and safe preparation of the products for sea ' \
-                'transportation.'
+ABOUT_US_2_EN = ('<strong>The product range consists of more than 200 variants of axle drawings for 1435 gauge '
+                 'and 1520 gauge, and others, namely</strong>\n\n'
+                 '  ● car axles\n'
+                 '  ● axles for specialised rolling stock locomotive axles\n'
+                 '  ● axles for intra-plant transport\n'
+                 '  ● axles for diesel and electric trains\n'
+                 '  ● axles for urban transport\n'
+                 '  ● axles for the metro\n\n'
+                 'DDAP-RAX products are certified in Ukraine, USA, Canada and Europe. The company has a full set '
+                 'of certificates such as ISO 9001, AAR M-1003, TSI. The Quality Management System ISO 9001:2015 '
+                 'is confirmed by the AFNOR "AFAQ" certificate.')
 
-ABOUT_US_1_UK = '<strong>Географічно привабливі</strong>\n\n' \
-                'Ми розташовані у самому серці України, і це дає нам можливість ефективно організовувати ' \
-                'доставку нашої продукції в усі куточки світу. Один з найбільших залізничних вузлів України ' \
-                'розташований прямо на території прокатного стану, що забезпечує можливість відвантажувати ' \
-                'нашу продукцію практично одразу після того, як її було вироблено, в будь-яку частину ' \
-                'європейського та азіатського континенту. Ми працюємо з найкращими експедиторськими командами ' \
-                'професіоналів у головних українських портах Чорного моря, таких як Одеса та Чорноморськ, і ' \
-                'гарантуємо швидку та безпечну підготовку продукції для морських перевезень.'
+
+ABOUT_US_0_UK = ("<strong>DDAP-RAX</strong> – українська машинобудівна компанія, яка спеціалізується виключно на "
+                 "виготовленні осей різних ступенів обробки для потреб замовників залізничної галузі.\n\n"
+                 "Історія компанії бере свій початок з 1991 року. За цей період ми виготовили понад 1,5 мільйона осей "
+                 "для ринків Північної Америки, України, СНД та ЄС.")
+
+
+ABOUT_US_1_UK = ("<strong>Переваги співпраці з нами</strong>\n\n"
+                 "  ● висока якість продукції\n"
+                 "  ● оптимальні ціни та терміни\n"
+                 "  ● доставки широкі інженерно-виробничі можливості\n"
+                 "  ● можливість відслідковувати\n"
+                 "  ● замовлення на всіх етапах через кабінет клієнта\n"
+                 "  ● індивідуальний підхід до клієнта\n\n"
+                 "Ми маємо повний комплект технологічного обладнання, вимірювальних приладів, автоматичного "
+                 "ультразвукового контролю, обладнання магнітно-порошкового контролю для виробництва осей за "
+                 "найвищими стандартами якості. Завдяки високій кваліфікації колективу, конструкторському, "
+                 "технологічному та виробничому досвіду наших фахівців ми можемо виконувати індивідуальні "
+                 "замовлення клієнтів у сегменті будівництва та ремонту рухомого складу та тягового обладнання. "
+                 "Власне програмне забезпечення компанії OSI дозволяє нам мати повну інформацію про ідентифікацію осі "
+                 "на кожному етапі виробництва та виконання замовлення.")
+
+ABOUT_US_2_UK =('<strong>Асортимент продукції складається з понад 200 варіантів креслень осей для колії 1435 та 1520 '
+                'та інших, а саме:</strong>\n\n'
+                '  ● автомобільні осі\n'
+                '  ● осі локомотивів спеціалізованого рухомого складу\n'
+                '  ● осі для внутрішньозаводського транспорту\n'
+                '  ● осі для дизель- та електропоїздів\n'
+                '  ● осі для міського транспорту\n'
+                '  ● осі для метро\n\n'
+                'Продукція DDAP-RAX сертифікована в Україні, США, Канаді та Європі. Компанія має повний пакет '
+                'сертифікатів, таких як ISO 9001, AAR M-1003, TSI. '
+                'Система менеджменту якості ISO 9001:2015 підтверджено сертифікатом AFNOR "AFAQ".')
