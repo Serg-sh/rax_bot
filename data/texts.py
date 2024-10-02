@@ -21,37 +21,37 @@ VCARD = 'BEGIN:VCARD ' \
         'EMAIL;TYPE=INTERNET:Denis.Kojokar@example.com ' \
         'END:VCARD'
 
-SERVICES_EN = '<strong>DDAP-RAX</strong> provides services for turning of blanks on CNC ' \
-              'machines and carries out turning of bodies of revolution with complex configuration.\n\n' \
-              '<strong>This turning method is suitable for:</strong>\n\n' \
-              '    ● turning of conical and cylindrical products;\n' \
-              '    ● grooving of various configurations;\n' \
-              '    ● cutting external threads of various sizes;\n' \
-              '    ● hole countersinks;\n' \
-              '    ● processing of ends or ledges;\n' \
-              '    ● manufacturing stepped shafts.\n\n' \
-              '<strong>Maximum dimensions for workpieces:</strong>\n\n' \
-              '<i>     diameter – 400 mm</i>\n' \
-              '<i>     length – 2600 mm.</i>\n\n'\
-              'To order these services, contact our specialists using the main menu, we will answer all your ' \
-              'questions and help you place an order.\n' \
-              'Our company guarantees high precision in manufacturing and the shortest lead times.'
+SERVICES_EN = ("<strong>DDAP-RAX</strong> provides services for turning of blanks on CNC machines and carries out "
+               "turning of bodies of revolution with complex configuration.\n\n"
+               "<strong>This turning method is suitable for:</strong>\n\n"
+               "  ● turning of conical and cylindrical products;\n"
+               "  ● grooving of various configurations;\n"
+               "  ● cutting external threads of various sizes;\n"
+               "  ● hole countersinks;\n"
+               "  ● processing of ends or ledges;\n"
+               "  ● manufacturing stepped shafts.\n\n"
+               "<strong>Maximum dimensions for workpieces:</strong>\n\n"
+               "<i>  diameter – 400 mm</i>\n"
+               "<i>  length – 2600 mm.</i>\n\n"
+               "To order these services, contact our specialists using the main menu, we will answer all your "
+               "questions and help you place an order.\nOur company guarantees high precision in manufacturing "
+               "and the shortest lead times.")
 
-SERVICES_UK = '<strong>ТОВ «ДДАП-РАКС»</strong> надає послуги токарного оброблення заготовок на верстатах з ЧПУ ' \
-              'і здійснює токарну обробку тіл обертання складної конфігурації.\n\n' \
-              '<strong>Цей метод обробки підходить для виконання:</strong>\n\n' \
-              '    ● виточування конічних і циліндричних виробів;\n' \
-              '    ● обробки канавок різної конфігурації;\n' \
-              '    ● нарізування зовнішньої різьби різних розмірів;\n' \
-              '    ● зенкування отворів;\n' \
-              '    ● обробки торців або уступів;\n' \
-              '    ● виготовлення ступінчастих валів.\n\n' \
-              '<strong>Максимальні розміри оброблюваних заготовок</strong>:\n\n' \
-              '<i>     діаметр – 400 мм</i>\n' \
-              '<i>     довжина – 2600 мм.</i>\n\n' \
-              'Для замовлення цих послуг, зв’яжіться з нашими фахівцями, скориставшись головним меню, ' \
-              'ми відповімо на всі ваші запитання та допоможемо оформити замовлення.\n' \
-              'Наша компанія гарантує високу точність при виготовленні та найкоротші терміни виконання замовлення.'
+SERVICES_UK = ('<strong>ТОВ «ДДАП-РАКС»</strong> надає послуги токарного оброблення заготовок на верстатах з ЧПУ '
+              'і здійснює токарну обробку тіл обертання складної конфігурації.\n\n'
+              '<strong>Цей метод обробки підходить для виконання:</strong>\n\n'
+              '  ● виточування конічних і циліндричних виробів;\n'
+              '  ● обробки канавок різної конфігурації;\n'
+              '  ● нарізування зовнішньої різьби різних розмірів;\n'
+              '  ● зенкування отворів;\n'
+              '  ● обробки торців або уступів;\n'
+              '  ● виготовлення ступінчастих валів.\n\n'
+              '<strong>Максимальні розміри оброблюваних заготовок</strong>:\n\n'
+              '<i>   діаметр – 400 мм</i>\n'
+              '<i>   довжина – 2600 мм.</i>\n\n'
+              'Для замовлення цих послуг, зв’яжіться з нашими фахівцями, скориставшись головним меню, '
+              'ми відповімо на всі ваші запитання та допоможемо оформити замовлення.\n'
+              'Наша компанія гарантує високу точність при виготовленні та найкоротші терміни виконання замовлення.')
 
 ABOUT_US_0_EN = ("<strong>DDAP-RAX</strong> is a Ukrainian machine-building company that specialises exclusively in "
                  "the manufacture of axles of various stages of processing for the needs of customers in the railway "

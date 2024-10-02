@@ -10,6 +10,7 @@ from handlers.user.default_commands import command_router
 from handlers.user.echo import echo_router
 from handlers.user.my_profile import my_profile_route
 from handlers.user.news import news_router
+from handlers.user.services import services_router
 from handlers.user.users import user_router
 from loader import dp, bot, _
 from utils.database.database import create_db
@@ -22,6 +23,7 @@ my_routers: List[Router] = [echo_router,
                             my_profile_route,
                             contact_router,
                             about_router,
+                            services_router,
                             ]
 
 dp.include_routers(*my_routers[::-1])
