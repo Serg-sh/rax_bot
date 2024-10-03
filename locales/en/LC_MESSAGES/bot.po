@@ -147,19 +147,43 @@ msgstr ""
 sgid "Назад у меню менеджера"
 msgstr ""
 
-sgid ""
+sgid "Надішліть текст розсилки"
 msgstr ""
 
-sgid ""
+sgid "Розсилка виконана"
 msgstr ""
 
-sgid ""
+sgid "Розсилка скасована"
 msgstr ""
 
-sgid ""
+sgid "Оберіть мову розсилки"
 msgstr ""
 
-sgid ""
+sgid "для"
+msgstr ""
+
+sgid "користувачів"
+msgstr ""
+
+sgid "Розіслати розсилку"
+msgstr ""
+
+sgid "Відмінити"
+msgstr ""
+
+sgid "Назад у адмін меню"
+msgstr ""
+
+sgid "Статистика боту"
+msgstr ""
+
+sgid "Додати адміністратора"
+msgstr ""
+
+sgid "Додати менеджера"
+msgstr ""
+
+sgid "Показати всіх користувачів"
 msgstr ""
 
 sgid ""

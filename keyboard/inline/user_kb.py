@@ -5,7 +5,7 @@ from loader import _
 from utils.http.site_api import get_link_with_language
 
 
-class InlineKeyboardUser():
+class InlineKeyboardUser:
 
     # Клавиатура основного меню
     def get_markup_main(self) -> InlineKeyboardMarkup:
@@ -59,7 +59,6 @@ class InlineKeyboardUser():
 
     # Клавіатура вибору мови
     def get_markup_languages(self) -> InlineKeyboardMarkup:
-
         en_button = InlineKeyboardButton(text='English', callback_data='en_language')
         uk_button = InlineKeyboardButton(text='Українська', callback_data='uk_language')
 
@@ -70,7 +69,7 @@ class InlineKeyboardUser():
         return markup_languages
 
 
-class InlineKeyboardBack():
+class InlineKeyboardBack:
     # Клавиатура назад в меню
     def get_markup_to_main_menu(self) -> InlineKeyboardMarkup:
         button_back_to_main = InlineKeyboardButton(text=_('Назад у меню'),
@@ -82,7 +81,7 @@ class InlineKeyboardBack():
         return markup_to_main_menu
 
 
-class InlineKeyboardNews():
+class InlineKeyboardNews:
     # Клавиатура новости
 
     def get_markup_news(self, user_language) -> InlineKeyboardMarkup:
@@ -102,3 +101,28 @@ class InlineKeyboardNews():
             [button_back_to_main_menu],
         ])
         return markup_news
+
+
+class InlineKeyboardMailing:
+    # Клавіатура для розсилок
+
+    def get_markup_mailing(self) -> InlineKeyboardMarkup:
+        confirm_button = InlineKeyboardButton(text=f"{_('Розіслати розсилку')}",
+                                              callback_data='confirm_mailing')
+        cancel_button = InlineKeyboardButton(text=_('Відмінити'),
+                                             callback_data='cancel_mailing')
+        markup_mailing = InlineKeyboardMarkup(inline_keyboard=[
+            [cancel_button, confirm_button],
+
+        ])
+        return markup_mailing
+
+    def get_markup_lang_mailing(self) -> InlineKeyboardMarkup:
+        all_clients = InlineKeyboardButton(text=_('Для всех пользователей'), callback_data='all_clients_mailing')
+        uk_clients = InlineKeyboardButton(text='Українська', callback_data='uk_clients_mailing')
+        en_clients = InlineKeyboardButton(text='English', callback_data='en_clients_mailing')
+        markup_lang_mailing = InlineKeyboardMarkup(inline_keyboard=[
+            [all_clients],
+            [uk_clients, en_clients],
+        ])
+        return markup_lang_mailing

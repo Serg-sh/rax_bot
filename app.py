@@ -9,6 +9,7 @@ from handlers.user.about import about_router
 from handlers.user.contacts import contact_router
 from handlers.user.default_commands import command_router
 from handlers.user.echo import echo_router
+from handlers.user.mailing import mailing_router
 from handlers.user.my_profile import my_profile_route
 from handlers.user.news import news_router
 from handlers.user.services import services_router
@@ -26,6 +27,7 @@ my_routers: List[Router] = [echo_router,
                             about_router,
                             services_router,
                             managers_router,
+                            mailing_router,
                             ]
 
 dp.include_routers(*my_routers[::-1])

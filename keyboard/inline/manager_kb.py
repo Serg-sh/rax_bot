@@ -3,7 +3,7 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from loader import _
 
 
-class InlineManagerKB():
+class InlineManagerKB:
     def get_markup_manager_main(self) -> InlineKeyboardMarkup:
         """
         Повертає инлалйн клавіатуру основного меню менеджера
