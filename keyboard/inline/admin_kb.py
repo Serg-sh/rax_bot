@@ -58,8 +58,10 @@ class InlineKeyboardAdmin:
         """
         button_show_all_users = InlineKeyboardButton(text=f"{_('Показати всіх користувачів')}",
                                                      callback_data='show_all_user')
+        button = self.get_button_back_to_admin_menu()
 
         markup_show_all_users = InlineKeyboardMarkup(inline_keyboard=[
-            [button_show_all_users]
+            [button_show_all_users],
+            [button],
         ])
         return markup_show_all_users

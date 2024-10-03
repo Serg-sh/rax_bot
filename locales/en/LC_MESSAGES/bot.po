@@ -186,6 +186,90 @@ msgstr ""
 sgid "Показати всіх користувачів"
 msgstr ""
 
+sgid "Кількість користувачів"
+msgstr ""
+
+sgid "Адміністратори"
+msgstr ""
+
+sgid "Менеджери"
+msgstr ""
+
+sgid "клієнта"
+msgstr ""
+
+sgid "Імʼя"
+msgstr ""
+
+sgid "Компанія"
+msgstr ""
+
+sgid "Телефон"
+msgstr ""
+
+sgid "Надішліть ID користувача"
+msgstr ""
+
+sgid "Користувач"
+msgstr ""
+
+sgid "призначений адміністратором"
+msgstr ""
+
+sgid "Користувач з ID"
+msgstr ""
+
+sgid "не зареєстрований"
+msgstr ""
+
+sgid "або ID не вірний"
+msgstr ""
+
+sgid "призначений менеджером"
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
+sgid ""
+msgstr ""
+
 sgid ""
 msgstr ""
 

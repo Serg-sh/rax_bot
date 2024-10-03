@@ -43,7 +43,7 @@ class UserDBQuery:
         :return: List[User]
         """
         async for session in get_async_session():
-            result = await session.execute(select(User).where(User.is_admin == False, User.is_manager == False))
+            result = await session.execute(select(User))
             users = result.scalars().all()
             return list(users)
 
