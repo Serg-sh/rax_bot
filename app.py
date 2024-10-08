@@ -7,6 +7,7 @@ from aiogram.types.bot_command import BotCommand
 from handlers.admin.admin import admin_router
 from handlers.manager.managers import managers_router
 from handlers.user.about import about_router
+from handlers.user.chat import chat_router
 from handlers.user.contacts import contact_router
 from handlers.user.default_commands import command_router
 from handlers.user.echo import echo_router
@@ -32,6 +33,7 @@ my_routers: List[Router] = [echo_router,
                             mailing_router,
                             admin_router,
                             message_to_manager_router,
+                            chat_router,
                             ]
 
 dp.include_routers(*my_routers[::-1])

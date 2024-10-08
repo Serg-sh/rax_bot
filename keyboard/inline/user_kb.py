@@ -189,10 +189,15 @@ class InlineKeyboardChat:
                 text = f"{_('Почати чат з менеджером')}"
 
         chat_callback = ChatCallback(messages=messages, user_id=contact_id, as_user=as_user).pack()
+        cancel_chat_callback = CancelCallback(cancel_chat='cancel_chat', user_id=contact_id).pack()
 
         keyboard = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text=text,
                                                                                callback_data=chat_callback
-                                                                               )]]
+                                                                               )],
+                                                         [InlineKeyboardButton(text=f"{_('Завершити чат')}",
+                                                                               callback_data=cancel_chat_callback
+                                                                               )]
+                                                         ]
                                         )
 
         if messages == 'many':

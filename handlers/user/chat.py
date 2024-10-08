@@ -1,15 +1,16 @@
-# from aiogram import Router
-# from aiogram.types import CallbackQuery
-#
-# from keyboard.inline.user_kb import InlineKeyboardUser
-# from utils.database.queryes import UserDBQuery
-# from loader import _
-#
-# db = UserDBQuery()
-# chat_router = Router()
-# user_kb = InlineKeyboardUser()
-#
-#
+from aiogram import Router, F
+from aiogram.fsm.context import FSMContext
+from aiogram.types import CallbackQuery
+
+from keyboard.inline.user_kb import InlineKeyboardUser, CancelCallback
+from utils.database.queryes import UserDBQuery
+from loader import _
+
+db = UserDBQuery()
+chat_router = Router()
+user_kb = InlineKeyboardUser()
+
+
 # @chat_router.callback_query(F.data == 'chat_with_manager')
 # async def chat_with_manager(call: CallbackQuery):
 #     if await check_user_data(call.from_user.id):
@@ -92,18 +93,19 @@
 #
 #     keyboard = cancel_chat(second_id)
 #     await message.answer(_('Дождитесь ответа менеджара или отмените сеанс'), reply_markup=keyboard)
-#
-#
-# @dp.callback_query_handler(cancel_chat_callback.filter(), state=['in_chat', 'wait_in_chat', None])
-# async def exit_chat(call: types.CallbackQuery, state: FSMContext, callback_data: dict):
-#     user_id = int(callback_data.get('user_id'))
-#     second_state = dp.current_state(user=user_id, chat=user_id)
-#     if await second_state.get_state() is not None:
-#         data_second = await second_state.get_data()
-#         second_id = data_second.get('second_id')
-#         if int(second_id) == call.from_user.id:
-#             await second_state.reset_state()
-#             await bot.send_message(user_id, _('Пользователь завершил сеанс'))
-#
-#     await call.message.edit_text(_('Вы завершили сеанс'))
-#     await state.reset_state()
+
+
+@chat_router.callback_query(CancelCallback.filter(F.cancel_chat == 'cancel_chat'))
+async def exit_chat(call: CallbackQuery, state: FSMContext, callback_data):
+    # user_id = callback_data.user_id
+    # second_state = dp.current_state(user=user_id, chat=user_id)
+    # second_state = call.__getstate__()
+    # if await call.__getstate__() is not None:
+    #     data_second = await second_state.get_data()
+    #     second_id = data_second.get('second_id')
+    #     if int(second_id) == call.from_user.id:
+    #         await second_state.reset_state()
+    #         await bot.send_message(user_id, _('Пользователь завершил сеанс'))
+
+    await call.message.edit_text(_('Вы завершили сеанс'))
+    await state.clear()
