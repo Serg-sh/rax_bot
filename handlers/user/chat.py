@@ -107,5 +107,5 @@ async def exit_chat(call: CallbackQuery, state: FSMContext, callback_data):
     #         await second_state.reset_state()
     #         await bot.send_message(user_id, _('Пользователь завершил сеанс'))
 
-    await call.message.edit_text(_('Вы завершили сеанс'))
+    await call.message.edit_text(text=f"{_('Чат з менеджером завершен')}", reply_markup=user_kb.get_markup_main())
     await state.clear()

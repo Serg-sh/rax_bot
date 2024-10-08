@@ -16,14 +16,13 @@ chat_kb = InlineKeyboardChat()
 async def ask_manager(call: CallbackQuery):
     text = _('Для відправки повідомлення менеджеру натисніть на кнопку')
     keyboard = await chat_kb.chat_keyboard(messages='one')
-    await call.message.answer(text, reply_markup=keyboard)
+    await call.message.edit_text(text, reply_markup=keyboard)
 
 
 @message_to_manager_router.callback_query(ChatCallback.filter(F.messages == 'one'))
 async def send_to_manager(call: CallbackQuery, state: FSMContext, callback_data: ChatCallback):
     await call.answer()
     user_id = callback_data.user_id
-
     await call.message.answer(_('Відправте Ваше питання'))
     await state.set_state('wait_for_ask')
     await state.update_data(second_id=user_id)
@@ -33,7 +32,6 @@ async def send_to_manager(call: CallbackQuery, state: FSMContext, callback_data:
 async def get_support_message(message: Message, state: FSMContext):
     data = await state.get_data()
     second_id = data.get('second_id')
-
     await bot.send_message(second_id,
                            f'{_("Вам прийшло повідомлення")}!\n'
                            f'{_("Для відповіді натисніть кнопку")}')

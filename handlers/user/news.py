@@ -1,4 +1,5 @@
 from datetime import datetime
+from pprint import pprint
 
 from aiogram import Router, F
 from aiogram.fsm.context import FSMContext
@@ -8,6 +9,7 @@ from keyboard.inline.user_kb import InlineKeyboardNews
 from utils.database.models import User
 from utils.database.queryes import UserDBQuery
 from utils.http.site_api import get_news, get_link_with_language
+from loader import _
 
 db = UserDBQuery()
 news_router = Router()
@@ -34,6 +36,8 @@ async def show_news(call: CallbackQuery, state: FSMContext):
            f'{datetime.fromtimestamp(int(news["created"])).strftime("%d-%m-%Y")}\n' \
            f'{get_link_with_language(user_language, news["api_link"])}'
     text = text.replace("</p>", "").replace("<p>", "")
+    if call.message.text == _("Головне меню"):
+        await call.message.edit_reply_markup()
     await call.message.edit_text(text=text, reply_markup=kb_news.get_markup_news(user_language), parse_mode="HTML")
 
 

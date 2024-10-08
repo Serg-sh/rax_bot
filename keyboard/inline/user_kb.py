@@ -1,7 +1,6 @@
 import random
 
 from aiogram.filters.callback_data import CallbackData
-from aiogram.fsm.context import FSMContext
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
 
 from config import SITE, MY_ACCOUNT, NEWS, PRODUCTS
@@ -151,7 +150,6 @@ class InlineKeyboardChat:
     # Клавіатури чату з менеджером
 
     async def check_busy_manager(self, manager_id):
-        # state = dp.current_state(chat=manager_id, user=manager_id)
         state = dp.message.__getstate__()
         state_str = str(state)
         if state_str == 'in_chat':
@@ -209,7 +207,6 @@ class InlineKeyboardChat:
                                               callback_data=cancel_chat_callback
                                               )
                          )
-
         return keyboard
 
     def cancel_chat(self, user_id):
