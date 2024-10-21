@@ -22,285 +22,245 @@ msgid "Мій профіль"
 msgstr "My profile"
 
 msgid "Меню адміністратора"
-msgstr "Admins menu"
+msgstr "Admin menu"
 
 msgid "Меню менеджера"
 msgstr "Managers menu"
 
 msgid "Доброго дня"
-msgstr ""
+msgstr "Hello"
 
 msgid "МИ З УКРАЇНИ"
-msgstr ""
+msgstr "We are from Ukraine"
 
 msgid "Раді вітати Вас у телеграм боті ДДАП-РАКС"
-msgstr ""
+msgstr "We are pleased to welcome you to the DDAP-RAX Telegram bot"
 
 msgid "Для подальшої роботи натисніть ГОЛОВНЕ МЕНЮ"
-msgstr ""
+msgstr "For further actions, press the MAIN MENU"
 
 msgid "у вас немає прав доступу"
-msgstr ""
+msgstr "You do not have access rights"
 
 msgid "Наші новини"
-msgstr
+msgstr "News"
 
 msgid "Кабінет клієнта"
-msgstr
+msgstr "Client cabinet"
 
 msgid "Наша продукція"
-msgstr
+msgstr "Our products"
 
 msgid "Наші послуги"
-msgstr
+msgstr "Our services"
 
 msgid "Запит до менеджера"
-msgstr
+msgstr "Request to the manager"
 
 msgid "Наші контакти"
-msgstr
+msgstr "Contacts"
 
 msgid "Про нас"
-msgstr
+msgstr "About us"
 
 msgid "Наш сайт"
-msgstr
+msgstr "Website"
 
 msgid "Назад у меню"
-msgstr ""
+msgstr "Back to menu"
 
 msgid "Відлуння вашого повідомлення"
-msgstr ""
+msgstr "The echo of your message"
 
 msgid "Відлуння вашого callback_query"
-msgstr ""
-
-sgid "Зміст повідомлення"
-msgstr ""
-
-sgid "Більше новин на сайті"
-msgstr ""
-
-sgid "Змінити № телефону"
-msgstr ""
-
-sgid "Змінити email"
-msgstr ""
-
-sgid "Змінити назву компанії"
-msgstr ""
-
-sgid "Змінити пароль"
-msgstr ""
-
-sgid "Відсутній"
-msgstr ""
-
-sgid "Не вказано"
-msgstr ""
-
-sgid "Встановлений"
-msgstr ""
-
-sgid "Надішліть Ваш контактний № телефону"
-msgstr ""
-
-sgid "№ тел.:"
-msgstr "успішно додан до Вашого профілю"
+msgstr "The echo of your callback_query"
 
-sgid "Надішліть Ваш email"
-msgstr ""
-
-sgid "Ви надіслали недійсний email"
-msgstr ""
-
-sgid "Надішліть назву Вашої компанії"
-msgstr ""
+msgid "Зміст повідомлення"
+msgstr "Content of the message"
 
-sgid "Виберіть мову"
-msgstr ""
-
-sgid "Мова успішно змінена"
-msgstr ""
+msgid "Більше новин на сайті"
+msgstr "More news on the website"
 
-sgid "Натисніть /start для застосування налаштунків"
-msgstr ""
+msgid "Змінити № телефону"
+msgstr "Change phone number"
 
-sgid "Надішліть Ваш пароль"
-msgstr ""
+msgid "Змінити email"
+msgstr "Change email"
 
-sgid "Пароль успішно змінено"
-msgstr ""
+msgid "Змінити назву компанії"
+msgstr "Change company name"
 
-sgid "Змінити мову"
-msgstr ""
+msgid "Змінити пароль"
+msgstr "Change password"
 
-sgid "Посилання на бот"
-msgstr ""
+msgid "Відсутній"
+msgstr "Missing"
 
-sgid "Створити розсилку для користувачів"
-msgstr ""
+msgid "Не вказано"
+msgstr "Not specified"
 
-sgid "Створити розсилку для менеджерів"
-msgstr ""
+msgid "Встановлений"
+msgstr "Set"
 
-sgid "Назад у меню менеджера"
-msgstr ""
+msgid "Надішліть Ваш контактний № телефону"
+msgstr "Please send your contact phone number"
 
-sgid "Надішліть текст розсилки"
-msgstr ""
+msgid "№ тел.:"
+msgstr "No. tel.:"
 
-sgid "Розсилка виконана"
-msgstr ""
+msgid "Надішліть Ваш email"
+msgstr "Please send your email"
 
-sgid "Розсилка скасована"
-msgstr ""
+msgid "Ви надіслали недійсний email"
+msgstr "You have sent an invalid email"
 
-sgid "Оберіть мову розсилки"
-msgstr ""
+msgid "Надішліть назву Вашої компанії"
+msgstr "Please send the name of your company"
 
-sgid "для"
-msgstr ""
+msgid "Виберіть мову"
+msgstr "Select a language"
 
-sgid "користувачів"
-msgstr ""
+msgid "Мова успішно змінена"
+msgstr "The language has been successfully changed"
 
-sgid "Розіслати розсилку"
-msgstr ""
+msgid "Натисніть /start для застосування налаштунків"
+msgstr "Press /start to apply the settings"
 
-sgid "Відмінити"
-msgstr ""
+msgid "Надішліть Ваш пароль"
+msgstr "Please send your password"
 
-sgid "Назад у адмін меню"
-msgstr ""
+msgid "Пароль успішно змінено"
+msgstr "The password has been successfully changed"
 
-sgid "Статистика боту"
-msgstr ""
+msgid "Змінити мову"
+msgstr "Change language"
 
-sgid "Додати адміністратора"
-msgstr ""
+msgid "Посилання на бот"
+msgstr "Link to the bot"
 
-sgid "Додати менеджера"
-msgstr ""
+msgid "Створити розсилку для користувачів"
+msgstr "Create a newsletter for users"
 
-sgid "Показати всіх користувачів"
-msgstr ""
+msgid "Створити розсилку для менеджерів"
+msgstr "Create a newsletter for managers"
 
-sgid "Кількість користувачів"
-msgstr ""
+msgid "Назад у меню менеджера"
+msgstr "Back to the manager's menu"
 
-sgid "Адміністратори"
-msgstr ""
+msgid "Надішліть текст розсилки"
+msgstr "Please send the text of the newsletter"
 
-sgid "Менеджери"
-msgstr ""
+msgid "Розсилка виконана"
+msgstr "The newsletter has been sent"
 
-sgid "клієнта"
-msgstr ""
+msgid "Розсилка скасована"
+msgstr "The newsletter has been canceled"
 
-sgid "Імʼя"
-msgstr ""
+msgid "Оберіть мову розсилки"
+msgstr "Select the language of the newsletter"
 
-sgid "Компанія"
-msgstr ""
+msgid "для"
+msgstr "for"
 
-sgid "Телефон"
-msgstr ""
+msgid "користувачів"
+msgstr "users"
 
-sgid "Надішліть ID користувача"
-msgstr ""
+msgid "Розіслати розсилку"
+msgstr "Send the newsletter"
 
-sgid "Користувач"
-msgstr ""
+msgid "Відмінити"
+msgstr "Cancel"
 
-sgid "призначений адміністратором"
-msgstr ""
+msgid "Назад у адмін меню"
+msgstr "Back to the admin menu"
 
-sgid "Користувач з ID"
-msgstr ""
+msgid "Статистика боту"
+msgstr "Bot statistics"
 
-sgid "не зареєстрований"
-msgstr ""
+msgid "Додати адміністратора"
+msgstr "Add administrator"
 
-sgid "або ID не вірний"
-msgstr ""
+msgid "Додати менеджера"
+msgstr "Add manager"
 
-sgid "призначений менеджером"
-msgstr ""
+msgid "Показати всіх користувачів"
+msgstr "Show all users"
 
-sgid "Для всіх користувачів"
-msgstr ""
+msgid "Кількість користувачів"
+msgstr "Total number of users"
 
-sgid "Відповісти користувачу"
-msgstr ""
+msgid "Адміністратори"
+msgstr "Administrators"
 
-sgid "Відправити питання менеджеру"
-msgstr ""
+msgid "Менеджери"
+msgstr "Managers"
 
-sgid "Почати чат з менеджером"
-msgstr ""
+msgid "клієнта"
+msgstr "Client"
 
-sgid "Завершити чат"
-msgstr ""
+msgid "Імʼя"
+msgstr "Name"
 
-sgid "Для відправки повідомлення менеджеру натисніть на кнопку"
-msgstr ""
+msgid "Компанія"
+msgstr "Company"
 
-sgid "Відправте Ваше питання"
-msgstr ""
+msgid "Телефон"
+msgstr "Tel."
 
-sgid "Вам прийшло повідомлення"
-msgstr ""
+msgid "Надішліть ID користувача"
+msgstr "Please send the user ID"
 
-sgid "Для відповіді натисніть кнопку"
-msgstr ""
+msgid "Користувач"
+msgstr "User"
 
-sgid "Повідомлення відправлено, очикуйте відповіді"
-msgstr ""
+msgid "призначений адміністратором"
+msgstr "Assigned as administrator"
 
-sgid "Чат з менеджером завершен"
-msgstr ""
+msgid "Користувач з ID"
+msgstr "User with ID"
 
-sgid ""
-msgstr ""
+msgid "не зареєстрований"
+msgstr "not registered"
 
-sgid ""
-msgstr ""
+msgid "або ID не вірний"
+msgstr "or the ID is incorrect"
 
-sgid ""
+msgid "призначений менеджером"
 msgstr ""
 
-sgid ""
-msgstr ""
+msgid "Для всіх користувачів"
+msgstr "Assigned as manager"
 
-sgid ""
-msgstr ""
+msgid "Відповісти користувачу"
+msgstr "Reply to the user."
 
-sgid ""
-msgstr ""
+msgid "Відправити питання менеджеру"
+msgstr "Send the question to the manager"
 
-sgid ""
-msgstr ""
+msgid "Почати чат з менеджером"
+msgstr "Start a chat with the manager"
 
-sgid ""
-msgstr ""
+msgid "Завершити чат"
+msgstr "End chat"
 
-sgid ""
-msgstr ""
+msgid "Для відправки повідомлення менеджеру натисніть на кнопку"
+msgstr "To send a message to the manager, press the button"
 
-sgid ""
-msgstr ""
+msgid "Відправте Ваше питання"
+msgstr "Please send your question"
 
-sgid ""
-msgstr ""
+msgid "Вам прийшло повідомлення"
+msgstr "You have received a message"
 
-sgid ""
-msgstr ""
+msgid "Для відповіді натисніть кнопку"
+msgstr "Press the button to reply"
 
-sgid ""
-msgstr ""
+msgid "Повідомлення відправлено, очикуйте відповіді"
+msgstr "Message sent, please wait for a response"
 
-sgid ""
-msgstr ""
+msgid "Чат з менеджером завершен"
+msgstr "The chat with the manager has ended"
 
+msgid "успішно додан до Вашого профілю"
+msgstr "successfully added to your profile"
 

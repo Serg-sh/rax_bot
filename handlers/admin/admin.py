@@ -25,6 +25,7 @@ def print_users(list_users):
 
 @admin_router.message(Command('admin'))
 @admin_router.message(F.text == 'Admin panel')
+@admin_router.message(F.text == 'Admin menu')
 @admin_router.message(F.text == 'Меню адміністратора')
 async def show_admin_panel(message: Message):
     await message.answer(text=f"{_('Меню адміністратора')}",
